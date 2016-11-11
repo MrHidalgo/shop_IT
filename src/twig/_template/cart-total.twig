@@ -1,0 +1,8 @@
+{% import './_macro/cart-total__body.twig' as total %}
+
+
+{% if (totalClass == 'total') %}
+    {{ total.cartTotalBody(totalClass, text, sum) }}
+{% else %}
+    {{ total.cartTotalBody(totalClass, text, sum) }}
+{% endif %}

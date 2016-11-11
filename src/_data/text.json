@@ -1,0 +1,9 @@
+{
+  "steps" : {
+    "1" : "Warenkorb",
+    "2" : "Lieferart",
+    "3" : "Zahlungsart",
+    "4" : "Bestätigung",
+    "5" : "Ergebnis"
+  }
+}

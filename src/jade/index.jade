@@ -1,0 +1,81 @@
+//include _mixin/mixin
+//include _template/btn
+
+
+doctype html
+html
+
+    head
+        //- META TAGS
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        //meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes")
+        //- TITLE
+        title!= "Test"
+
+        //- LINK CSS
+        link(href="./css/test.css", rel="stylesheet")
+
+
+    body
+
+
+        .modal
+            ul
+                - for(var i = 0; i < 20; i++)
+                     li
+                        h2!= i
+
+
+        a(href="#", class="btn")!= "click"
+
+        span
+
+
+        //-.container
+            //- STEPS
+            block steps
+                //include _template/steps
+
+            .internal-container
+                //- CARTS
+                block carts
+                    include _template/cart
+
+                //- TOTAL CART INFO
+                block totalCart
+                    //include _template/total-cart
+
+                //- BTN NEXT/PREV
+                block btn
+                    //.btn
+                        +btnWrap("next", "fake-next",   "no-icon",      "Weiter zur Zahlungsart")
+                        +btnWrap("next", "next",        "with-icon",    "L'étape suivante")
+                        .btn__text
+                            span.btn__text-line
+                            span.btn__text-word!= 'OR'
+                        +btnWrap("prev", "prev",        "no-icon",      "Continuer vos achats")
+
+                //- RADIO BTN
+                block radioBtn
+                    //include _template/radioBtn
+
+                //- CHECKBOX BTN
+                block checkboxBtn
+                    //include _template/checkboxBtn
+
+                //- INPUT/SELECT FIELD
+                block inputSelect
+                    include _template/input
+
+                //+btnWrap("next next-internal", "next", "no-icon",   "Submit")
+                //+btnWrap("prev prev-internal", "prev", "with-icon left", "No, I'm a New customer")
+
+
+
+
+
+
+    script(src="script/jquery-1.11.1.min.js")
+    script(src="script/script.js")

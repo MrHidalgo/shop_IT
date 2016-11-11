@@ -1,0 +1,20 @@
+{% import './_macro/btn__body.twig' as button %}
+
+
+{% if (optBtn == "fake-next") %}
+    <a href="{{ hrefAttr }}" data-id="fake_button" style='display:none;' class="btn__wrap btn__wrap-{{ class }}">
+        {{ button.btnInternalSpan(class, optIcon, text) }}
+    </a>
+{% elseif (optBtn == "next__empty") %}
+    <a href="{{ hrefAttr }}" class="btn__wrap btn__wrap-{{ class }}">
+        {{ button.btnInternalSpan(class, optIcon, text) }}
+    </a>
+{% elseif (optBtn == "next") %}
+    <a href="{{ hrefAttr }}" data-id="send_button" class="btn__wrap btn__wrap-{{ class }}">
+        {{ button.btnInternalSpan(class, optIcon, text) }}
+    </a>
+{% elseif (optBtn == "prev") %}
+    <a href="{{ hrefAttr }}" class="btn__wrap btn__wrap-{{ class }}">
+        {{ button.btnInternalSpan(class, optIcon, text) }}
+    </a>
+{% endif %}

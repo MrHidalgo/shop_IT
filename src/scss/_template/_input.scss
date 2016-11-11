@@ -1,0 +1,617 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// CONFIG VARIABLE
+@import "../_config/input-config";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+
+/*
+	FORMS-ROW                   --> FR
+
+	INPUT & SELECT              --> IS
+
+	INPUT                       --> I
+
+	LABEL TITLE & SELECT TITLE  --> LTST
+
+	LABEL TITLE                 --> LT
+
+	INFO/ERROR MESSAGE          --> IEM
+
+	INPUT SHIPPING METHOD       --> ISM
+
+	INPUT SHIPPING METHOD HALF  --> ISMH
+*/
+
+$w-all    : return-value(dimension, all);
+
+$c-white  : return-value(color, white);
+
+
+.forms-row {
+	position: relative;
+	min-height: $FR_minHeight;
+	@include respond-to("small-all") {
+		min-height: $FR-SMALL-ALL_minHeight;
+	}
+
+
+	.payment-method & {
+		min-height: $FRPM_minHeight;
+		@include respond-to("extra_small") {
+			min-height: $FRPM-EXTRA-SMALL_minHeight;
+		}
+	}
+
+
+	&.forms-payment {
+		@include respond-to("extra_small") {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+}
+
+
+// INPUT INPUT-SELECT(custom)
+input,
+.input-select {
+	position: relative;
+	@include mixinDimensions($IS_width - ($IS_borderWidth * 2 + $IS_paddingRight * 2), $IS_height - ($IS_borderWidth * 2));
+	border: $IS_borderWidth solid $IS_borderColor;
+	border-radius: $IS_borderRadius;
+	padding: $IS_paddingTop $IS_paddingRight $IS_paddingBottom $IS_paddingLeft;
+	background-color: #fff;
+}
+
+.input-select {
+	line-height: $IS_lineHeight - 2;
+	font-size: $LTST_fontSize;
+}
+// /-INPUT INPUT-SELECT(custom)
+
+
+// TITLE
+.label,
+.input,
+.select {
+	&__title {
+		position: absolute;
+		font: {
+			size: $LTST_fontSize;
+		}
+		z-index: 10;
+	}
+}
+
+.input,
+.select {
+	&__title {
+		color: $LTST_fontColor;
+		top: $LTST_top;
+	}
+}
+
+
+.label__title {
+	top: 0;
+	left: $LT_left;
+	line-height: $IS_height;
+	color: $LT_fontColor;
+	transition: all .2s ease-in-out;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
+
+	&-text {
+		position: relative;
+		z-index: 10;
+	}
+
+	&-bg {
+		background-color: #fff;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		z-index: 0;
+	}
+}
+// /-TITLE
+
+
+// INFO - ERROR BLOCK
+.info,
+.error {
+	&-m {
+		display: none;
+		font : {
+			size: $IEM_fontSize;
+			family: $IEM_fontFamily;
+		}
+	}
+}// /-INFO - ERROR BLOCK
+
+
+// FOCUS - ERROR - DONE - WARNING - CONTENT
+.focus,
+.error,
+.done,
+.warning,
+.content {
+	.label__title {
+		top: $LT_topTransform;
+		left: $LT_leftTransform;
+		font: {
+			size: $LT_fontSizeTransform;
+			family: $IEM_fontFamily;
+		}
+		line-height: $LT_lineHeightTransform;
+		padding: $LT_paddingTop $LT_paddingRight $LT_paddingBottom $LT_paddingLeft;
+	}
+}
+
+.focus {
+	input,
+	.input-select {
+		border-color: $IEM_fontColor-FOCUS;
+	}
+
+	.label__title {
+		color: $IEM_fontColor-FOCUS;
+	}
+
+	.info-m {
+		display: block;
+		color: $IEM_fontColor-FOCUS;
+	}
+}
+
+.error {
+	input,
+	.input-select {
+		border-color: $IEM_fontColor-ERROR;
+	}
+
+	.label__title {
+		color: $IEM_fontColor-ERROR;
+	}
+
+	.error-m {
+		display: block;
+		color: $IEM_fontColor-ERROR;
+	}
+}
+
+.done {
+	input,
+	.input-select {
+		border-color: $IEM_fontColor-DONE;
+	}
+
+	.label__title {
+		color: $IEM_fontColor-DONE;
+	}
+}
+
+.warning {
+	input,
+	.input-select {
+		border-color: $IEM_fontColor-WARNING;
+	}
+
+	.label__title {
+		color: $IEM_fontColor-WARNING;
+	}
+}
+
+.content {
+	input,
+	.input-select {
+		border-color: $IEM_fontColor-CONTENT;
+	}
+
+	.label__title {
+		color: darken($IEM_fontColor-CONTENT, 20%);
+	}
+}
+// /-FOCUS - ERROR - DONE - WARNING - CONTENT
+
+
+// input shipping
+.input-wrap {
+	&__name,
+	&__email,
+	&__country,
+	&__addrees {
+		padding-bottom: 5px;
+	}
+
+
+	&__two-l,
+	&__two-r {
+		width: $ISM_widthWrap;
+		float: left;
+		@include respond-to("medium") {
+			width: $ISM-MEDIUM_widthWrap;
+		}
+		@include respond-to("small-all") {
+			width: 100%;
+		}
+
+
+		input,
+		.input-select {
+			@include respond-to("medium") {
+				width: $ISM-MEDIUM_width;
+			}
+			@include respond-to("small-all") {
+				width: 100%;
+			}
+		}
+	}
+
+	&__two-l {
+		margin-right: $ISM_marginRight;
+		@include respond-to("small-all") {
+			margin-right: 0;
+		}
+	}
+
+	&__two-r {
+		margin-left: $ISM_marginLeft;
+		@include respond-to("small-all") {
+			margin-left: 0;
+		}
+
+
+		&-first,
+		&-second {
+			width: $ISMT_widthAllWrap;
+			float: left;
+			@include respond-to("medium") {
+				width: $ISMT-MEDIUM_widthAllWrap;
+			}
+			@include respond-to("small-all") {
+				width: $ISMT-SMALL-ALL_widthAllTwo;
+			}
+
+
+			input {
+				width: $ISMT_widthAllTwo;
+				@include respond-to("medium") {
+					width: $ISMT-MEDIUM_widthAllTwo;
+				}
+				@include respond-to("small-all") {
+					width: 100%;
+				}
+			}
+		}
+
+
+		&-first {
+			margin-right: $ISMT_marginRight;
+			@include respond-to("small-all") {
+				margin-right: $ISMT-SMALL-ALL_marginRight;
+			}
+		}
+
+
+		&-second {
+			margin-left: $ISMT_marginLeft;
+			@include respond-to("small-all") {
+				margin-left: $ISMT-SMALL-ALL_marginLeft;
+			}
+		}
+	}
+
+
+	&__addrees {
+		margin-top: 20px;
+		padding-bottom: 20px;
+		@include respond-to("small-all") {
+			margin-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+
+	&__gender {
+		@include respond-to("small-all") {
+			padding-bottom: 20px;
+		}
+
+
+		.error-m {
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+	}
+
+
+	&__internal {
+
+
+		.forms-row {
+			width: $IS_width;
+			margin: 0 auto;
+			padding-bottom: 40px;
+			@include respond-to("small-all") {
+				width: 100%;
+			}
+
+			input {
+				@include respond-to("small-all") {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+
+	&__date-birth {
+
+		.input-select {
+			float: left;
+			margin-left: $PMSB_marginLeft;
+			width: $PMSB_width;
+			@include respond-to("small-all") {
+				width: $PMSB-SMALL-ALL_width;
+			}
+			@include respond-to("extra_small") {
+				margin-left: $PMSB-EXTRA-SMALL_marginLeft;
+				width: $PMSB-EXTRA-SMALL_width;
+			}
+
+
+			&.year {
+				margin-left: 0;
+			}
+		}
+	}
+
+
+	&__issuing-bank,
+	&__card-number {
+
+		input {
+			width: $PMIBC_width;
+			@include respond-to("small-all") {
+				width: $PMIBC-SMALL-ALL_width;
+			}
+			@include respond-to("extra_small") {
+				width: $w-all;
+			}
+		}
+	}
+
+
+	&__card-info {
+		margin-top: 20px;
+
+
+		.input-wrap {
+			&__card-l,
+			&__card-r {
+				float: left;
+			}
+
+
+			&__card-l {
+				margin-right: $PMISC_marginRight;
+				width: $PMES_width-left;
+				@include respond-to("extra_small") {
+					margin-right: 0;
+					width: $PMES-EXTRA-SMALL_width-left;
+				}
+
+
+				.input-select {
+					float: left;
+					width: $PMSED_width-input;
+					@include respond-to("small-all") {
+						width: $PMSED-SMALL-ALL_width-input;
+					}
+					@include respond-to("extra_small") {
+						width: $PMSED-EXTRA-SMALL_width-input;
+					}
+
+
+					&.month {
+						margin-right: $PMSED_marginRight;
+						@include respond-to("extra_small") {
+							margin-right: $PMSED-EXTRA-SMALL_marginRight;
+						}
+					}
+				}
+			}
+
+
+			&__card-r {
+				width: $PMES_width-right;
+				@include respond-to("extra_small") {
+					width: $PMES-EXTRA-SMALL_width-right;
+				}
+
+
+				input {
+					width: $PMES_width-input;
+					@include respond-to("small-all") {
+						width: $PMES-SMALL-ALL_width-input;
+					}
+					@include respond-to("extra_small") {
+						width: $PMSED-EXTRA-SMALL_width-input;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.info-m {
+
+
+	.focus &.card-info,
+	&.card-info.show-info {
+		display: block;
+	}
+
+	.error & {
+		&.card-info {
+			display: block;
+			margin-top: 20px;
+			position: static;
+			margin-left: -240px;
+			width: 360px;
+			height: auto;
+			background: $PMI-M_backgroundColor-error;
+			color: $PMI-M_fontColor-error;
+			box-shadow: $PMI-M_boxShadow-error;
+			text-align: center;
+			margin-bottom: 30px;
+			@include respond-to("small-all") {
+				width: 270px;
+				left: 0;
+				right: auto;
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+
+			.left,
+			.right {
+				float: none;
+			}
+
+
+			.right {
+				.info-m__title {
+					margin-top: 10px;
+				}
+			}
+
+
+			.info-m__text {
+				margin-bottom: 10px;
+				font-family: $PMI-M_fontFamily-text-error;
+			}
+
+			.info-m__img {
+				position: static;
+			}
+		}
+	}
+
+
+	&.card-info {
+		display: none;
+
+		position: absolute;
+		left: -340px;
+		top: -369px;
+		z-index: 10;
+		padding: 20px;
+		border-radius: $PMI-M_borderRadius;
+		background: $PMI-M_backgroundColor;
+		box-shadow: $PMI-M_boxShadow;
+		color: $PMI-M_fontColor;
+		width: 562px;
+		height: 300px;
+		@include respond-to("small-all") {
+			text-align: center;
+			height: auto;
+			left: auto;
+			right: 0;
+			top: auto;
+			bottom: 120px;
+			padding: 15px;
+		}
+		@include respond-to("small") {
+			width: 400px;
+		}
+		@include respond-to("extra_small") {
+			width: 270px;
+			bottom: 100px;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+
+
+	.left,
+	.right {
+		width: 271px;
+		position: relative;
+		height: 100%;
+		@include respond-to("small-all") {
+			width: 100%;
+			float: none;
+		}
+	}
+
+	.left {
+		float: left;
+	}
+
+	.right {
+		float: right;
+
+
+		.info-m__title {
+			@include respond-to("small-all") {
+				margin-top: 10px;
+			}
+		}
+	}
+
+
+	&__title {
+		font: {
+			size: $PMI-M_fontSize-title;
+			family: $PMI-M_fontFamily-title;
+		}
+		margin-bottom: 10px;
+	}
+
+
+	&__text {
+		font: {
+			size: $PMI-M_fontSize-text;
+			family: $PMI-M_fontFamily-text;
+		}
+		@include respond-to("small-all") {
+			margin-bottom: 10px;
+		}
+	}
+
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		@include respond-to("small-all") {
+			position: static;
+		}
+	}
+}
+
+
+.btn-cvv {
+	font : {
+		size: $PMBCVV_fontSize;
+	}
+	color: $PMBCVV_fontColor;
+	text-decoration: $PMBCVV_textDecoration;
+	@include respond-to("extra_small") {
+		position: $PMBCVV-EXTRA-SMALL_position;
+		left: $PMBCVV-EXTRA-SMALL_left;
+		top: $PMBCVV-EXTRA-SMALL_top;
+	}
+}

@@ -1,0 +1,62 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// CONFIG VARIABLE
+@import "../_config/_cart-total-wrap__config";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+
+/*
+	{.cart-total-wrap}
+
+	CART TOTAL WRAP --> CTW { &.wrap }
+
+	CART TOTAL TITLE--> CTT { &.title }
+
+	CART TOTAL PRICE--> CTP { &.price }
+*/
+
+
+.cart-total {
+	&-wrap {
+		height: $CTW_height;
+		background: $CTW_backgroundColor;
+		border-bottom: 1px solid $CTW_borderColor;
+		padding: 0 $CTW_paddingLeft 0 $CTW_paddingRight;
+		font: {
+			size: $CTW_fontSize;
+			family: $CTW_fontFamily;
+		}
+		@include respond-to('small-all') {
+			padding: 0 $CTW-SMALL-ALL__paddingLeft 0 $CTW-SMALL-ALL__paddingRight;
+		}
+
+
+		&.total {
+			.cart-total-price {
+				color: $CTP_fontColor;
+			}
+		}
+
+
+		&_bottom {
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+	}
+
+
+	&-title {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		width: $CTT_width;
+		vertical-align: middle;
+	}
+
+
+	&-price {
+		float: right;
+		line-height: $CTP_lineHeight;
+	}
+}

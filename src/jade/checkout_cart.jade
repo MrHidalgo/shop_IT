@@ -1,0 +1,75 @@
+include _mixin/mixin
+include _template/steps
+include _template/total-cart
+include _template/radioBtn
+include _template/btn
+
+
+- var objJSON = dataJSON;
+
+
+doctype html
+html
+
+    +headSite('DE', '', objJSON.styleLink)
+
+
+    body
+
+        .container
+
+            .internal-container
+                .header-steps
+                    h1.main__title!= "Zur Kasse"
+
+                    //- STEPS
+                    block steps
+                        +stepsTmpl(0)
+
+                    p.sub__title
+                        span.sub__title-main!= "Schritt "
+                        span.sub__title-text!= "1: Wählen Sie Ihr Warenkorb & Bonus"
+
+                form
+                    #form_cart.form_cart
+                        h2.block__title!= "Informations générales"
+
+                        //- CARTS
+                        block carts
+                            include _template/cart
+
+                        //- TOTAL CART INFO
+                        block totalCart
+                            +cartTotalLine(1, "Summe der preisnachlässe:", "")
+                            +cartTotalLine(1, "Preis inkl. rabatt:", "")
+
+                        h2.block__title!= "Choisissez votre bonus, il est gratuit!"
+
+                        .bonus-wrap
+                            p.text__title!= "Each item in the basket increases the size of the bonus products. Update your product to increase the number of tablets in rebate."
+
+                            //- RADIO BTN
+                            block radioBtn
+                                .forms-row.form-bonus
+                                    +radioBtn(i, true, "active", "Maximum Potency Testosterone Booster 60 caps bottle x <span class='red'>1 Flasche</span>")
+                                    +radioBtn(i, true, "", "Maximum Potency Testosterone Booster 60 caps bottle x <span class='red'>1 Flasche</span>")
+                                    +radioBtn(i, false, "", "Kein Bonus")
+
+
+                p.invoice__title!= "Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird."
+
+                //- BTN NEXT/PREV
+                block btn
+                    .btn
+                        +btnWrap("next", "fake-next",   "no-icon",      "Bitte warten...")
+                        +btnWrap("next", "next",        "with-icon right",    "Weiter zur Versandart")
+
+                        .divider-text
+                            span.divider-text__line
+                            span.divider-text__word!= 'OR'
+
+                        +btnWrap("prev", "prev",        "no-icon",      "Zurück zum Einkaufen")
+
+
+    script(src="script/jquery-1.11.1.min.js")
+    script(src="script/script.js")

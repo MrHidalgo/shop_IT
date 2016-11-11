@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./css/fonts.min.css">
+    <link rel="stylesheet" href="./css/common.min.css">
+    <title>PAYMENT</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="internal-container">
+        <div class="header-steps">
+          <h1 class="main__title">Zur Kasse</h1>
+          <div class="steps">
+            <div class="steps__wrap steps__wrap_check steps__wrap-1">
+              <div class="steps__wrap-container">
+                <i class="steps__wrap-icon"></i>
+              </div>
+              <p class="steps__wrap-text">Warenkorb</p>
+              <span class="steps__wrap-line"></span>
+              <span class="steps__wrap-line-status">
+                <i class="steps__wrap-line-icon"></i>
+              </span>
+            </div>
+            <div class="steps__wrap steps__wrap_check steps__wrap-2">
+              <div class="steps__wrap-container">
+                <i class="steps__wrap-icon"></i>
+              </div>
+              <p class="steps__wrap-text">Lieferart</p>
+              <span class="steps__wrap-line"></span>
+              <span class="steps__wrap-line-status">
+                <i class="steps__wrap-line-icon"></i>
+              </span>
+            </div>
+            <div class="steps__wrap steps__wrap_active steps__wrap-3">
+              <div class="steps__wrap-container">
+                <i class="steps__wrap-icon"></i>
+              </div>
+              <p class="steps__wrap-text">Zahlungsart</p>
+              <span class="steps__wrap-line"></span>
+              <span class="steps__wrap-line-status">
+                <i class="steps__wrap-line-icon"></i>
+              </span>
+            </div>
+            <div class="steps__wrap steps__wrap-4">
+              <div class="steps__wrap-container">
+                <i class="steps__wrap-icon"></i>
+              </div>
+              <p class="steps__wrap-text">Bestätigung</p>
+              <span class="steps__wrap-line"></span>
+              <span class="steps__wrap-line-status">
+                <i class="steps__wrap-line-icon"></i>
+              </span>
+            </div>
+            <div class="steps__wrap steps__wrap_status steps__wrap-5">
+              <div class="steps__wrap-container">
+                <i class="steps__wrap-icon"></i>
+              </div>
+              <p class="steps__wrap-text">Ergebnis</p>
+              <span class="steps__wrap-line"></span>
+              <span class="steps__wrap-line-status">
+                <i class="steps__wrap-line-icon"></i>
+              </span>
+            </div>
+          </div>
+          <p class="sub__title">
+            <span class="sub__title-main">Schritt </span>
+            <span class="sub__title-text">3 : Zahlungsart</span>
+          </p>
+        </div>
+        <p class="block__title border-radius_top">Wählen sie zahlungsart</p>
+        <form action="" id="checkout_form" class="payment-method wrap_bg border-radius_bottom">
+          <div class="form__wrap">
+            <div class="cart-row">
+              <div class="forms-row forms-payment">
+                <div class="radio-item active">
+                  <input type="radio" id="payment_method_visa" name="payment_method">
+                  <label for="payment_method_visa" class="payment-method">
+                    <i class="icon radio-item__layer0"></i>
+                    <i class="icon radio-item__layer1"></i>
+                  </label>
+                </div>
+                <div class="radio-item ">
+                  <input type="radio" id="payment_method_mastercard" name="payment_method">
+                  <label for="payment_method_mastercard" class="payment-method">
+                    <i class="icon radio-item__layer0"></i>
+                    <i class="icon radio-item__layer1"></i>
+                  </label>
+                </div>
+                <div class="radio-item ">
+                  <input type="radio" id="payment_method_amex" name="payment_method">
+                  <label for="payment_method_amex" class="payment-method">
+                    <i class="icon radio-item__layer0"></i>
+                    <i class="icon radio-item__layer1"></i>
+                  </label>
+                </div>
+                <div class="radio-item ">
+                  <input type="radio" id="payment_method_btc" name="payment_method">
+                  <label for="payment_method_btc" class="payment-method">
+                    <i class="icon radio-item__layer0"></i>
+                    <i class="icon radio-item__layer1"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="input-wrap__date-birth clearfix">
+              <div class="forms-row">
+                <div class="wrap-select">
+                  <p class="select__title">Geburtsdatum</p>
+                  <div class="input input-select year">
+                    <span class="input-select__value"></span>
+                    <select name="" id="">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                    <i class="input-select__icon"></i>
+                  </div>
+                  <div class="input input-select month">
+                    <span class="input-select__value"></span>
+                    <select name="" id="">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                    <i class="input-select__icon"></i>
+                  </div>
+                  <div class="input input-select date">
+                    <span class="input-select__value"></span>
+                    <select name="" id="">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                    <i class="input-select__icon"></i>
+                  </div>
+                </div>
+                <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
+                <span class="error-m">Bitte geben Sie Vorname ein.</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="input-wrap__issuing-bank">
+                <div class="forms-row">
+                  <div class="input">
+                    <input type="text" id="f2_issuing_bank">
+                    <label for="f2_issuing_bank" class="label__title">
+                      <span class="label__title-text">Name der Bank</span>
+                      <span class="label__title-bg"></span>
+                    </label>
+                  </div>
+                  <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
+                  <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                </div>
+              </div>
+              <div class="input-wrap__card-number">
+                <div class="forms-row">
+                  <div class="input">
+                    <input type="text" id="f_card_number">
+                    <label for="f_card_number" class="label__title">
+                      <span class="label__title-text">Kreditkartennummer</span>
+                      <span class="label__title-bg"></span>
+                    </label>
+                  </div>
+                  <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
+                  <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                </div>
+              </div>
+              <div class="input-wrap__card-info clearfix">
+                <div class="input-wrap__card-l">
+                  <div class="forms-row">
+                    <div class="wrap-select">
+                      <p class="select__title">Gültig bis</p>
+                      <div class="input input-select month">
+                        <span class="input-select__value"></span>
+                        <select name="" id="">
+                          <option value="">1</option>
+                          <option value="">2</option>
+                          <option value="">3</option>
+                          <option value="">4</option>
+                          <option value="">5</option>
+                        </select>
+                        <i class="input-select__icon"></i>
+                      </div>
+                      <div class="input input-select year">
+                        <span class="input-select__value"></span>
+                        <select name="" id="">
+                          <option value="">1</option>
+                          <option value="">2</option>
+                          <option value="">3</option>
+                          <option value="">4</option>
+                          <option value="">5</option>
+                        </select>
+                        <i class="input-select__icon"></i>
+                      </div>
+                    </div>
+                    <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
+                    <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                  </div>
+                </div>
+                <div class="input-wrap__card-r">
+                  <div class="forms-row">
+                    <p class="input__title">Sicherheitscode</p>
+                    <div class="input">
+                      <input type="text" id="f_cvv"> </div>
+                    <a href="javascript:void(0);" class="btn btn-cvv">Hilfe ansehen</a>
+                    <span class="info-m card-info clearfix">
+                      <span class="left">
+                        <p class="info-m__title">Visa, Mastercard, Discover & etc.</p>
+                        <p class="info-m__text">Der Sicherheitscode Ihrer Visa, Mastercard oder Discover Karte ist eine dreistellige Zahl auf der Rückseite Ihrer Bankkarte, die Ihrer Bankkartennummer folgt.</p>
+                        <img src="./img/visa_cv.png" alt="visa" class="info-m__img"> </span>
+                      <span class="right">
+                        <p class="info-m__title">American Express</p>
+                        <p class="info-m__text">Der Sicherheitscode für Ihre American Express Karte ist eine vierstellige Zahl auf der Vorderseite Ihrer Bankkarte, links oder rechts oberhalb Ihrer Bankkartennummer.</p>
+                        <img src="./img/amex_cv.png" alt="amex" class="info-m__img"> </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <p class="invoice__title"> Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird. </p>
+        <div class="btn">
+          <a href="javascript:void(0);" data-id="fake_button" style='display:none;' class="btn__wrap btn__wrap-next">
+            <span class="btn__wrap-text">Bitte warten...</span>
+          </a>
+          <a href="/confirm" data-id="send_button" class="btn__wrap btn__wrap-next">
+            <span class="btn__wrap-text">Weiter zur Bestätigung</span>
+            <span class="btn__wrap-icon">
+              <i class="icon icon-next"></i>
+            </span>
+          </a>
+          <div class="divider-text">
+            <span class="divider-text__line"></span>
+            <span class="divider-text__word">OR</span>
+          </div>
+          <a href="/shipping" class="btn__wrap btn__wrap-prev">
+            <span class="btn__wrap-text">Zurück zur Lieferart</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="./script/jquery-1.11.1.min.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

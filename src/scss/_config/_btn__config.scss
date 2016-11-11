@@ -1,0 +1,45 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+/*
+		BTN
+		- next;
+		- prev;
+		- place;
+*/
+
+
+$BTN_width                : 260px;
+$BTN_width-internal       : 425px;
+	$BTN__SMALL-ALL__width-internal : 100%;
+
+$BTN_height               : 40px;
+$BTN_lineHeight           : $BTN_height;
+$BTN_borderRadius         : 4px;
+$BTN_borderWidth          : 2px;
+$BTN_fontSize             : 14px;
+$BTN_fontFamily           : return-value(fonts, open-sans-bold);
+
+$BTN-prev_fontColor       : return-value(color, fern);
+$BTN-prev_borderColor     : return-value(color, fern);
+$BTN-prev_backgroundColor : return-value(color, white);
+$BTN-prev_iconName        : $sp-i-btn-prev-group;
+
+$BTN-next_fontColor       : return-value(color, white);
+$BTN-next_borderColor     : return-value(color, persimmon);
+$BTN-next_backgroundColor : return-value(color, persimmon);
+$BTN-next_iconName        : $sp-i-btn-next-group;
+
+$BTN-place_fontColor      : $BTN-next_fontColor;
+$BTN-place_borderColor    : $BTN-next_borderColor;
+$BTN-place_backgroundColor: $BTN-next_backgroundColor;
+$BTN-place_iconName       : $sp-i-btn-place-group;
+
+$BTN-back_fontColor       : $BTN-next_fontColor;
+$BTN-back_borderColor     : $BTN-next_borderColor;
+$BTN-back_backgroundColor : $BTN-next_backgroundColor;
+$BTN-back_iconName        : $sp-i-btn-back-group;
+
+$BTN_marginLeft-icon      : 10px;
+$BTN_marginRight-icon     : 10px;

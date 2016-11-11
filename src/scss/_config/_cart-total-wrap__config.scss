@@ -1,0 +1,28 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+/*
+	CART TOTAL WRAP --> CTW
+
+	CART TOTAL TITLE--> CTT
+
+	CART TOTAL PRICE--> CTP
+*/
+
+
+$CTW_height                     : 50px;
+$CTW_paddingLeft                : 30px;
+$CTW_paddingRight               : 30px;
+	$CTW-SMALL-ALL__paddingLeft   : 15px;
+	$CTW-SMALL-ALL__paddingRight  : 15px;
+
+$CTW_backgroundColor            : return-value(color, whisperLight);
+$CTW_borderColor                : return-value(color, white);
+$CTW_fontSize                   : 14px;
+$CTW_fontFamily                 : return-value(fonts, open-sans-bold);
+
+$CTT_width                      : 70%;
+
+$CTP_fontColor                  : return-value(color, deep_pink);
+$CTP_lineHeight                 : $CTW_height;

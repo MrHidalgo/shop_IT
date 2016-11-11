@@ -1,0 +1,21 @@
+mixin inputWrap(idName, labelName, formsClass)
+    div(class="forms-row " + formsClass)
+        .input
+            input(type="text", id= idName)
+            label(for= idName, class="label__title")
+                span.label__title-text!= labelName
+                span.label__title-bg
+        span.info-m!= "Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen."
+        span.error-m!= "Bitte geben Sie Vorname ein."
+
+
+mixin selectWrap(titleName)
+    .forms-row.select
+        p.select__title!= titleName
+        .input.input-select
+            span.input-select__value
+            select()
+                -for (var i = 0; i < 5; i++)
+                    option!= i
+            i.input-select__icon
+        span.error-m

@@ -1,0 +1,10 @@
+{% macro cartTotalBody(opt, text, sum) %}
+
+    <div class="cart-total-wrap {{ opt }}">
+        <span class="aligner"></span>
+
+        <span class="cart-total-title">{{ text }}</span>
+        <span class="cart-total-price">{{ sum }}</span>
+    </div>
+
+{% endmacro %}

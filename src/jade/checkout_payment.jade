@@ -1,0 +1,65 @@
+include _mixin/mixin
+include _template/steps
+include _template/total-cart
+include _template/radioBtn
+include _template/checkboxBtn
+include _template/input
+include _template/btn
+
+
+- var objJSON = dataJSON;
+
+
+doctype html
+html
+
+    +headSite('DE', '', objJSON.styleLink)
+
+
+    body
+
+        .container
+
+            .internal-container
+                .header-steps
+                    h1.main__title!= "Zur Kasse"
+
+                    //- STEPS
+                    block steps
+                        +stepsTmpl(2)
+
+                    p.sub__title
+                        span.sub__title-main!= "Schritt "
+                        span.sub__title-text!= "3: Zahlungsart"
+
+                .payment
+                    form
+                        h2.block__title!= "Wählen Sie Zahlungsart"
+
+                        .payment-wrap
+                            .input-wrap.input-wrap-payment
+                                .forms-row.forms-payment
+                                    +radioBtnPayment("visa",         "active")
+                                    +radioBtnPayment("mastercard",   "")
+                                    +radioBtnPayment("amex",         "")
+                                    +radioBtnPayment("btc",          "")
+
+
+
+                p.invoice__title!= "Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird."
+
+                //- BTN NEXT/PREV
+                block btn
+                    .btn
+                        +btnWrap("next", "fake-next",   "no-icon",      "Bitte warten...")
+                        +btnWrap("next", "next",        "with-icon right",    "Weiter zur Zahlungsart")
+
+                        .divider-text
+                            span.divider-text__line
+                            span.divider-text__word!= 'OR'
+
+                        +btnWrap("prev", "prev",        "no-icon",      "Zurück zum Warenkorb")
+
+
+    script(src="script/jquery-1.11.1.min.js")
+    script(src="script/script.js")

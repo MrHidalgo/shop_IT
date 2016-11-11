@@ -1,0 +1,213 @@
+{% set bool_discount        = "discount" %}
+{% set poduct_count         = 2 %}
+{% set poduct_free_count    = 1 %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    {% for link in linkFiles.style_link %}
+        <link rel="stylesheet" href="{{ link }}">
+    {% endfor %}
+
+    <title>CONFIRMATION</title>
+</head>
+<body class={{ bool_discount }}>
+    <div class="container">
+        <div class="internal-container">
+
+            <div class="header-steps">
+                <h1 class="main__title">Zur Kasse</h1>
+
+                {% include './_template/steps.twig' with {
+                    count : 4
+                } %}
+
+                {% include './_template/sub_title.twig' with {
+                    page_number : 4,
+                    page_name   : "Bestätigung",
+                } %}
+            </div>
+
+
+            <p class="block__title border-radius_top">Check yout data</p>
+
+
+            <div class="place-wrap wrap_bg clearfix">
+                <div class="place-wrap__left">
+                    <p class="place-wrap__title">Bestellung noch nicht aufgegeben</p>
+
+                    <p class="place-wrap__text">
+                        Überprüfen Sie Ihre Daten und drücken Sie auf
+
+                        <a href="/status" class="place-wrap__btn" data-id="send_link">Bestellung Aufgeben</a>
+
+                        oder
+
+                        <a href="/payment" class="place-wrap__btn">Zurück zur Zahlungsart</a>
+
+                        , wenn Sie einen Fehler finden.
+                    </p>
+                </div>
+                <div class="place-wrap__right">
+                    {% include './_template/btn.twig' with {
+                        class   : "place",
+                        optBtn  : "next",
+                        optIcon : "with-icon right",
+                        text    : "Weiter zur Bestätigung",
+                        hrefAttr: "/status"
+                    } %}
+                </div>
+            </div>
+
+
+            <div class="confirmation-wrap wrap_bg">
+                <div class="wrap">
+
+                    <div class="left-col">
+
+                        <p class="confirm-title">Anschrift</p>
+
+                        {% include './_template/confirmLeft.twig' %}
+
+                    </div>
+
+                    <div class="right-col">
+
+                        <p class="confirm-title">Lieferadresse</p>
+
+                        {% include './_template/confirmRight.twig' %}
+
+                    </div>
+                </div>
+
+                <div class="bottom-col">
+
+                    <p class="confirm-title">Kreditkarte</p>
+
+                    {% include './_template/confirmBottom.twig' %}
+
+                </div>
+            </div>
+
+
+            <div class="cart-wrap">
+                <div class="cart">
+
+                    {% include './_template/cart.twig' with {
+                        countCart           : poduct_count,
+                        opt                 : bool_discount,
+                        bool_free_discount  : 'false',
+                        boolBtn             : false
+                    } %}
+
+                </div>
+
+
+                <div class="cart cart-free">
+
+                    {% include './_template/cart.twig' with {
+                    countCart           : poduct_free_count,
+                    opt                 : bool_discount,
+                    bool_free_discount  : 'true',
+                    boolBtn             : false,
+                    boolSubtotal        : "free"
+                    } %}
+
+                </div>
+            </div>
+
+
+            {% include './_template/cart-total.twig' with {
+                totalClass  : '',
+                text        : 'Insgesamt:',
+                sum         : '€132.82',
+            } %}
+            {% include './_template/cart-total.twig' with {
+                totalClass  : '',
+                text        : 'SUMME DER PREISNACHLÄSSE:',
+                sum         : '€132.82',
+            } %}
+            {% include './_template/cart-total.twig' with {
+                totalClass  : '',
+                text        : 'Preis inkl. rabatt:',
+                sum         : '€132.82',
+            } %}
+            {% include './_template/cart-total.twig' with {
+                totalClass  : '',
+                text        : 'Lieferung:',
+                sum         : '€132.82',
+            } %}
+            {% include './_template/cart-total.twig' with {
+                totalClass  : 'border-radius_bottom total',
+                text        : 'GESAMT:',
+                sum         : '€132.82',
+            } %}
+
+
+            <form action="">
+                <div class="subscribe-form clearfix">
+
+                    <p class="subscribe__title">Subscribe the newsletter</p>
+
+                    {% include './_template/radioBtnSubscribe.twig' with {
+                        idNum_1       : "accept",
+                        idNum_2       : "refusal"
+                    } %}
+                </div>
+            </form>
+
+
+            <p class="invoice__title">
+                Hinweis! Die Rechnung wird in USD angegeben (<span>$82.37</span>)
+                <br>
+                In einigen Fällen kann der tatsächliche Endbetrag vom Gesamtrechnungsbetrag aufgrund der ausländischen Transaktionsgebühr abweichen.
+            </p>
+
+
+            <div class="btn">
+
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "fake-next",
+                    optIcon : "no-icon",
+                    text    : "Bitte warten...",
+                    hrefAttr: "javascript:void(0);"
+                } %}
+
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "next",
+                    optIcon : "with-icon right",
+                    text    : "Weiter zur Bestätigung",
+                    hrefAttr: "/status"
+                } %}
+
+                <div class="divider-text">
+                    <span class="divider-text__line"></span>
+                    <span class="divider-text__word">OR</span>
+                </div>
+
+                {% include './_template/btn.twig' with {
+                    class   : "prev",
+                    optBtn  : "prev",
+                    optIcon : "no-icon",
+                    text    : "Zurück zur Lieferart",
+                    hrefAttr: "/payment"
+                } %}
+
+            </div>
+        </div>
+    </div>
+
+    {% for link in linkFiles.script_link %}
+        <script src="{{ link }}"></script>
+    {% endfor %}
+
+</body>
+</html>

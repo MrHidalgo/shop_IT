@@ -1,0 +1,127 @@
+///
+/// IMPORT BLOCK
+///
+@import "_mixin/mixin";
+@import "_function/function";
+///
+/// IMPORT TEMPLATE
+///
+@import "_template/_grid";
+@import "_template/_base";
+
+
+@import "_template/steps";
+@import "_template/cart";
+@import "_template/cart-total-wrap";
+@import "_template/btn";
+@import "_template/radioCheckboxBtn";
+@import "_template/input";
+@import "_template/title";
+@import "_template/confirm";
+@import "_template/statusHeader";
+@import "_template/bottomInfo";
+
+
+
+///
+/// VARIABLE BLOCK
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+
+$f-openSansRegular  : return-value(fonts, open-sans-regular);
+
+
+///
+/// MAIN BLOCK
+///
+body,
+html{
+	width: $w-all;
+}
+
+
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+
+	min-height: $w-all;
+
+	line-height: 1.42857143;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: $c-white;
+
+	font-family: $f-openSansRegular;
+}
+@media screen and (max-width: 1024px) {
+	body {
+		cursor: pointer;
+	}
+}
+
+
+p,
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+}
+
+
+ul{
+	margin: 0;
+	padding: 0;
+
+	li{
+		list-style: none;
+	}
+}
+
+
+a{
+	outline: none;
+	text-decoration: none;
+	color: #222;
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}
+
+input{
+	outline: none;
+	box-shadow: none;
+	appearance: none;
+}
+
+img {
+	display: inline-block;  *display: inline;  *zoom: 1;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: none;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}

@@ -1,0 +1,193 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// CONFIG VARIABLE
+@import "../_config/_title__config";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+
+/*
+	TITLE GENERAL PROPERTIES -- > TGP
+
+	MAIN TITLE     --> MT {.main__title}
+
+	SUB TITLE      --> ST {.sub__title}
+
+	BLOCK TITLE    --> BT {.block__title}
+
+	TEXT TITLE     --> TT {.text__title}
+
+	INVOICE TITLE  --> IT {.invoice__title}
+
+	QUESTION TITLE --> QT {.question__title}
+
+	GENDER TITLE   --> GT {.gender__title}
+*/
+
+
+.main__title,
+.block__title,
+.sub__title {
+	font: {
+		family: $TGP_fontFamily;
+	}
+	color: $TGP_fontColor;
+}
+
+
+.main__title {
+	font: {
+		size: $MT_fontSize;
+	}
+	height: $MT_height;
+	line-height: $MT_lineHeight;
+	display: inline-block;  *display: inline;  *zoom: 1;
+	@include respond-to("small-all") {
+		display: none;
+	}
+}
+
+
+.sub__title {
+	font: {
+		size: $ST_fontSize;
+	}
+	padding: $ST_paddingTop $ST_paddingRight $ST_paddingBottom $ST_paddingLeft;
+	@include respond-to("extra_small") {
+		padding-left: $ST-EXTRA-SMALL_paddingLeft;
+	}
+}
+
+
+.block__title {
+	font: {
+		size: $BT_fontSize;
+	}
+	height: $BT_height;
+	line-height: $BT_lineHeight;
+	border-bottom: 1px solid $BT_borderColor;
+	padding: $BT_paddingTop $BT_paddingRight $BT_paddingBottom $BT_paddingLeft;
+	background-color: $BT_backgroundColor;
+	@include respond-to("extra_small") {
+		font: {
+			size: $BT__EXTRA-SMALL__fontSize;
+		}
+	}
+	@include respond-to("small-all") {
+		padding: $BT_paddingTop $BT_paddingRight $BT_paddingBottom $BT__SMALL-ALL__paddingLeft;
+	}
+
+
+	&_top {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+}
+
+
+.text__title {
+	font: {
+		size: $TT_fontSize;
+		style: $TT_fontStyle;
+	}
+	color: $TT_fontColor;
+	padding: $TT_paddingTop $TT_paddingRight $TT_paddingBottom $TT_paddingLeft;
+}
+
+
+.invoice__title {
+	font: {
+		size: $IT_fontSize;
+	}
+	padding: $IT_paddingTop $IT_paddingRight $IT_paddingBottom $IT_paddingLeft;
+	text-align: center;
+}
+
+
+.question__title {
+	font: {
+		size: $QT_fontSize;
+		weight: normal;
+	}
+	text-align: center;
+	color: $QT_fontColor;
+	padding: $QT_paddingTop $QT_paddingRight $QT_paddingBottom $QT_paddingLeft;
+	@include respond-to("small-all") {
+		font: {
+			size: $QT__SMALL-ALL__fontSize;
+		}
+	}
+}
+
+
+.gender__title {
+	font: {
+		size: $GT_fontSize;
+	}
+	color: $GT_fontColor;
+	display: inline-block;  *display: inline;  *zoom: 1;
+	margin: $GT_marginTop $GT_marginRight $GT_marginBottom $GT_marginLeft;
+	position: relative;
+	top: 2px;
+	@include respond-to("small-all") {
+		margin-bottom: 15px;
+	}
+}
+
+
+.subscribe__title {
+	display: none;
+	@include respond-to("small-all") {
+		font : {
+			size: $SbT_fontSize;
+			family: $SbT_fontFamily;
+		}
+		color: $SbT_fontColor;
+		display: block;
+	}
+}
+
+
+.place-wrap__title {
+	font : {
+		size: $PWT_fontSize;
+	}
+	color: $PWT_fontColor;
+	margin-bottom: 5px;
+}
+
+
+.confirm-title {
+	font: {
+		size: $CT_fontSize;
+		family: $CT_fontFamily;
+	}
+	color: $CT_fontColor;
+	text-transform: $CT_fontTransform;
+	padding-left: $CT_paddingLeft;
+	height: $CT_height;
+	line-height: $CT_lineHeight;
+	border-top: 1px solid $CT_borderColor;
+	border-bottom: 1px solid $CT_borderColor;
+	@include respond-to("small-all") {
+		padding-left: $CT-SMALL-ALL_paddingLeft;
+	}
+}
+
+
+.status__wrap-title {
+	font: {
+		size: 22px;
+		family: return-value(fonts, open-sans-bold);
+	}
+	color: return-value(color, deep_pink);
+	text-transform: uppercase;
+	display: inline-block;  *display: inline;  *zoom: 1;
+	vertical-align: middle;
+	@include respond-to("small-all") {
+		display: block;
+		margin-bottom: 15px;
+	}
+}

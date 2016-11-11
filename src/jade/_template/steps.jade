@@ -1,0 +1,27 @@
+- var objJSON = dataJSON.steps;
+
+
+mixin stepsTmpl(opt)
+
+    mixin stepsWrapInternal(i)
+        .steps__wrap-container
+            i.steps__wrap-icon
+        p.steps__wrap-text!= dataJSON.steps.stepsText[i]
+        span.steps__wrap-line
+        span.steps__wrap-line-status
+            i.steps__wrap-line-icon
+
+    .steps
+        - for(var i = 0, stepsTextLen = dataJSON.steps.stepsText.length; i < stepsTextLen; i++)
+            if (opt == i)
+                div(class='steps__wrap steps__wrap-' + dataJSON.steps.stepsNameClass[i] + ' steps__wrap_active')
+                    +stepsWrapInternal(i)
+            else if (opt > i)
+                div(class='steps__wrap steps__wrap-' + dataJSON.steps.stepsNameClass[i] + ' steps__wrap_check')
+                    +stepsWrapInternal(i)
+            else if (i == stepsTextLen - 1)
+                div(class='steps__wrap steps__wrap-' + dataJSON.steps.stepsNameClass[i] + ' steps__wrap_status')
+                    +stepsWrapInternal(i)
+            else
+                div(class='steps__wrap steps__wrap-' + dataJSON.steps.stepsNameClass[i])
+                    +stepsWrapInternal(i)

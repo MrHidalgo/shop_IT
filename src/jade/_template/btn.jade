@@ -1,0 +1,44 @@
+mixin btnWrap(className, optBtn, optIcon, textBtn)
+    -
+        var fakeBtn = "fake_button",
+            sendBtn = "send_button";
+
+
+    mixin spanInfo(optIcon)
+        if (optIcon == "with-icon right")
+            span.btn__wrap-text!= textBtn
+            span.btn__wrap-icon
+                i(class='icon icon-' + className)
+        else if (optIcon == "with-icon left")
+            span.btn__wrap-icon
+                i(class='icon icon-' + className)
+            span.btn__wrap-text!= textBtn
+        else if (optIcon != 'no-icon')
+            span.btn__wrap-icon
+                i(class='icon icon-' + className)
+            span.btn__wrap-text!= textBtn
+        else
+            span.btn__wrap-text!= textBtn
+
+
+    mixin btn(className, attrName, attrOpt, attrStyle)
+        if (attrOpt == true)
+            if (attrStyle != true)
+                a(href='javascript:void(0);', class='btn__wrap btn__wrap-' + className, data-id= attrName)
+                    +spanInfo(optIcon)
+            else
+                a(href='javascript:void(0);', class='btn__wrap btn__wrap-' + className, style='display:none;', data-id= attrName)
+                    +spanInfo(optIcon)
+        else
+            a(href='javascript:void(0);', class='btn__wrap btn__wrap-' + className)
+                +spanInfo(optIcon)
+
+
+    if (optBtn == "fake-next")
+        +btn(className, fakeBtn, true, true)
+    else if (optBtn == 'next__empty')
+        +btn(className, '', false, false)
+    else if (optBtn == 'next')
+        +btn(className, sendBtn, true, false)
+    else if (optBtn == 'prev')
+        +btn(className, '', false, false)

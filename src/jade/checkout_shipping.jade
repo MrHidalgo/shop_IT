@@ -1,0 +1,179 @@
+include _mixin/mixin
+include _template/steps
+include _template/total-cart
+include _template/radioBtn
+include _template/checkboxBtn
+include _template/input
+include _template/btn
+
+
+- var objJSON = dataJSON;
+
+
+doctype html
+html
+
+    +headSite('DE', '', objJSON.styleLink)
+
+
+    body
+
+        .container
+
+            .internal-container
+                .header-steps
+                    h1.main__title!= "Zur Kasse"
+
+                    //- STEPS
+                    block steps
+                        +stepsTmpl(1)
+
+                    p.sub__title
+                        span.sub__title-main!= "Schritt "
+                        span.sub__title-text!= "2: Lieferart"
+
+                form
+                    h2.block__title!= "Wählen Sie Lieferart"
+
+                    .method-wrap
+                        .method-wrap__left
+                            //- RADIO BTN
+                            block radioBtn
+                                .forms-row.forms-method
+                                    +radioBtn(i, true, "active", "Einschreiben - <span class='radio-item__total'>$20.00</span> <span class='radio-item__date'>(14-21 Werktage)</span>")
+                                    +radioBtn(i, true, "", "EMS - <span class='radio-item__free'>GRATIS</span> <span class='radio-item__date'>(14-21 Werktage)</span>")
+
+                                    //- CHECKBOX BTN
+                                    block checkboxBtn
+                                        +checkboxBtn("")
+
+                        .method-wrap__right
+                            .first
+                                span.first__text!= "Lieferart: "
+                                strong.first__strong!= "Einschreiben"
+                            .second
+                                span.second__text
+                                    | Ungefähres Lieferdatum:
+                                    br
+                                    span.second__text-internal!= "November, 08 - November, 18"
+
+                    //- TOTAL CART INFO
+                    block totalCart
+                        +cartTotalLine(1, "Insgesamt:", "")
+                        +cartTotalLine(1, "Preis inkl. rabatt:", "")
+                        +cartTotalLine(1, "Lieferung:", "")
+                        +cartTotalLine(1, "GESAMT:", "total")
+
+                    h2.block__title!= "Rechnungsinformationen"
+
+                    .input-wrap
+                        h3.question__title!= "Have you ordered with us before?"
+
+                        +btnWrap("next next-customer", "next__empty", "with-icon right", "Ja, ich bin hier zum ersten Mal")
+
+                        .divider-text.divider-text-input
+                            span.divider-text__line
+                            span.divider-text__word!= 'OR'
+
+
+                        .input-wrap__name.clearfix
+                            .input-wrap__l
+                                +inputWrap("first_name", "Vorname", "")
+                            .input-wrap__r
+                                +inputWrap("last_name", "Name", "")
+                        .input-wrap__gender.clearfix
+                            .forms-row.gender-form-row
+                                span.gender__title!= "Geschlecht"
+                                +radioBtn(0, false, "", "Männlich")
+                                +radioBtn(1, false, "", "Weiblich")
+                                +radioBtn(2, false, "", "Anderes")
+                                span.error-m!= "Bitte wählen Sie Ihr Geschlecht aus"
+                        .input-wrap__email.clearfix
+                            .input-wrap__l
+                                +inputWrap("email_name", "Email", "")
+                            .input-wrap__r
+                                +inputWrap("a_email_name", "Alternative e-mail (Optional)", "")
+
+
+                        .divider-text.divider-text-input.divider-text-empty
+                            span.divider-text__line
+
+
+                        .input-wrap__country.clearfix
+                            .input-wrap__l
+                                +selectWrap("Country")
+                            .input-wrap__r
+                                .input-wrap__r-first
+                                    +inputWrap("city", "Stadt", "")
+                                .input-wrap__r-second
+                                    +inputWrap("zip", "PLZ", "")
+                        .input-wrap__addrees.clearfix
+                            .input-wrap__l
+                                +inputWrap("address", "Anschrift", "")
+                            .input-wrap__r
+                                +inputWrap("phone", "Telefon", "")
+
+
+                    h2.block__title!= "Lieferadresse"
+
+                    .shipping-address
+                        span.shipping-address__text!= "Lieferadresse ist dieselbe, wie die Rechnungsadresse?"
+                        .forms-row.forms-shipping
+                            +radioBtn(0, false, "", "Ja")
+                            +radioBtn(1, false, "", "Nein")
+
+                    form
+                        .input-wrap.input-wrap-shipping
+                            .input-wrap__name.clearfix
+                                .input-wrap__l
+                                    +inputWrap("first_name", "Vorname & Name", "")
+                                .input-wrap__r
+                                    +selectWrap("Country")
+                            .input-wrap__country.clearfix
+                                .input-wrap__l
+                                    +inputWrap("address", "Anschrift", "")
+                                .input-wrap__r
+                                    .input-wrap__r-first
+                                        +inputWrap("city", "Stadt", "")
+                                    .input-wrap__r-second
+                                        +inputWrap("zip", "PLZ", "")
+
+                    h2.block__title!= "Rechnungsinformationen"
+
+                    .input-wrap.input-wrap-internal
+                        h3.input-wrap__text!= "Wenn Sie bereits etwas bei uns bestellt haben, dann geben Sie bitte Ihre E-Mail-Adresse (die Sie für den letzten Einkauf benutzt haben) und Ihre Bestellnummer (bzw. die vier letzten Ziffern Ihrer Kreditkartennummer, falls Sie die Bestellnummer nicht mehr wissen) ein, um die Bestellinformationen automatisch auszufüllen"
+                        .input-wrap__internal.clearfix
+                            +inputWrap("email_name", "Email", "")
+                            +inputWrap("order", "Bestellnummer bzw. die vier letzten Ziffern Ihrer Kreditkartennummer", "")
+
+                        +btnWrap("next next-internal", "next", "no-icon",   "Submit")
+
+                        .divider-text.divider-text-input.divider-text-internal
+                            span.divider-text__line
+                            span.divider-text__word!= 'OR'
+
+                        +btnWrap("prev prev-internal", "prev", "with-icon left", "No, I'm a New customer")
+
+
+                    p.invoice__title
+                        | Hinweis! Die Rechnung wird in USD angegeben. (<span>$82.37</span>)
+                        br
+                        | In einigen Fällen kann der tatsächliche Endbetrag vom Gesamtrechnungsbetrag aufgrund der ausländischen Transaktionsgebühr abweichen.
+                        br
+                        | Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird.
+
+                    //- BTN NEXT/PREV
+                    block btn
+                        .btn
+                            +btnWrap("next", "fake-next",   "no-icon",      "Bitte warten...")
+                            +btnWrap("next", "next",        "with-icon right",    "Weiter zur Zahlungsart")
+
+                            .divider-text
+                                span.divider-text__line
+                                span.divider-text__word!= 'OR'
+
+                            +btnWrap("prev", "prev",        "no-icon",      "Zurück zum Warenkorb")
+
+
+    script(src="script/jquery-1.11.1.min.js")
+    script(src="script/script.js")

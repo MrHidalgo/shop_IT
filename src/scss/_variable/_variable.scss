@@ -1,0 +1,41 @@
+////
+/// @group  Variable
+////
+
+///
+/// @name   object
+///
+
+$object : (
+    color : (
+        white             : #fff,
+        black             : #000,
+        nero              : #222,
+        suva_gray         : #909090,
+        alice_blue        : #F5FAFD,
+        deep_pink         : #E9007E,
+        fern              : #5EBC58,
+        grey              : #868686,
+        show              : #FAFAFA,
+		    persimmon         : #E94F00,
+		    whisper           : #E5E5E5,
+		    whisperLight      : #EEE,
+		    sunset_orange     : #F14C4C,
+		    curious_blue      : #307FB4,
+		    mango_tango       : #E17900,
+		    black_russian     : #0B0B0D,
+		    snow              : #FCFCFC
+    ),
+
+		fonts : (
+			lato-regular        : 'lato_regular',
+			lato-bold           : 'lato_bold',
+			open-sans-regular   : 'opensans_regular',
+			open-sans-bold      : 'opensans_bold',
+			officina-sans-bold  : 'officina_sans_boldC'
+    ),
+
+    dimension : (
+        all       : 100%
+    ),
+);

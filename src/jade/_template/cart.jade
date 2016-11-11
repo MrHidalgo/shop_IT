@@ -1,0 +1,82 @@
+- var objJSON = dataJSON.cart;
+
+
+mixin cartItem(countCart, opt, arr)
+    -for(var i = 0; i < countCart; i++)
+        if(i == 0)
+            .cart-item
+                +leftRightSide(opt, arr)
+        else
+            .cart-item.cart-item-next
+                +leftRightSide(opt, arr)
+
+
+//- LEFT & RIGHT SIDE
+mixin leftRightSide(opt, arr)
+    mixin leftRight(opt, arr)
+        .left-side
+            p.cart-title!= arr[0]
+            +leftSideWrap()
+
+        .right-side
+            +rightWrap(opt, arr)
+
+    if (opt == 'discount')
+        - var cartTitleDiscountArr = objJSON.cartTitleDiscount;
+            +leftRight(opt, cartTitleDiscountArr)
+    else
+        - var cartTitleArr = objJSON.cartTitle;
+            +leftRight(opt, cartTitleArr)
+
+
+//- LEFT SIDE WRAP [img, product name]
+mixin leftSideWrap()
+    .left-side__wrap
+        .left-side__wrap-img
+            img(src='./img/img-product.png', class='img-goods')
+        .left-side__wrap-name
+            .aligner
+            p.goods-descr!= dataJSON.cart.cartText[0]
+
+
+//- RIGHT WRAP [subtotal, discount, per-pack, btn-wrap]
+mixin rightWrap(opt, arr)
+    .row-btn
+        p.cart-title!= arr[1]
+        .right-side__wrap
+            +rowBtnSelectClose()
+    if (opt == 'discount')
+        .row-discount
+            p.cart-title!= arr[2]
+            .right-side__wrap
+                span.discount!= '10%'
+    .row-perpack
+        p.cart-title!= arr[3]
+        .right-side__wrap
+            span.ppack!= '€132.82'
+    .row-subtotal
+        p.cart-title!= arr[4]
+        .right-side__wrap
+            span.subtotal!= '€132.82'
+
+
+//- RIGHT SIDE [btn close, select]
+mixin rowBtnSelectClose()
+    .quantity-wrap
+        span.input-select__value
+        select()
+            -for (var i = 0; i < 10; i++)
+                option!= i
+        i.input-select__icon
+    a(href='', class='close-btn')
+        i.close-btn__icon
+        span.close-btn__text!= dataJSON.cart.cartText[1]
+
+
+
+.cart
+    +cartItem(1, '', objJSON)
+
+.discount
+    .cart
+        +cartItem(1, 'discount', objJSON)

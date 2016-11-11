@@ -1,0 +1,16 @@
+{% import './_macro/cart__body.twig' as cartWrap %}
+
+
+{% for i in 1..countCart %}
+
+    {% if (loop.first) %}
+        <div class="cart-item">
+            {{ cartWrap.wrapInternal(opt, bool_free_discount, boolBtn, boolSubtotal) }}
+        </div>
+    {% else %}
+        <div class="cart-item cart-item-next">
+            {{ cartWrap.wrapInternal(opt, bool_free_discount, boolBtn, boolSubtotal) }}
+        </div>
+    {% endif %}
+
+{% endfor %}

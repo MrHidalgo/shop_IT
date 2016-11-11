@@ -1,0 +1,305 @@
+////
+/// @group  Mixin
+////
+
+/// 
+/// Mixin setting the width and height element.
+///
+/// @name   mixinDimensions
+///
+/// @param  {String}  $width             - The width property sets the width of an element.
+/// @param  {String}  $height  [$width]  - The height property sets the height of an element.
+///
+/// @see    $object
+///
+/// @example
+///   <selector> {
+///     @include mixinDimensions(100%);
+///     @include mixinDimensions(100%, 50%);
+///   }
+///
+@mixin mixinDimensions($width, $height:$width) {
+  width : $width;
+  height: $height;
+}
+
+///
+/// Mixin centered elements use with display:flex.
+///
+/// @name   mixinCenteredBLockFlex
+///
+/// @param  {String}  $position             - The flex-direction property specifies the direction of the flexible items.
+/// @param  {String}  $alignItem    [null]  - The align-items property specifies the default alignment for items inside the flexible container.
+/// @param  {String}  $contentJust  [null]  - The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+///
+/// @example
+///   <selector> {
+///     @include mixinCenteredBLockFlex(
+///       $position   : [row | row-reverse | column | column-reverse],
+///       $alignItem  : [stretch | center | flex-start | flex-end | baseline],
+///       $contentJust: [flex-start | flex-end | center | space-between | space-around]
+///     );
+///   }
+///
+@mixin mixinCenteredBLockFlex($position, $alignItem:null, $contentJust:null) {
+  display         : flex;
+  flex-direction  : $position;
+  align-items     : $alignItem;
+  justify-content : $contentJust;
+}
+
+///
+/// Mixin centered elements use with position:absolute.
+///
+/// @name   mixinCenteredBLockAbsolute
+///
+/// @param  {String}  $left
+/// @param  {String}  $right
+/// @param  {String}  $top
+/// @param  {String}  $bottom
+///
+/// @example
+///   <selector> {
+///     @include mixinCenteredBLockFlex(0, 0, 0, 0);
+///   }
+///
+@mixin mixinCenteredBLockAbsolute($left, $right, $top, $bottom) {
+  position  : absolute;
+  left      : $left;
+  right     : $right;
+  top       : $top;
+  bottom    : $bottom;
+  margin    : auto;
+}
+
+///
+/// Mixin generate animation. It uses an additional function :
+/// - **map-get()**   - returns the value in a map associated with the given key. If the map doesn’t have such a key, returns null;
+/// - **map-merge()** - Merges two maps together into a new map. Keys in $map2 will take precedence over keys in $map1;
+///
+/// @link http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method       map-get()
+/// @link http://sass-lang.com/documentation/Sass/Script/Functions.html#map_merge-instance_method     map-merge()
+///
+/// @name   mixinKeyframes
+///
+/// @param  {String}  $keyName - Animation Name
+/// @param  {Object}  $options
+///
+/// @example
+///   <selector> {
+///     @include moduleKeyframes(clockLeft,
+///       (
+///         opacityStart      : 0.8,
+///         opacityEnd        : 1,
+///         transformStart    : rotate(360deg)
+///       )
+///       ||
+///       (
+///         opacityStart      : 0.5,
+///         opacityEnd        : 1,
+///         transformDouble   : (rotate(-360deg) scale(0.5))
+///       )
+///     );
+///   }
+///
+@mixin mixinKeyframes($keyName, $options: ()) {
+  $configuration: map-merge((), $options);
+
+  @keyframes #{$keyName} {
+    from{
+      opacity   : map-get($configuration, opacityStart);
+      transform : map-get($configuration, transformStart);
+      transform : map-get($configuration, transformDouble);
+    }
+    to{
+      opacity   : map-get($configuration, opacityEnd);
+      transform : map-get($configuration, transformEnd);
+    }
+  }
+}
+
+///
+/// Mixin the border shorthand property sets all the border properties in one declaration.
+/// The properties that can be set, are (in order): border-width, border-style, and border-color.
+///
+/// @name   mixinBorder
+///
+/// @param  {String}  $place        - if 'all'  then border: width solid color;
+/// @param  {String}  $width [null] - if 'null' then border-#([top, right, bottom, left]): 1px solid color, else border-#([top, right, bottom, left]): width solid color;
+/// @param  {String}  $color        - Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values;
+///
+/// @link http://www.w3schools.com/cssref/css_colors_legal.asp  CSS Color Values
+///
+/// @see    $object
+///
+/// @example
+///   <selector> {
+///     @include mixinBorder('all', #000);
+///     @include mixinBorder(left , null, #000);
+///     @include mixinBorder(left , 2px , #000);
+///   }
+///
+@mixin mixinBorder($place, $width, $color) {
+  $false: null;
+
+  @if ($place == 'all') {
+    border: $width solid $color;
+  }
+  @else if ($width == $false) {
+    border-#{$place}: 1px solid $color;
+  }
+  @else {
+    border-#{$place}: $width solid $color;
+  }
+}
+
+///
+/// Mixin text-shadow property adds shadow to text.
+///
+/// @name     mixinTextShadow
+///
+/// @param    {String}  $hoff   - Required. The position of the horizontal shadow. Negative values are allowed;
+/// @param    {String}  $voff   - Required. The position of the vertical shadow. Negative values are allowed;
+/// @param    {String}  $blur   - Optional. The blur radius. Default value is 0;
+/// @param    {String}  $color  - Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values;
+///
+/// @link http://www.w3schools.com/cssref/css_colors_legal.asp  CSS Color Values
+///
+/// @require  render-pixel
+/// @see      $object
+///
+/// @example
+///   <selector> {
+///     @include mixinTextShadow(render-pixel(2px), render-pixel(2px), render-pixel(8px), #FF0000);
+///   }
+///
+@mixin mixinTextShadow($hoff, $voff, $blur, $color) {
+  text-shadow: $hoff $voff $blur $color;
+}
+
+///
+/// Mixin box-shadow property attaches one or more shadows to an element.
+///
+/// @name     mixinBoxShadow
+///
+/// @param    {String}  $inset  - Optional. Changes the shadow from an outer shadow (outset) to an inner shadow
+/// @param    {String}  $hoff   - Required. The position of the horizontal shadow. Negative values are allowed;
+/// @param    {String}  $voff   - Required. The position of the vertical shadow. Negative values are allowed;
+/// @param    {String}  $blur   - Optional. The blur radius. Default value is 0;
+/// @param    {String}  $color  - Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values;
+///
+/// @link http://www.w3schools.com/cssref/css_colors_legal.asp  CSS Color Values
+///
+/// @require  render-pixel
+/// @see      $object
+///
+/// @example
+///   <selector> {
+///     @include mixinBoxShadow(render-pixel(2px), render-pixel(2px), render-pixel(8px), #FF0000);
+///   }
+///
+@mixin mixinBoxShadow($inset, $hoff, $voff, $blur, $color) {
+  @if ($inset == 'none') {
+    box-shadow: $hoff $voff $blur $color;
+  }
+  @else {
+    box-shadow: $inset $hoff $voff $blur $color;
+  }
+}
+
+///
+/// Mixin in mathematics, the gradient is a generalization of the usual concept of derivative of a function in one dimension to a function in several dimensions.
+///
+/// @name     mixinLinerGradient
+///
+/// @param    {Color}  $start_color  - Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values;
+/// @param    {Color}  $end_color    - --//--
+///
+/// @link http://www.w3schools.com/cssref/css_colors_legal.asp  CSS Color Values
+///
+/// @see    $object
+///
+/// @example
+///   <selector> {
+///     @include mixinLinerGradient(#F00A1B, #FF0000);
+///     @include mixinLinerGradient($white, $black);
+///   }
+///
+@mixin mixinLinerGradient($start_color, $end_color){
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $start_color), color-stop(100%, $end_color));
+  background-image: -moz-linear-gradient($start_color, $end_color);
+  background-image: -webkit-linear-gradient($start_color, $end_color);
+  background-image: linear-gradient($start_color, $end_color);
+}
+
+///
+/// Mixin insert image [:after | :before]
+///
+/// @name     mixinInsertImage
+///
+/// @param    {String}  $display-value  - The display property specifies the type of box used for an HTML element.
+/// @param    {String}  $width          - The width property sets the width of an element.
+/// @param    {String}  $height         - The height property sets the height of an element.
+/// @param    {String}  $image          - Image name
+/// @param    {String}  $margin-place   - The margin shorthand property sets all the margin properties in one declaration. This property can have from one to four values.
+/// @param    {Number}  $margin-value   -
+/// @param    {String}  $vertical-align - The vertical-align property sets the vertical alignment of an element.
+///
+/// @link http://www.w3schools.com/cssref/css_colors_legal.asp  CSS Color Values
+///
+/// @require  render-pixel
+/// @see      $object
+///
+/// @example
+///   <selector> {
+///     @include mixinInsertImage(
+///       [inline | block | flex | inline-block],
+///       render-pixel(25px),
+///       render-pixel(25px),
+///       $imageName,
+///       [top | right | bottom | left],
+///       render-pixel(15px),
+///       [baseline | sub | super | top | text-top | middle | bottom | text-bottom]
+///     );
+///   }
+///
+@mixin mixinInsertImage($display-value, $width, $height, $image, $margin-place, $margin-value, $vertical-align) {
+  content: '';
+  display: $display-value;
+  width: $width;
+  height: $height;
+  background: url($image) no-repeat center;
+  background-size: contain;
+  margin-#{$place}: render-pixel($margin-value);
+  vertical-align: $vertical-align;
+}
+
+
+
+
+$breakpoints: (
+	'extra_small'       : screen and (max-width: 479px),
+	'small'             : screen and (min-width: 480px) and (max-width:  767px),
+	'small-all'         : screen and (max-width: 767px),
+	'medium'            : screen and (min-width: 768px) and (max-width:  991px),
+	'large'             : screen and (min-width: 992px) and (max-width: 1199px),
+	'extra_large'       : screen and (min-width: 1200px)
+);
+
+@mixin respond-to($name) {
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $name) {
+		// Prints a media query based on the value
+		@media #{inspect(map-get($breakpoints, $name))} {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+			+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+}

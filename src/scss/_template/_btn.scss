@@ -1,0 +1,164 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// CONFIG VARIABLE
+@import "../_config/btn__config";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+
+/*
+		BTN
+		- next;
+		- prev;
+*/
+
+
+// main
+.btn {
+	.btn__wrap {
+		position: absolute;
+		@include respond-to('small-all') {
+			position: static;
+		}
+	}
+}
+
+// btn
+.btn {
+	position: relative;
+	min-height: $BTN_height;
+
+
+	&__wrap{
+		display: block;
+
+
+		&-prev,
+		&-place,
+		&-back,
+		&-next {
+			@include mixinDimensions($BTN_width - ($BTN_borderWidth * 2), $BTN_height - ($BTN_borderWidth * 2));
+			line-height: $BTN_height - ($BTN_borderWidth * 2) - 2;
+			border-radius: $BTN_borderRadius;
+			text-align: center;
+			@include respond-to('small-all') {
+				display: block;
+				@include mixinDimensions($BTN_width, $BTN_height);
+				margin: 0 auto;
+			}
+		}
+
+
+		&-prev {
+			color: $BTN-prev_fontColor;
+			left: 0;
+			border: $BTN_borderWidth solid $BTN-prev_borderColor;
+			background-color: $BTN-prev_backgroundColor;
+
+
+			.btn__wrap-icon {
+				.icon {
+					margin-right: $BTN_marginRight-icon;
+					@include retina-sprite($BTN-prev_iconName);
+				}
+			}
+		}
+
+
+		&-next,
+		&-place {
+			color: $BTN-next_fontColor;
+			right: 0;
+			border: $BTN_borderWidth solid $BTN-next_borderColor;
+			background-color: $BTN-next_backgroundColor;
+		}
+
+
+		&-next {
+			.btn__wrap-icon {
+				.icon {
+					margin-left: $BTN_marginLeft-icon;
+					@include retina-sprite($BTN-next_iconName);
+				}
+			}
+		}
+
+
+		&-place {
+			position: absolute;
+			top: 0;  *top: 35px;
+			bottom: 0;
+			right: 25px;
+			margin: auto;
+			@include respond-to("small-all") {
+				position: static;
+			}
+
+
+			.btn__wrap-icon {
+				.icon {
+					margin-left: $BTN_marginLeft-icon;
+					@include retina-sprite($BTN-place_iconName);
+				}
+			}
+		}
+
+
+		&-print,
+		&-back {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			margin-left: 25px;
+			@include respond-to("small-all") {
+				margin-left: 0;
+			}
+		}
+
+
+		&-back {
+			color: $BTN-back_fontColor;
+			border: $BTN_borderWidth solid $BTN-back_borderColor;
+			background-color: $BTN-back_backgroundColor;
+
+
+			.btn__wrap-icon {
+				.icon {
+					margin-left: $BTN_marginLeft-icon;
+					@include retina-sprite($BTN-back_iconName);
+				}
+			}
+		}
+
+
+		&.next-internal,
+		&.prev-internal {
+			width: $BTN_width-internal - ($BTN_borderWidth * 2);
+			margin: 0 auto;
+			@include respond-to("small-all") {
+				width: $BTN__SMALL-ALL__width-internal;
+			}
+		}
+
+
+		&.next-customer {
+			margin: 0 auto 15px;
+		}
+
+
+		&-text {
+			font: {
+				size: $BTN_fontSize;
+				family: $BTN_fontFamily;
+			}
+		}
+
+
+		&-icon {
+			.icon {
+				display: inline-block;  *display: inline;  *zoom: 1;
+				vertical-align: middle;
+			}
+		}
+	}
+}

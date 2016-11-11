@@ -1,0 +1,300 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// CONFIG VARIABLE
+@import "../_config/radioCheckboxBtn-config";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+$c-whisper  : return-value(color, whisper);
+
+
+/*
+	RADIO BUTTON          --> RB
+
+	CHECKBOX BUTTON       --> CB
+
+	RADIO PAYMENT BUTTON  --> RPB
+
+	RADIO BUTTON & CHECKBOX BUTTON --> RBCB
+*/
+
+
+// BONUS STEP-1
+.form-bonus,
+.forms-method,
+.delivery{
+	overflow: hidden;
+
+
+	.insurance-item,
+	.radio-item {
+		float: left;
+		clear: both;
+		@include respond-to("small-all") {
+			float: none;
+		}
+	}
+}// /-BONUS STEP-1
+
+
+.gender-form-row,
+.forms-payment,
+.forms-shipping,
+.subscribe-form {
+	.radio-item {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		margin-right: 10px;
+
+
+		&__icon {
+			margin-right: 5px;
+		}
+	}
+}
+
+
+.form-bonus {
+	.radio-item {
+		&.active {
+			.radio-item__name-text {
+				color: $SRB_fontColor-text-color;
+			}
+		}
+	}
+}
+
+
+.forms-payment {
+	.radio-item {
+		margin-top: 0;
+		margin-right: 30px;
+		@include respond-to("extra_small") {
+			margin: 0;
+		}
+	}
+}
+
+
+.subscribe-form {
+	text-align: center;
+	padding: 5px 15px 20px;
+	border-bottom: 1px solid $c-whisper;
+	@include respond-to("small-all") {
+		text-align: left;
+		padding-top: 15px;
+	}
+
+
+	.radio-item {
+		&.active {
+			.radio-item__name-text_color {
+				color: $SRB_fontColor-text-color;
+			}
+		}
+
+
+		&__name {
+			@include respond-to("small-all") {
+				width: auto;
+			}
+		}
+	}
+
+
+	&__title {
+		display: none;
+		@include respond-to("small-all") {
+			display: block;
+		}
+	}
+}
+
+
+.gender-form-row {
+	padding-top: 5px;
+	@include respond-to("small-all") {
+		padding-top: 0;
+	}
+
+
+	.radio-item {
+		margin-top: 0;
+		@include respond-to("small-all") {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+// CHECKBOX RADIO BTN
+.insurance-item,
+.radio-item {
+	font: {
+		size: $RBCB_fontSize;
+	}
+	color: $RBCB_fontColor;
+	margin: $RBCB_marginTop $RBCB_marginRight $RBCB_marginBottom $RBCB_marginLeft;
+
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+
+	&__wrap,
+	&__name {
+		display: inline-block;  *display: inline;  *zoom: 1;
+	}
+
+
+	&__img {
+		float: $RBCB-img_float;
+		margin: $RBCB-img_marginTop $RBCB-img_marginRight $RBCB-img_marginBottom $RBCB-img_marginLeft;
+		line-height: 27px;
+	}
+
+
+	&__name {
+		.aligner {
+			margin-right: 0;
+		}
+
+
+		&-text {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+		}
+	}
+
+
+	&__total,
+	&__free {
+		font: {
+			family: $RBCB_total_fontFamily;
+		}
+	}
+
+
+	&__free {
+		color: $RBCB_fontColor-afterUpgrade;
+	}
+
+
+	label {
+		position: relative;
+		cursor: pointer;
+	}
+}// /-CHECKBOX RADIO BTN
+
+
+// CHECKBOX BTN
+.insurance-item {
+	&.active {
+		.insurance-item__icon {
+			@include retina-sprite($CB-icon_active);
+		}
+	}
+
+
+	&.disabled {
+		.insurance-item__icon {
+			opacity: 0.6;
+		}
+	}
+
+
+	&__icon {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		@include retina-sprite($CB-icon_notActive);
+		vertical-align: middle;
+		margin: $RBCB-icon_marginTop $RBCB-icon_marginRight $RBCB-icon_marginBottom $RBCB-icon_marginLeft;
+	}
+
+
+	&__name {
+		@include respond-to("small-all") {
+			width: calc(100% - 55px);
+		}
+	}
+}// /-CHECKBOX BTN
+
+
+// RADIO BTN
+.radio-item {
+	&.active {
+		.radio-item__icon {
+			@include retina-sprite($RB-icon_active);
+		}
+
+
+		.radio-item__layer0 {
+			position: absolute;
+			top: -25px;
+			left: -2px;
+			@include mixinDimensions(54px, 38px);
+			border: $RPB_borderWidthActive solid $RPB_borderColorActive;
+			box-shadow: inset 0 0 0 2px rgba(#fff, 1), 0 2px 3px 0 rgba(#000, 0.25);
+			@include respond-to("small-all") {
+				@include mixinDimensions(58px, 42px);
+			}
+		}
+	}
+
+
+	&__icon {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		@include retina-sprite($RB-icon_notActive);
+		vertical-align: middle;
+		margin: $RBCB-icon_marginTop $RBCB-icon_marginRight $RBCB-icon_marginBottom $RBCB-icon_marginLeft;
+	}
+
+
+	&__name {
+		@include respond-to("small-all") {
+			width: calc(100% - 115px);
+		}
+
+
+		.red {
+			color: $RBCB_fontColor-afterUpgrade;
+		}
+
+
+		&-text {
+			&_color {
+				font-family: $SRB_fontFamily-text-color;
+			}
+
+
+			&_show {
+				@include respond-to("small-all") {
+					display: none;
+				}
+			}
+		}
+	}
+
+
+	&__layer0 {
+		border-radius: $RPB_borderRadiusActive;
+	}
+}// /-RADIO BTN
+
+
+// RADIO PAYMENT BTN
+@each $idName, $imgName
+	in  ("payment_method_visa",       $RPB-img_visa),
+			("payment_method_mastercard", $RPB-img_mastercard),
+			("payment_method_amex",       $RPB-img_amex),
+			("payment_method_btc",        $RPB-img_btc)
+{
+	##{$idName} {
+		& + .payment-method .radio-item__layer1 {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			@include retina-sprite($imgName);
+		}
+	}
+}

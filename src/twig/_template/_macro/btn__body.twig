@@ -1,0 +1,22 @@
+{% macro btnInternalSpan(class, optIcon, text) %}
+
+    {% if (optIcon == "with-icon right") %}
+        <span class="btn__wrap-text">{{ text }}</span>
+        <span class="btn__wrap-icon">
+            <i class="icon icon-{{ class }}"></i>
+        </span>
+    {% elseif (optIcon == "with-icon left") %}
+        <span class="btn__wrap-icon">
+            <i class="icon icon-{{ class }}"></i>
+        </span>
+        <span class="btn__wrap-text">{{ text }}</span>
+    {% elseif (optIcon != 'no-icon') %}
+        <span class="btn__wrap-icon">
+            <i class="icon icon-{{ class }}"></i>
+        </span>
+        <span class="btn__wrap-text">{{ text }}</span>
+    {% else %}
+        <span class="btn__wrap-text">{{ text }}</span>
+    {% endif %}
+
+{% endmacro %}

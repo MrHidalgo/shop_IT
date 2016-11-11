@@ -1,0 +1,30 @@
+{% set bool_discount    = "discount" %}
+{% set poduct_count     = 2 %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    {% for link in linkFiles.style_link %}
+        <link rel="stylesheet" href="{{ link }}">
+    {% endfor %}
+
+    <title>CART</title>
+</head>
+
+<body class={{ bool_discount }}>
+    <div class="container">
+        <div class="internal-container">
+
+        </div>
+    </div>
+
+    {% for link in linkFiles.script_link %}
+        <script src="{{ link }}"></script>
+    {% endfor %}
+
+</body>
+</html>

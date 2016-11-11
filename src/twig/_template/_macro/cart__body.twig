@@ -1,0 +1,78 @@
+{% macro wrapInternal(opt, bool_free_discount, boolBtn, boolSubtotal) %}
+
+    <div class="left-side">
+        <p class="cart-title">Ware</p>
+
+        <div class="left-side__wrap">
+
+            <div class="left-side__wrap-img">
+                <img src="./img/img-product.png" alt="" class='img-goods'>
+            </div>
+
+            <div class="left-side__wrap-name">
+                <div class="aligner"></div>
+                <p class="goods-descr">
+                    Maximum Potency Testosterone Booster 60 caps bottle x
+                    <span>1 Flasche</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-side">
+
+        <div class="row-btn">
+            <p class="cart-title">Menge</p>
+            <div class="right-side__wrap">
+
+                {% if (boolBtn == false) %}
+                    <span class="quantity">1</span>
+                {% else %}
+                    <div class="quantity-wrap">
+                        <span class="input-select__value"></span>
+                        <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                        <i class="input-select__icon"></i>
+                    </div>
+
+                    <a href="javascript:void(0);" class="close-btn">
+                        <i class="close-btn__icon"></i>
+                        <span class="close-btn__text">Löschen</span>
+                    </a>
+                {% endif %}
+
+            </div>
+        </div>
+
+        {% if (opt == 'discount' and bool_free_discount == 'false') %}
+            <div class="row-discount">
+                <p class="cart-title">Rabatt</p>
+                <div class="right-side__wrap">
+                    <span class="discount">10%</span>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row-perpack">
+            <p class="cart-title">Fur Verpackung</p>
+            <div class="right-side__wrap">
+                <span class="ppack">€1132.82</span>
+            </div>
+        </div>
+
+        <div class="row-subtotal">
+            <p class="cart-title">Insgesamt</p>
+            <div class="right-side__wrap">
+
+                {% if (boolSubtotal == 'free') %}
+                    <span class="subtotal subtotal_free">GRATIS</span>
+                {% else %}
+                    <span class="subtotal">€132.82</span>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% endmacro %}

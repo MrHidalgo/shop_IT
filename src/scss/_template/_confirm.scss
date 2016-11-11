@@ -1,0 +1,120 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+// SPRITE [&retina]
+@import "../_variable/sprite_de";
+
+// CONFIG VARIABLE
+@import "../_config/confirm__config";
+
+
+$w-all  : return-value(dimension, all);
+
+
+.confirmation-wrap {
+	border-bottom: 1px solid $CC_borderColor;
+
+
+	.wrap {
+		display: table;
+		width: $w-all;
+
+
+		.left-col {
+			width:  $CC_width-left;
+			border-right: 1px solid $CC_borderColor;
+			@include respond-to("small-all") {
+				border-right: none;
+			}
+		}
+
+
+		.right-col {
+			width:  $CC_width-right;
+		}
+
+
+		.left-col,
+		.right-col {
+			display: table-cell;
+			vertical-align: top;
+			@include respond-to("small-all") {
+				display: block;
+				width: $w-all;
+			}
+		}
+	}
+
+
+	table {
+		tr {
+			margin-top: $CC_marginTop;
+			display: block;
+
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+
+			&.last {
+				.col2 {
+					word-break: break-all;
+				}
+			}
+
+
+			td {
+				font: {
+					size: $CC_fontSize;
+				}
+				vertical-align: top;
+
+
+				&.col1 {
+					min-width: 120px;
+				}
+
+
+				&.col2 {
+					font-family: $CC_fontFamily;
+				}
+			}
+		}
+	}
+}
+
+
+.blank {
+	padding: 25px;
+	@include respond-to("small-all") {
+		padding: 15px;
+	}
+
+
+	.first {
+		font : {
+			size: $CC_fontSize;
+		}
+	}
+
+
+	.second {
+		font : {
+			size: $CC_fontSize-card;
+			family: $CC_fontFamily;
+		}
+	}
+
+
+	&__row {
+		float: left;
+		min-width: 130px;
+		margin-bottom: 5px;
+	}
+
+
+	.row-5 {
+		margin-bottom: 0;
+	}
+}

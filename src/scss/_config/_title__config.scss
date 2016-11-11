@@ -1,0 +1,129 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+/*
+	TITLE GENERAL PROPERTIES -- > TGP
+
+	MAIN TITLE     --> MT
+
+	SUB TITLE      --> ST
+
+	BLOCK TITLE    --> BT
+
+	TEXT TITLE     --> TT
+
+	INVOICE TITLE  --> IT
+
+	QUESTION TITLE --> QT
+
+	GENDER TITLE   --> GT
+
+	SUBSCRIBE TITLE --> SbT
+
+	PLACE WRAP TITLE --> PWT
+
+	CONFIRM TITLE --> CT
+*/
+
+
+// TITLE GENERAL PROPERTIES
+$TGP_fontFamily     : return-value(fonts, officina-sans-bold);
+$TGP_fontColor      : 24px;
+
+
+// MAIN TITLE
+$MT_height          : 61px;
+$MT_lineHeight      : $MT_height;
+$MT_fontSize        : 24px;
+$MT_fontFamily      : return-value(fonts, officina-sans-bold);
+$MT_fontColor       : return-value(color, black_russian);
+
+
+// SUB TITLE
+$ST_fontSize        : 16px;
+$ST_fontFamily      : return-value(fonts, officina-sans-bold);
+$ST_fontColor       : return-value(color, black_russian);
+$ST_paddingTop      : 20px;
+$ST_paddingRight    : $ST_paddingTop;
+$ST_paddingBottom   : $ST_paddingTop;
+$ST_paddingLeft     : 0;
+	$ST-EXTRA-SMALL_paddingLeft     : 15px;
+
+
+// BLOCK TITLE
+$BT_height          : 50px;
+$BT_lineHeight      : $BT_height + 5px;
+$BT_fontSize        : 18px;
+	$BT__EXTRA-SMALL__fontSize    : 16px;
+
+$BT_borderColor     : return-value(color, whisper);
+$BT_paddingTop      : 0;
+$BT_paddingRight    : 0;
+$BT_paddingBottom   : 0;
+$BT_paddingLeft     : 30px;
+	$BT__SMALL-ALL__paddingLeft : $BT_paddingLeft - 15;
+
+$BT_backgroundColor : return-value(color, snow);
+
+
+// TEXT TITLE
+$TT_fontSize        : 13px;
+$TT_fontStyle       : italic;
+$TT_fontColor       : return-value(color, grey);
+$TT_paddingTop      : 15px;
+$TT_paddingRight    : 0;
+$TT_paddingBottom   : $TT_paddingTop;
+$TT_paddingLeft     : $TT_paddingRight;
+
+
+// INVOICE TITLE
+$IT_fontSize        : 13px;
+$IT_paddingTop      : 20px;
+$IT_paddingRight    : 15px;
+$IT_paddingBottom   : $IT_paddingTop;
+$IT_paddingLeft     : $IT_paddingRight;
+
+
+// QUESTION TITLE
+$QT_fontSize        : 16px;
+	$QT__SMALL-ALL__fontSize  : 14px;
+
+$QT_fontColor       : return-value(color, nero);
+$QT_paddingTop      : 15px;
+$QT_paddingRight    : 0;
+$QT_paddingBottom   : 10px;
+$QT_paddingLeft     : $QT_paddingRight;
+
+
+// GENDER TITLE
+$GT_fontSize        : 13px;
+$GT_fontColor       : return-value(color, nero);
+$GT_marginTop       : 0;
+$GT_marginRight     : 10px;
+$GT_marginBottom    : 0;
+$GT_marginLeft      : 0;
+
+
+// SUBSCRIBE TITLE --> SbT
+$SbT_fontSize       : 13px;
+$SbT_fontFamily     : return-value(fonts, open-sans-regular);
+$SbT_fontColor      : return-value(color, nero);
+
+
+// PLACE WRAP TITLE --> PWT
+$PWT_fontSize       : 16px;
+$PWT_fontColor      : return-value(color, deep_pink);
+
+
+// CONFIRM TITLE --> CT
+$CT_fontSize        : 13px;
+$CT_fontFamily      : return-value(fonts, open-sans-bold);
+$CT_fontColor       : return-value(color, nero);
+$CT_fontTransform   : uppercase;
+$CT_paddingLeft     : 25px;
+	$CT-SMALL-ALL_paddingLeft     : 15px;
+
+$CT_height          : 50px;
+$CT_lineHeight      : $CT_height;
+$CT_borderColor     : return-value(color, whisperLight);

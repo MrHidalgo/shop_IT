@@ -1,0 +1,25 @@
+{% import './_macro/steps__body.twig' as steps %}
+
+<div class="steps">
+    {% for i in 1..5 %}
+
+        {% if (count == i) %}
+            <div class="steps__wrap steps__wrap_active steps__wrap-{{ i }}">
+                {{ steps.stepsBody(text.steps[i]) }}
+            </div>
+        {% elseif (count > i) %}
+            <div class="steps__wrap steps__wrap_check steps__wrap-{{ i }}">
+                {{ steps.stepsBody(text.steps[i]) }}
+            </div>
+        {% elseif (loop.last) %}
+            <div class="steps__wrap steps__wrap_status steps__wrap-{{ i }}">
+                {{ steps.stepsBody(text.steps[i]) }}
+            </div>
+        {% else %}
+            <div class="steps__wrap steps__wrap-{{ i }}">
+                {{ steps.stepsBody(text.steps[i]) }}
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>

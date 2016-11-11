@@ -1,0 +1,200 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+/*
+	FORMS-ROW                             --> FR
+
+	FORMS-ROW PAYMENT METHOD              --> FRPM
+
+	INPUT & SELECT                        --> IS
+
+	INPUT                                 --> I
+
+	LABEL TITLE & SELECT TITLE            --> LTST
+
+	LABEL TITLE                           --> LT
+
+	INFO/ERROR MESSAGE                    --> IEM
+
+	INPUT SHIPPING METHOD                 --> ISM
+
+	INPUT SHIPPING METHOD HALF            --> ISMH
+
+	PAYMENT METHOD WRAP                   --> PMW
+
+	PAYMENT METHOD SELECT BIRTH           --> PMSB
+
+	PAYMENT METHOD INPUT BANK-CARD        --> PMIBC
+
+	PAYMENT METHOD EXPIRATION-SECURITY    --> PMES
+
+	PAYMENT METHOD SELECT EXPIRATION DATE --> PMSED
+
+	PAYMENT METHOD INPUT SECURITY CODE    --> PMISC
+
+	PAYMENT METHOD BTN CVV                --> PMBCVV
+
+	PAYMENT METHOD INFO-M                 --> PMI-M
+*/
+
+
+// FORMS-ROW                   --> FR
+$FR_minHeight               : 50px;
+	$FR-SMALL-ALL_minHeight   : 70px;
+
+$FR_paddingTop              : 0;
+$FR_paddingRight            : 30px;
+$FR_paddingBottom           : 0;
+$FR_paddingLeft             : $FR_paddingRight;
+
+
+// FORMS-ROW PAYMENT METHOD    --> FRPM
+$FRPM_minHeight             : 90px;
+	$FRPM-EXTRA-SMALL_minHeight: 70px;
+
+
+// INPUT & SELECT              --> IS
+$IS_width                   : 425px;
+$IS_height                  : 40px;
+$IS_lineHeight              : $IS_height;
+$IS_borderWidth             : 1px;
+$IS_borderColor             : return-value(color, whisper);
+$IS_borderRadius            : 4px;
+$IS_paddingTop              : 0;
+$IS_paddingRight            : 15px;
+$IS_paddingBottom           : 0;
+$IS_paddingLeft             : $IS_paddingRight;
+
+
+// LABEL TITLE & SELECT TITLE  --> LTST
+$LTST_fontSize              : 13px;
+$LTST_fontColor             : return-value(color, nero);
+$LTST_top                   : -22px;
+
+
+// LABEL TITLE                 --> LT
+$LT_fontSize                : $LTST_fontSize;
+$LT_fontColor               : return-value(color, grey);;
+$LT_left                    : 15px;
+	// LT AFTER ADD CLASS [focus, error, warning, content, done] --> transform title
+	$LT_topTransform          : -10px;
+	$LT_leftTransform         : $LT_left - 5;
+	$LT_fontSizeTransform     : 11px;
+	$LT_backgroundColor       : return-value(color, white);
+	$LT_paddingTop            : 0;
+	$LT_paddingRight          : 5px;
+	$LT_paddingBottom         : 0;
+	$LT_paddingLeft           : $LT_paddingRight;
+	$LT_lineHeightTransform   : 20px;
+
+
+// INFO/ERROR MESSAGE          --> IEM
+$IEM_fontSize               : 11px;
+$IEM_fontFamily             : return-value(fonts, open-sans-bold);
+$IEM_fontColor-FOCUS        : return-value(color, curious_blue);
+$IEM_fontColor-ERROR        : return-value(color, sunset_orange);
+$IEM_fontColor-DONE         : return-value(color, fern);
+$IEM_fontColor-WARNING      : return-value(color, mango_tango);
+$IEM_fontColor-CONTENT      : $IS_borderColor;
+
+
+// INPUT SHIPPING METHOD       --> ISM
+$ISM_widthAll               : 940px;
+	$ISM-MEDIUM_widthAll      : 720px;
+	$ISM-SMALL-ALL_widthAll   : 100%;
+
+$ISM_marginRight            : 15px;
+$ISM_marginLeft             : $ISM_marginRight;
+
+$ISM_widthWrap              : ($ISM_widthAll - ((30px * 2) + $ISM_marginRight * 2)) / 2;
+	$ISM-MEDIUM_widthWrap     : ($ISM-MEDIUM_widthAll - (($FR_paddingRight * 2) + $ISM_marginRight * 2)) / 2;
+
+$ISM-MEDIUM_width           : $ISM-MEDIUM_widthWrap - ($IS_borderWidth * 2 + $IS_paddingRight * 2);
+
+
+// INPUT SHIPPING METHOD TWO   --> ISMT
+$ISMT_marginRight           : 5px;
+$ISMT_marginLeft            : $ISMT_marginRight;
+$ISMT_widthAllWrap          : (($ISM_widthWrap - ($ISMT_marginRight * 2)) / 2);
+	$ISMT-MEDIUM_widthAllWrap : (($ISM-MEDIUM_widthWrap - ($ISMT_marginRight * 2)) / 2);
+
+$ISMT_widthAllTwo           : (($ISM_widthWrap - ($ISMT_marginRight * 2))/ 2) - ($IS_borderWidth * 2 + $IS_paddingRight * 2);
+	$ISMT-MEDIUM_widthAllTwo  : (($ISM-MEDIUM_widthWrap - ($ISMT_marginRight * 2)) / 2)  - ($IS_borderWidth * 2 + $IS_paddingRight * 2);
+
+$ISMT-SMALL-ALL_marginRight : 1.5%;
+$ISMT-SMALL-ALL_marginLeft  : $ISMT-SMALL-ALL_marginRight;
+$ISMT-SMALL-ALL_widthAllTwo : ($ISM-SMALL-ALL_widthAll - ($ISMT-SMALL-ALL_marginRight * 2)) / 2;
+
+
+// PAYMENT METHOD WRAP         --> PMW
+$PMW_width                  : 400px;
+	$PMW-EXTRA-SMALL_width    : 100%;
+
+$PMW_paddingTop             : 50px;
+$PMW_paddingRight           : 0;
+$PMW_paddingBottom          : 0;
+$PMW_paddingLeft            : $PMW_paddingRight;
+
+
+// PAYMENT METHOD SELECT BIRTH --> PMSB
+$PMSB_marginLeft            : 15px;
+	$PMSB-EXTRA-SMALL_marginLeft: 4%;
+
+$PMSB_width                 : ($PMW_width - ($IS_paddingRight * 6) - ($PMSB_marginLeft * 2) - ($IS_borderWidth * 6)) / 3;
+	$PMSB-SMALL-ALL_width     : ($PMW_width - ($PMSB_marginLeft * 2)) / 3;
+		$PMSB-EXTRA-SMALL_width : ($PMW-EXTRA-SMALL_width - ($PMSB-EXTRA-SMALL_marginLeft * 2)) / 3;
+
+
+// PAYMENT METHOD INPUT BANK-CARD --> PMIBC
+$PMIBC_width                : $PMW_width - ($IS_paddingRight * 2) - ($IS_borderWidth * 2);
+	$PMIBC-SMALL-ALL_width    : $PMW_width;
+
+
+// PAYMENT METHOD INPUT SECURITY CODE --> PMISC
+$PMISC_marginRight          : 15px;
+
+
+// PAYMENT METHOD EXPIRATION-SECURITY  --> PMES
+$PMES_width-right           : 160px;
+	$PMES-EXTRA-SMALL_width-right: 100%;
+
+$PMES_width-left            : $PMW_width - ($PMES_width-right + $PMISC_marginRight);
+	$PMES-EXTRA-SMALL_width-left: $PMES-EXTRA-SMALL_width-right;
+
+$PMES_width-input           : $PMES_width-right - ($IS_paddingRight * 2) - ($IS_borderWidth * 2);
+	$PMES-SMALL-ALL_width-input: $PMES_width-right;
+
+
+// PAYMENT METHOD SELECT EXPIRATION DATE --> PMSED
+$PMSED_marginRight          : 15px;
+	$PMSED-EXTRA-SMALL_marginRight: 4%;
+
+$PMSED_width-input          : ($PMES_width-left - ($IS_paddingRight * 4) - ($IS_borderWidth * 4) - $PMSED_marginRight) / 2;
+	$PMSED-SMALL-ALL_width-input: ($PMES_width-left - $PMSED_marginRight) / 2;
+		$PMSED-EXTRA-SMALL_width-input: ($PMES-EXTRA-SMALL_width-left - $PMSED-EXTRA-SMALL_marginRight) / 2;
+
+
+// PAYMENT METHOD BTN CVV                --> PMBCVV
+$PMBCVV_fontSize            : 12px;
+$PMBCVV_fontColor           : return-value(color, persimmon);
+$PMBCVV_textDecoration      : underline;
+	$PMBCVV-EXTRA-SMALL_position: absolute;
+	$PMBCVV-EXTRA-SMALL_left  : $PMSED-EXTRA-SMALL_width-input + $PMSED-EXTRA-SMALL_marginRight;
+	$PMBCVV-EXTRA-SMALL_top   : 10px;
+
+
+// PAYMENT METHOD INFO-M                 --> PMI-M
+$PMI-M_borderRadius         : 10px;
+$PMI-M_backgroundColor      : return-value(color, white);
+$PMI-M_boxShadow            : 0 0 30px 0 rgba(0,0,0,0.5);
+$PMI-M_fontColor            : return-value(color, nero);
+$PMI-M_fontSize-title       : 16px;
+$PMI-M_fontFamily-title     : return-value(fonts, officina-sans-bold);
+$PMI-M_fontSize-text        : 13px;
+$PMI-M_fontFamily-text      : return-value(fonts, open-sans-regular);
+	// AFTER ADD CLASS ERROR
+	$PMI-M_boxShadow-error        : none;
+	$PMI-M_backgroundColor-error  : return-value(color, sunset_orange);
+	$PMI-M_fontColor-error        : return-value(color, white);
+	$PMI-M_fontFamily-text-error  : return-value(fonts, open-sans-bold);

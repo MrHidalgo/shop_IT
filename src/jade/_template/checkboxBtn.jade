@@ -1,0 +1,9 @@
+mixin checkboxBtn(className)
+    div(class="insurance-item " + className)
+        input(type="checkbox", id="input-1")
+        label(for="input-1")
+            .insurance-item__wrap
+                i.icon.insurance-item__icon
+            .insurance-item__name
+                span.aligner
+                span.insurance-item__name-text!= "Include Delivery Insurance - <strong>€4.99</strong>"

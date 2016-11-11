@@ -1,0 +1,22 @@
+<div class="radio-item {{ classActive }}">
+    <input type="radio" id="{{ idNum }}" name="input-name">
+
+    <label for="{{ idNum }}">
+
+        <div class="radio-item__wrap">
+
+            {% if (optImg == true) %}
+                <span class="radio-item__img">
+                    <img src="./img/img-product.png" alt="" class='img-bonus' width='50'>
+                </span>
+            {% endif %}
+
+            <i class="icon radio-item__icon"></i>
+        </div>
+
+        <div class="radio-item__name">
+            <span class="aligner"></span>
+            <span class="radio-item__name-text">{{ productName }}</span>
+        </div>
+    </label>
+</div>

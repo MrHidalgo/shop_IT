@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    {% for link in linkFiles.style_link %}
+        <link rel="stylesheet" href="{{ link }}">
+    {% endfor %}
+
+    <title>SHIPPING</title>
+</head>
+<body>
+    <div class="container">
+        <div class="internal-container">
+
+            <div class="header-steps">
+                <h1 class="main__title">Zur Kasse</h1>
+
+                {% include './_template/steps.twig' with {
+                    count : 2
+                } %}
+
+                {% include './_template/sub_title.twig' with {
+                    page_number : 2,
+                    page_name   : "Lieferart",
+                } %}
+            </div>
+
+            <form action="">
+                <p class="block__title border-radius_top">Wählen Sie Lieferart</p>
+
+                <div class="method-wrap wrap_bg">
+                    <div class="method-wrap__left">
+                        <div class="forms-row forms-method">
+
+                            {% include './_template/radioBtn.twig' with {
+                                classActive : "",
+                                idNum       : 0,
+                                optImg      : true,
+                                productName : "Einschreiben - <span class='radio-item__total'>$20.00</span> <span class='radio-item__date'>(14-21 Werktage)</span>"
+                            } %}
+
+                            {% include './_template/radioBtn.twig' with {
+                                classActive : "",
+                                idNum       : 1,
+                                optImg      : true,
+                                productName : "EMS - <span class='radio-item__free'>GRATIS</span> <span class='radio-item__date'>(14-21 Werktage)</span>"
+                            } %}
+
+                            {% include './_template/checkbox.twig' %}
+                        </div>
+                    </div>
+
+                    <div class="method-wrap__right">
+                        <div class="first">
+                            <span class="first__text">Lieferart: </span>
+                            <strong class="first__strong">Einschreiben</strong>
+                        </div>
+                        <div class="second">
+                            <span class="second__text">
+                                Ungefähres Lieferdatum:
+                                <br>
+                                <span class="second__text-internal">November, 08 - November, 18</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Insgesamt:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Preis inkl. rabatt:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Lieferung:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : 'total',
+                    text        : 'GESAMT:',
+                    sum         : '€132.82',
+                } %}
+
+                <p class="block__title">Rechnungsinformationen</p>
+
+                <div class="input-wrap wrap_bg">
+                    <h3 class="question__title">Have you ordered with us before?</h3>
+
+                    {% include './_template/btn.twig' with {
+                        class   : "next next-customer",
+                        optBtn  : "next__empty",
+                        optIcon : "with-icon right",
+                        text    : "Ja, ich bin hier zum ersten Mal"
+                    } %}
+
+                    <div class="divider-text divider-text-input">
+                        <span class="divider-text__line"></span>
+                        <span class="divider-text__word">OR</span>
+                    </div>
+
+                    <div class="input-wrap__name clearfix">
+                        <div class="input-wrap__two-l">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "first_name",
+                                labelName   : "Vorname"
+                            } %}
+
+                        </div>
+                        <div class="input-wrap__two-r">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "last_name",
+                                labelName   : "Name"
+                            } %}
+
+                        </div>
+                    </div>
+
+                    <div class="input-wrap__gender clearfix">
+
+                        <div class="forms-row gender-form-row">
+                            <span class="gender__title">Geschlecht</span>
+
+                            {% include './_template/radioBtn.twig' with {
+                                classActive : "",
+                                idNum       : 0,
+                                optImg      : false,
+                                productName : "Männlich"
+                            } %}
+                            {% include './_template/radioBtn.twig' with {
+                                classActive : "",
+                                idNum       : 1,
+                                optImg      : false,
+                                productName : "Weiblich"
+                            } %}
+                            {% include './_template/radioBtn.twig' with {
+                                classActive : "",
+                                idNum       : 2,
+                                optImg      : false,
+                                productName : "Anderes"
+                            } %}
+
+                            <span class="error-m">Bitte wählen Sie Ihr Geschlecht aus</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrap__email clearfix">
+                        <div class="input-wrap__two-l">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "email_name",
+                                labelName   : "Email"
+                            } %}
+
+                        </div>
+
+                        <div class="input-wrap__two-r">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "a_email_name",
+                                labelName   : "Alternative e-mail (Optional)"
+                            } %}
+
+                        </div>
+                    </div>
+
+                    <div class="divider-text divider-text-input divider-text-empty">
+                        <span class="divider-text__line"></span>
+                    </div>
+
+                    <div class="input-wrap__country clearfix">
+                        <div class="input-wrap__two-l">
+
+                            {% include './_template/select.twig' with {
+                                titleName   : "Country"
+                            } %}
+
+                        </div>
+                        <div class="input-wrap__two-r">
+
+                            <div class="input-wrap__two-r-first">
+
+                                {% include './_template/input.twig' with {
+                                    idName      : "city",
+                                    labelName   : "Stadt"
+                                } %}
+
+                            </div>
+                            <div class="input-wrap__two-r-second">
+
+                                {% include './_template/input.twig' with {
+                                    idName      : "zip",
+                                    labelName   : "PLZ"
+                                } %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-wrap__addrees clearfix">
+                        <div class="input-wrap__two-l">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "address",
+                                labelName   : "Anschrift"
+                            } %}
+
+                        </div>
+                        <div class="input-wrap__two-r">
+
+                            {% include './_template/input.twig' with {
+                                idName      : "phone",
+                                labelName   : "Telefon"
+                            } %}
+
+                        </div>
+                    </div>
+                </div>
+
+                <p class="block__title">Lieferadresse</p>
+
+                <div class="shipping-address wrap_bg">
+                    <span class="shipping-address__text">Lieferadresse ist dieselbe, wie die Rechnungsadresse?</span>
+
+                    <div class="forms-row forms-shipping">
+
+                        {% include './_template/radioBtn.twig' with {
+                            classActive : "",
+                            idNum       : "isSameAsBilling",
+                            optImg      : false,
+                            productName : "Ja"
+                        } %}
+
+                        {% include './_template/radioBtn.twig' with {
+                            classActive : "",
+                            idNum       : "notSameAsBilling",
+                            optImg      : false,
+                            productName : "Nein"
+                        } %}
+                    </div>
+                </div>
+
+                <form action="">
+                    <div class="input-wrap wrap_bg input-wrap-shipping">
+                        <div class="input-wrap__name clearfix">
+
+                            <div class="input-wrap__two-l">
+
+                                {% include './_template/input.twig' with {
+                                    idName      : "first_name",
+                                    labelName   : "Vorname & Name"
+                                } %}
+
+                            </div>
+                            <div class="input-wrap__two-r">
+
+                                {% include './_template/select.twig' with {
+                                    titleName   : "Country"
+                                } %}
+
+                            </div>
+                        </div>
+
+                        <div class="input-wrap__country clearfix">
+                            <div class="input-wrap__two-l">
+
+                                {% include './_template/input.twig' with {
+                                    idName      : "address",
+                                    labelName   : "Anschrift"
+                                } %}
+
+                            </div>
+                            <div class="input-wrap__two-r">
+                                <div class="input-wrap__two-r-first">
+
+                                    {% include './_template/input.twig' with {
+                                        idName      : "city",
+                                        labelName   : "Stadt"
+                                    } %}
+
+                                </div>
+                                <div class="input-wrap__two-r-second">
+
+                                    {% include './_template/input.twig' with {
+                                        idName      : "zip",
+                                        labelName   : "PLZ"
+                                    } %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <p class="block__title">Rechnungsinformationen</p>
+
+                <div class="input-wrap wrap_bg input-wrap-internal">
+                    <h3 class="input-wrap__text">Wenn Sie bereits etwas bei uns bestellt haben, dann geben Sie bitte
+                        Ihre E-Mail-Adresse (die Sie für den letzten Einkauf benutzt haben) und Ihre Bestellnummer (bzw.
+                        die vier letzten Ziffern Ihrer Kreditkartennummer, falls Sie die Bestellnummer nicht mehr
+                        wissen) ein, um die Bestellinformationen automatisch auszufüllen</h3>
+
+                    <div class="input-wrap__internal clearfix">
+
+                        {% include './_template/input.twig' with {
+                            idName      : "email_name",
+                            labelName   : "Email"
+                        } %}
+
+                        {% include './_template/input.twig' with {
+                            idName      : "order",
+                            labelName   : "Bestellnummer bzw. die vier letzten Ziffern Ihrer Kreditkartennummer"
+                        } %}
+
+                    </div>
+
+                    {% include './_template/btn.twig' with {
+                        class   : "next next-internal",
+                        optBtn  : "next",
+                        optIcon : "no-icon",
+                        text    : "Absenden"
+                    } %}
+
+                    <div class="divider-text divider-text-input divider-text-internal">
+                        <span class="divider-text__line"></span>
+                        <span class="divider-text__word">OR</span>
+                    </div>
+
+                    {% include './_template/btn.twig' with {
+                        class   : "prev prev-internal",
+                        optBtn  : "prev",
+                        optIcon : "with-icon left",
+                        text    : "No, I'm a New customer"
+                    } %}
+
+                </div>
+
+            </form>
+
+            <p class="invoice__title">
+                Hinweis! Die Rechnung wird in USD angegeben. (<span>$82.37</span>)
+                <br>
+                In einigen Fällen kann der tatsächliche Endbetrag vom Gesamtrechnungsbetrag aufgrund der ausländischen Transaktionsgebühr abweichen.
+                <br>
+                Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird.
+            </p>
+
+            <div class="btn">
+
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "fake-next",
+                    optIcon : "no-icon",
+                    text    : "Bitte warten...",
+                    hrefAttr: "javascript:void(0);"
+                } %}
+
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "next",
+                    optIcon : "with-icon right",
+                    text    : "Weiter zur Zahlungsart",
+                    hrefAttr: "/payment"
+                } %}
+
+                <div class="divider-text">
+                    <span class="divider-text__line"></span>
+                    <span class="divider-text__word">OR</span>
+                </div>
+
+                {% include './_template/btn.twig' with {
+                    class   : "prev",
+                    optBtn  : "prev",
+                    optIcon : "no-icon",
+                    text    : "Zurück zum Warenkorb",
+                    hrefAttr: "/"
+                } %}
+
+            </div>
+        </div>
+    </div>
+
+
+    {% for link in linkFiles.script_link %}
+        <script src="{{ link }}"></script>
+    {% endfor %}
+
+</body>
+</html>

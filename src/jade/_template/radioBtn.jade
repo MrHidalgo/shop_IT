@@ -1,0 +1,21 @@
+
+mixin radioBtn(count, optImg, classActive, text)
+    div(class="radio-item " + classActive)
+        input(type="radio", id="input-" + count, name="input-name")
+        label(for="input-" + count)
+            .radio-item__wrap
+                if (optImg != false)
+                    span.radio-item__img
+                        img(src='./img/img-product.png', class='img-bonus', width='50')
+                i.icon.radio-item__icon
+            .radio-item__name
+                span.aligner
+                span.radio-item__name-text!= text
+
+
+mixin radioBtnPayment(idName, classActive)
+    div(class="radio-item " + classActive, id= idName)
+        input(type="radio", id="payment_method_" + idName, name="payment_method")
+        label(for="payment_method_" + idName, class="payment-method")
+            i.icon.radio-item__layer0
+            i.icon.radio-item__layer1

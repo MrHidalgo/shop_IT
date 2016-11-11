@@ -1,0 +1,232 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+/*
+	CART ITEM                                       --> CI
+	CART ITEM NEXT                                  --> CIN {NOT FIRST BLOCK}
+	CART-ITEM TITLE                                 --> CIT
+	CART-ITEM LEFT-SIDED                            --> CILS
+	CART-ITEM RIGHT-SIDED                           --> CIRS
+	CART ITEM LEFT SIDE IMG                         --> CILSI
+	CART ITEM LEFT SIDE PRODUCT NAME                --> CILSPN
+	CART ITEM RIGHT SIDE BTN                        --> CIRSB
+	CART ITEM RIGHT SIDE BTN SELECT                 --> CIRSBS
+	CART ITEM RIGHT SIDE BTN CLOSE                  --> CIRSBC
+	CART ITEM RIGHT SIDE OTHER ROW                  --> CIRSOR
+	CART ITEM RIGHT SIDE ROW Y DISCOUNT             --> CIRSRYD
+	CART ITEM RIGHT SIDE ROW N DISCOUNT             --> CIRSRND
+	CART CONFIRM RIGHT SIDE ROW BTN                 --> CCRSRB
+	CART CONFIRM RIGHT SIDE ROW DISCOUNT            --> CCRSRD
+	CART CONFIRM RIGHT SIDE ROW PERPACK             --> CCRSRP
+	CART CONFIRM RIGHT SIDE ROW SUBTOTAL            --> CCRSRS
+	CART CONFIRM LEFT SIDE                          --> CCLS
+	CART CONFIRM LEFT SIDE Y DISCOUNT               --> CCLSYD
+	CART CONFIRM LEFT SIDE PRODUCT NAME             --> CCLSPN
+	CART CONFIRM LEFT SIDE PRODUCT NAME Y DISCOUNT  --> CCLSPNYD
+	CART CONFIRM RIGHT SIDE                         --> CCRS
+	CART CONFIRM RIGHT SIDE Y DISCOUNT              --> CCRSYD
+	CART FREE RIGHT SIDE ROW BTN Y DISCOUNT         --> CFRSRBYD
+*/
+
+
+// CART ITEM       --> CI
+$CI_height                                : 140px;
+$CI_backgroundColor                       : return-value(color, show);
+$CI_borderColor                           : return-value(color, whisperLight);
+
+
+// CART-ITEM-NEXT  --> CIN {NOT FIRST BLOCK}
+$CIN_height                               : 90px;
+
+
+// CART-ITEM TITLE --> CIT
+$CIT_height                               : 50px - 1;
+	$CIT-SMALL-ALL_height                   : 15px;
+$CIT_lineHeight                           : $CIT_height;
+$CIT_fontSize                             : 13px;
+$CIT_fontFamily                           : return-value(fonts, lato-regular);
+$CIT_fontStyle                            : italic;
+$CIT_fontColor                            : return-value(color, grey);
+$CIT_paddingLeft                          : 30px;
+	$CIT-MEDIUM_paddingLeft                 : 15px;
+
+
+// CART-ITEM LEFT-SIDED  --> CILS
+$CILS_width-all                           : 940px;
+$CILS_width                               : 400px;
+	$CILS-MEDIUM_width-all                  : 720px;
+	$CILS-MEDIUM_width                      : 300px;
+
+$CILS_paddingTop                          : 5px;
+$CILS_paddingRight                        : 10px;
+$CILS_paddingBottom                       : $CILS_paddingTop;
+$CILS_paddingLeft                         : 30px;
+	$CILS-MEDIUM_paddingLeft                : 15px;
+		$CILS-SMALL-ALL_paddingLeft           : 90px;
+
+$CILS_height-wrap                         : 90px - ($CILS_paddingTop * 2) - 1;
+	$CILS-SMALL-ALL_height-wrap             : 90px;
+
+
+// CART ITEM LEFT SIDE IMG           --> CILSI
+$CILSI_height-imgName                     : $CILS_height-wrap;
+$CILSI_lineHeight-imgName                 : $CILS_height-wrap;
+$CILSI_width-imgContainer                 : 90px;
+	$CILSI-SMALL-ALL_width-imgContainer     : 100px;
+
+$CILSI-IE7_paddingTop-img                 : 25px;
+
+
+// CART-ITEM RIGHT-SIDED             --> CIRS
+$CIRS_width                               : $CILS_width-all - $CILS_width;
+	$CIRS-MEDIUM_width                      : $CILS-MEDIUM_width-all - $CILS-MEDIUM_width;
+
+$CIRS_height                              : $CILS_height-wrap;
+	$CIRS-SMALL-ALL_height                  : $CILS-SMALL-ALL_height-wrap - 40;
+
+$CIRS_lineHeight                          : $CILS_height-wrap;
+
+
+// CART ITEM LEFT SIDE PRODUCT NAME  --> CILSPN
+$CILSPN_fontFamily-productName            : return-value(fonts, officina-sans-bold);
+$CILSPN_fontSize-productName              : 16px;
+	$CILSPN-MEDIUM_fontSize-productName     : 14px;
+
+$CILSPN_paddingTop-wrap                   : 5px;
+$CILSPN_paddingRight-wrap                 : 0;
+$CILSPN_paddingBottom-wrap                : $CILSPN_paddingTop-wrap;
+$CILSPN_paddingLeft-wrap                  : 0;
+
+
+// CART ITEM RIGHT SIDE BTN          --> CIRSB
+$CIRSB_width                              : 210px;
+	$CIRSB-MEDIUM_width                     : 180px;
+
+$CIRSB-SMALL-ALL_marginBottom             : 15px;
+
+
+// CART ITEM RIGHT SIDE BTN SELECT   --> CIRSBS
+$CIRSBS_borderWidth                       : 1px;
+$CIRSBS_borderColor                       : return-value(color, whisper);
+$CIRSBS_width                             : 79px - $CIRSBS_borderWidth * 2;
+	$CIRSBS-SMALL-ALL_width                 : 70%;
+
+$CIRSBS_height                            : 40px - $CIRSBS_borderWidth * 2;
+$CIRSBS_lineHeight                        : $CIRSBS_height;
+$CIRSBS_borderRadius                      : 4px;
+$CIRSBS_backgroundColor                   : return-value(color, white);
+$CIRSBS_paddingLeft-value                 : 20px;
+
+
+// CART ITEM RIGHT SIDE BTN CLOSE    --> CIRSBC
+$CIRSBC_fontSize                          : 13px;
+$CIRSBC_fontFamily                        : return-value(fonts, open-sans-regular);
+$CIRSBC_fontColor                         : return-value(color, persimmon);
+$CIRSBC_iconName                          : $sp-i-close-btn-group;
+$CIRSBC_marginRihgt-icon                  : 5px;
+$CIRSBC_top                               : 1px;
+$CIRSBC_paddingRight                      : 10px;
+	$CIRSBC-SMALL-ALL_width                 : 100% - $CIRSBS-SMALL-ALL_width;
+
+
+// CART ITEM RIGHT SIDE OTHER ROW    --> CIRSOR
+$CIRSOR_fontSize                          : 13px;
+$CIRSOR_fontFamily                        : return-value(fonts, lato-regular);
+$CIRSOR_fontColor                         : return-value(color, deep_pink);
+
+
+// CART ITEM RIGHT SIDE ROW Y DISCOUNT --> CIRSRYD
+$CIRSRYD_width-discount                   : 70px;
+	$CIRSRYD-MEDIUM_width-discount          : 50px;
+
+$CIRSRYD_width-perPack-Subtotal           : ($CIRS_width - $CIRSB_width - $CIRSRYD_width-discount) / 2;
+	$CIRSRYD-MEDIUM_width-perPack-Subtotal  : ($CIRS-MEDIUM_width - $CIRSB-MEDIUM_width - $CIRSRYD-MEDIUM_width-discount) / 2;
+
+$CIRSRYD_left-discount                    : $CIRSB_width;
+	$CIRSRYD-MEDIUM_left-discount           : $CIRSB-MEDIUM_width;
+
+$CIRSRYD_left-perPack                     : $CIRSB_width + $CIRSRYD_width-discount;
+	$CIRSRYD-MEDIUM_left-perPack            : $CIRSB-MEDIUM_width + $CIRSRYD-MEDIUM_width-discount;
+
+$CIRSRYD_left-subtotal                    : $CIRSRYD_left-perPack + $CIRSRYD_width-perPack-Subtotal;
+	$CIRSRYD-MEDIUM_left-subtotal           : $CIRSRYD-MEDIUM_left-perPack + $CIRSRYD-MEDIUM_width-perPack-Subtotal;
+
+
+// CART ITEM RIGHT SIDE ROW N DISCOUNT --> CIRSRND
+$CIRSRND_width-perPack-subtotal           : ($CIRS_width - $CIRSB_width) / 2;
+	$CIRSRND-MEDIUM_width-perPack-subtotal  : ($CIRS-MEDIUM_width - $CIRSB-MEDIUM_width) / 2;
+
+$CIRSRND_left-perPack                     : $CIRSB_width;
+	$CIRSRND-MEDIUM_left-perPack            : $CIRSB-MEDIUM_width;
+
+$CIRSRND_left-subtotal                    : $CIRSRND_left-perPack + $CIRSRND_width-perPack-subtotal;
+	$CIRSRND-MEDIUM_left-subtotal           : $CIRSRND-MEDIUM_left-perPack + $CIRSRND-MEDIUM_width-perPack-subtotal;
+
+
+// CART CONFIRM RIGHT SIDE ROW BTN                 --> CCRSRB
+$CCRSRB_width                             : 70px;
+	$CCRSRB-SMALL-ALL_width                 : (100% / 3);
+	$CCRSRB-SMALL-ALL_width-discount        : 20%;
+
+
+// CART CONFIRM RIGHT SIDE ROW DISCOUNT            --> CCRSRD
+$CCRSRD_width                             : $CCRSRB_width;
+	$CCRSRD-SMALL-ALL_width                 : $CCRSRB-SMALL-ALL_width;
+
+$CCRSRD_left-discount                     : $CCRSRB_width;
+
+
+// CART CONFIRM RIGHT SIDE ROW PERPACK             --> CCRSRP
+$CCRSRP_width                             : 110px;
+	$CCRSRP-SMALL-ALL_width                 : (100% - ($CCRSRB-SMALL-ALL_width * 2)) / 2;
+	$CCRSRP-SMALL-ALL_width-discount        : (100% - ($CCRSRB-SMALL-ALL_width-discount * 2)) / 2;
+
+$CCRSRP_left                              : $CCRSRB_width;
+$CCRSRP_left-discount                     : $CCRSRB_width + $CCRSRD_width;
+
+
+// CART CONFIRM RIGHT SIDE ROW SUBTOTAL            --> CCRSRS
+$CCRSRS_width                             : $CCRSRP_width;
+	$CCRSRS-SMALL-ALL_width                 : $CCRSRP-SMALL-ALL_width;
+
+$CCRSRS_left                              : $CCRSRB_width + $CCRSRP_width;
+$CCRSRS_left-discount                     : ($CCRSRB_width * 2) + $CCRSRP_width;
+
+
+// CART CONFIRM LEFT SIDE                          --> CCLS
+$CCLS_width                               : $CILS_width-all - (($CCRSRP_width * 2) + $CCRSRB_width);
+	$CCLS-MEDIUM_width                      : $CILS-MEDIUM_width-all - (($CCRSRP_width * 2) + $CCRSRB_width);
+
+
+// CART CONFIRM LEFT SIDE Y DISCOUNT               --> CCLSYD
+$CCLSYD_width                             : $CILS_width-all - (($CCRSRB_width * 2) + ($CCRSRP_width * 2));
+	$CCLSYD-MEDIUM_width                    : $CILS-MEDIUM_width-all - (($CCRSRB_width * 2) + ($CCRSRP_width * 2));
+
+
+// CART CONFIRM LEFT SIDE PRODUCT NAME             --> CCLSPN
+$CCLSPN_width                             : $CCLS_width - ($CILSI_width-imgContainer + $CILS_paddingLeft + $CILS_paddingRight);
+	$CCLSPN-MEDIUM_width                    : $CCLS-MEDIUM_width - ($CILSI_width-imgContainer + $CILS_paddingLeft + $CILS_paddingRight);
+
+
+// CART CONFIRM LEFT SIDE PRODUCT NAME Y DISCOUNT  --> CCLSPNYD
+$CCLSPNYD_width                           : $CCLSYD_width - ($CILSI_width-imgContainer + $CILS_paddingLeft + $CILS_paddingRight);
+	$CCLSPNYD-MEDIUM_width                  : $CCLSYD-MEDIUM_width - ($CILSI_width-imgContainer + $CILS_paddingLeft + $CILS_paddingRight);
+
+// CART CONFIRM RIGHT SIDE                         --> CCRS
+$CCRS_left                                : $CCLS_width;
+	$CCRS-MEDIUM_left                       : $CCLS-MEDIUM_width;
+
+$CCRS_width                               : ($CCRSRP_width * 2) + $CCRSRB_width;
+
+
+// CART CONFIRM RIGHT SIDE Y DISCOUNT              --> CCRSYD
+$CCRSYD_left                              : $CCLSYD_width;
+	$CCRSYD-MEDIUM_left                     : $CCLSYD-MEDIUM_width;
+
+$CCRSYD_width                             : ($CCRSRB_width * 2) + ($CCRSRP_width * 2);
+
+
+// CART FREE RIGHT SIDE ROW BTN Y DISCOUNT         --> CFRSRBYD
+$CFRSRBYD_width                           : ($CCRSRB_width * 2);
+	$CFRSRBYD-SMALL-ALL_width               : ($CCRSRB-SMALL-ALL_width-discount * 2);

@@ -1,0 +1,15 @@
+- var objJSON = dataJSON.steps;
+
+
+mixin cartTotalLine(count, text, opt)
+    mixin wrap(opt)
+        div(class='cart-total-wrap ' + opt)
+            span.aligner
+            span.cart-total-title!= text
+            span.cart-total-price!= '€132.82'
+
+    - for(var i = 0; i < count; i++)
+        if (opt == 'total')
+            +wrap('total')
+        else
+            +wrap('')
