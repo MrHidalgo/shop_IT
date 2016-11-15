@@ -5,7 +5,7 @@
 @import "../_config/cart-config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 
@@ -69,6 +69,7 @@ $w-all : return-value(dimension, all);
 
 	&__wrap {
 		border-bottom: 1px solid $CI_borderColor;
+		position: relative;
 		@include respond-to('small-all') {
 			border-bottom: none;
 		}
@@ -158,7 +159,6 @@ $w-all : return-value(dimension, all);
 				display: inline-block;  *display: inline;  *zoom: 1;
 				vertical-align: middle;
 				font: {
-					family: $CILSPN_fontFamily-productName;
 					size: $CILSPN_fontSize-productName;
 				}
 				@include respond-to('medium') {
@@ -251,10 +251,13 @@ $w-all : return-value(dimension, all);
 			background: $CIRSBS_backgroundColor;
 			vertical-align: middle;
 			position: relative;
+			@include respond-to('medium') {
+				width: $CIRSBS-MEDIUM_width;
+			}
 			@include respond-to('small-all') {
 				width: $CIRSBS-SMALL-ALL_width;
+				height: $CIRSBS-SMALL-ALL_height;
 			}
-
 
 			.input-select__value {
 				padding-left: $CIRSBS_paddingLeft-value;
@@ -263,18 +266,34 @@ $w-all : return-value(dimension, all);
 
 
 		.close-btn  {
-			float: right;
-			text-align: center;
+			display: inline-block;  *display: inline;  *zoom: 1;
+			width: $CIRSBC_width;
+			height: $CIRSBC_height;
+			line-height: $CIRSBC_lineHeight;
+			border: {
+				radius: $CIRSBC_borderRadius;
+				width: $CIRSBC_borderWidth;
+				style: solid;
+				color: $CIRSBC_borderColor;
+			}
+			text: {
+				align: center;
+				transform: uppercase;
+			}
 			font: {
 				size: $CIRSBC_fontSize;
-				family: $CIRSBC_fontFamily;
 			}
 			color: $CIRSBC_fontColor;
-			padding-right: $CIRSBC_paddingRight;
+			padding: 0 $CIRSBC_paddingLeft;
+			margin-left: $CIRSBC_marginLeft;
+			@include respond-to('medium') {
+				padding: 0 $CIRSBC-MEDIUM_paddingLeft;
+			}
 			@include respond-to('small-all') {
-				padding-right: 0;
-				padding-left: 15px;
-				width: $CIRSBC-SMALL-ALL_width;
+				margin-left: $CIRSBC-SMALL-ALL_marginLeft;
+				position: absolute;
+				top: 13px;
+				right: 0;
 			}
 
 
@@ -299,7 +318,6 @@ $w-all : return-value(dimension, all);
 	&-subtotal {
 		font: {
 			size: $CIRSOR_fontSize;
-			family: $CIRSOR_fontFamily;
 		}
 		@include respond-to('small-all') {
 			float: left;
@@ -314,9 +332,6 @@ $w-all : return-value(dimension, all);
 		&-perpack,
 		&-subtotal {
 			width: $CIRSRYD_width-perPack-Subtotal;
-			@include respond-to('medium'){
-				width: $CIRSRYD-MEDIUM_width-perPack-Subtotal;
-			}
 		}
 
 		&-discount {
@@ -331,6 +346,7 @@ $w-all : return-value(dimension, all);
 		&-perpack {
 			left: $CIRSRYD_left-perPack;
 			@include respond-to('medium'){
+				width: $CIRSRYD-MEDIUM_width-perPack;
 				left: $CIRSRYD-MEDIUM_left-perPack;
 			}
 		}
@@ -338,6 +354,7 @@ $w-all : return-value(dimension, all);
 		&-subtotal {
 			left: $CIRSRYD_left-subtotal;
 			@include respond-to('medium'){
+				width: $CIRSRYD-MEDIUM_width-subtotal;
 				left: $CIRSRYD-MEDIUM_left-subtotal;
 			}
 		}
@@ -355,28 +372,31 @@ $w-all : return-value(dimension, all);
 
 // !DISCOUNT BLOCK
 .row {
-	&-perpack,
-	&-subtotal {
-		width: $CIRSRND_width-perPack-subtotal;
-		@include respond-to('medium'){
-			width: $CIRSRND-MEDIUM_width-perPack-subtotal;
-		}
-		@include respond-to('small-all') {
-			width: $w-all / 2;
-		}
-	}
-
 	&-perpack {
+		width: $CIRSRND_width-perPack;
 		left: $CIRSRND_left-perPack;
 		@include respond-to('medium'){
+			width: $CIRSRND-MEDIUM_width-perPack;
 			left: $CIRSRND-MEDIUM_left-perPack;
 		}
 	}
 
 	&-subtotal {
+		width: $CIRSRND_width-subtotal;
 		left: $CIRSRND_left-subtotal;
 		@include respond-to('medium'){
+			width: $CIRSRND-MEDIUM_width-subtotal;
 			left: $CIRSRND-MEDIUM_left-subtotal;
+		}
+		@include respond-to('small-all') {
+			text-align: right;
+		}
+	}
+
+	&-perpack,
+	&-subtotal {
+		@include respond-to('small-all') {
+			width: $w-all / 2;
 		}
 	}
 }

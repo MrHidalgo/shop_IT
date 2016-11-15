@@ -2,7 +2,7 @@
 @import "../_function/function";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 // CONFIG VARIABLE
 @import "../_config/confirm__config";
@@ -13,6 +13,8 @@ $w-all  : return-value(dimension, all);
 
 .confirmation-wrap {
 	border-bottom: 1px solid $CC_borderColor;
+	border-right: 1px solid $CC_borderColor;
+	border-left: 1px solid $CC_borderColor;
 
 
 	.wrap {

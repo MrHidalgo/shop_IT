@@ -86,27 +86,28 @@
             </div>
 
 
-
-            {% include './_template/cart-total.twig' with {
-                totalClass  : '',
-                text        : 'Insgesamt:',
-                sum         : '€132.82',
-            } %}
-            {% include './_template/cart-total.twig' with {
-                totalClass  : '',
-                text        : 'Preis inkl. rabatt:',
-                sum         : '€132.82',
-            } %}
-            {% include './_template/cart-total.twig' with {
-                totalClass  : '',
-                text        : 'Lieferung:',
-                sum         : '€132.82',
-            } %}
-            {% include './_template/cart-total.twig' with {
-                totalClass  : 'border-radius_bottom total',
-                text        : 'GESAMT:',
-                sum         : '€132.82',
-            } %}
+            <div class="total-wrap">
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Insgesamt:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Preis inkl. rabatt:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Lieferung:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : 'border-radius_bottom total',
+                    text        : 'GESAMT:',
+                    sum         : '€132.82',
+                } %}
+            </div>
 
 
             {% include './_template/bottomInfo.twig' %}

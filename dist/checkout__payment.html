@@ -12,65 +12,44 @@
     <div class="container">
       <div class="internal-container">
         <div class="header-steps">
-          <h1 class="main__title">Zur Kasse</h1>
           <div class="steps">
             <div class="steps__wrap steps__wrap_check steps__wrap-1">
-              <div class="steps__wrap-container">
-                <i class="steps__wrap-icon"></i>
-              </div>
-              <p class="steps__wrap-text">Warenkorb</p>
-              <span class="steps__wrap-line"></span>
-              <span class="steps__wrap-line-status">
-                <i class="steps__wrap-line-icon"></i>
-              </span>
+              <div class="steps__wrap-container"></div>
+              <p class="steps__wrap-text">Carrello</p>
+              <p class="steps__wrap-text_mobile">
+                <i class="steps__wrap-text-icon"></i> Passo 1 </p>
             </div>
             <div class="steps__wrap steps__wrap_check steps__wrap-2">
-              <div class="steps__wrap-container">
-                <i class="steps__wrap-icon"></i>
-              </div>
-              <p class="steps__wrap-text">Lieferart</p>
-              <span class="steps__wrap-line"></span>
-              <span class="steps__wrap-line-status">
-                <i class="steps__wrap-line-icon"></i>
-              </span>
+              <div class="steps__wrap-container"></div>
+              <p class="steps__wrap-text">Metodo di spedizione</p>
+              <p class="steps__wrap-text_mobile">
+                <i class="steps__wrap-text-icon"></i> Passo 2 </p>
             </div>
             <div class="steps__wrap steps__wrap_active steps__wrap-3">
-              <div class="steps__wrap-container">
-                <i class="steps__wrap-icon"></i>
-              </div>
-              <p class="steps__wrap-text">Zahlungsart</p>
-              <span class="steps__wrap-line"></span>
-              <span class="steps__wrap-line-status">
-                <i class="steps__wrap-line-icon"></i>
-              </span>
+              <div class="steps__wrap-container"></div>
+              <p class="steps__wrap-text">Metodo di pagamento</p>
+              <p class="steps__wrap-text_mobile">
+                <i class="steps__wrap-text-icon"></i> Passo 3 </p>
             </div>
             <div class="steps__wrap steps__wrap-4">
-              <div class="steps__wrap-container">
-                <i class="steps__wrap-icon"></i>
-              </div>
-              <p class="steps__wrap-text">Bestätigung</p>
-              <span class="steps__wrap-line"></span>
-              <span class="steps__wrap-line-status">
-                <i class="steps__wrap-line-icon"></i>
-              </span>
+              <div class="steps__wrap-container"></div>
+              <p class="steps__wrap-text">Conferma</p>
+              <p class="steps__wrap-text_mobile">
+                <i class="steps__wrap-text-icon"></i> Passo 4 </p>
             </div>
             <div class="steps__wrap steps__wrap_status steps__wrap-5">
-              <div class="steps__wrap-container">
-                <i class="steps__wrap-icon"></i>
-              </div>
-              <p class="steps__wrap-text">Ergebnis</p>
-              <span class="steps__wrap-line"></span>
-              <span class="steps__wrap-line-status">
-                <i class="steps__wrap-line-icon"></i>
-              </span>
+              <div class="steps__wrap-container"></div>
+              <p class="steps__wrap-text">Risultato</p>
+              <p class="steps__wrap-text_mobile">
+                <i class="steps__wrap-text-icon"></i> Risultato </p>
             </div>
           </div>
           <p class="sub__title">
-            <span class="sub__title-main">Schritt </span>
-            <span class="sub__title-text">3 : Zahlungsart</span>
+            <span class="sub__title-main">Passo </span>
+            <span class="sub__title-text">3 : Metodo di Pagamento</span>
           </p>
         </div>
-        <p class="block__title border-radius_top">Wählen sie zahlungsart</p>
+        <p class="block__title border-radius_all">Selezionare il metodo di spedizione</p>
         <form action="" id="checkout_form" class="payment-method wrap_bg border-radius_bottom">
           <div class="form__wrap">
             <div class="cart-row">
@@ -108,7 +87,7 @@
             <div class="input-wrap__date-birth clearfix">
               <div class="forms-row">
                 <div class="wrap-select">
-                  <p class="select__title">Geburtsdatum</p>
+                  <p class="select__title">Data di nascita</p>
                   <div class="input input-select year">
                     <span class="input-select__value"></span>
                     <select name="" id="">
@@ -153,7 +132,7 @@
                   <div class="input">
                     <input type="text" id="f2_issuing_bank">
                     <label for="f2_issuing_bank" class="label__title">
-                      <span class="label__title-text">Name der Bank</span>
+                      <span class="label__title-text">La banca emittente</span>
                       <span class="label__title-bg"></span>
                     </label>
                   </div>
@@ -166,7 +145,7 @@
                   <div class="input">
                     <input type="text" id="f_card_number">
                     <label for="f_card_number" class="label__title">
-                      <span class="label__title-text">Kreditkartennummer</span>
+                      <span class="label__title-text">Numeero di carta</span>
                       <span class="label__title-bg"></span>
                     </label>
                   </div>
@@ -178,7 +157,7 @@
                 <div class="input-wrap__card-l">
                   <div class="forms-row">
                     <div class="wrap-select">
-                      <p class="select__title">Gültig bis</p>
+                      <p class="select__title">Data di scadenza</p>
                       <div class="input input-select month">
                         <span class="input-select__value"></span>
                         <select name="" id="">
@@ -208,7 +187,7 @@
                 </div>
                 <div class="input-wrap__card-r">
                   <div class="forms-row">
-                    <p class="input__title">Sicherheitscode</p>
+                    <p class="input__title">Il Codicedi Sicurezza</p>
                     <div class="input">
                       <input type="text" id="f_cvv"> </div>
                     <a href="javascript:void(0);" class="btn btn-cvv">Hilfe ansehen</a>
@@ -231,10 +210,10 @@
         <p class="invoice__title"> Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird. </p>
         <div class="btn">
           <a href="javascript:void(0);" data-id="fake_button" style='display:none;' class="btn__wrap btn__wrap-next">
-            <span class="btn__wrap-text">Bitte warten...</span>
+            <span class="btn__wrap-text">Attendere prego...</span>
           </a>
           <a href="/confirm" data-id="send_button" class="btn__wrap btn__wrap-next">
-            <span class="btn__wrap-text">Weiter zur Bestätigung</span>
+            <span class="btn__wrap-text">Continuare alla Conferma</span>
             <span class="btn__wrap-icon">
               <i class="icon icon-next"></i>
             </span>
@@ -244,7 +223,10 @@
             <span class="divider-text__word">OR</span>
           </div>
           <a href="/shipping" class="btn__wrap btn__wrap-prev">
-            <span class="btn__wrap-text">Zurück zur Lieferart</span>
+            <span class="btn__wrap-icon">
+              <i class="icon icon-prev"></i>
+            </span>
+            <span class="btn__wrap-text">Ritornare al Metodo di Spedizione</span>
           </a>
         </div>
       </div>

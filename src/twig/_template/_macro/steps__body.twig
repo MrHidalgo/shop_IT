@@ -1,15 +1,12 @@
-{% macro stepsBody(stepName) %}
+{% macro stepsBody(stepName, stepNameMobile) %}
 
-    <div class="steps__wrap-container">
-        <i class="steps__wrap-icon"></i>
-    </div>
+    <div class="steps__wrap-container"></div>
 
     <p class="steps__wrap-text">{{ stepName }}</p>
 
-    <span class="steps__wrap-line"></span>
-
-    <span class="steps__wrap-line-status">
-        <i class="steps__wrap-line-icon"></i>
-    </span>
+    <p class="steps__wrap-text_mobile">
+        <i class="steps__wrap-text-icon"></i>
+        {{ stepNameMobile }}
+    </p>
 
 {% endmacro %}

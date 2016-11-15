@@ -238,8 +238,8 @@ function imageSprites(taskName) {
         var src, spImgPath, retinaspImgPath, destImg, destCss;
 
         src             = './src/icons/*.png';
-        spImgPath       = '../img/sprite_de.png';
-        retinaspImgPath = '../img/sprite_de@2x.png';
+        spImgPath       = '../img/sprite_it.png';
+        retinaspImgPath = '../img/sprite_it@2x.png';
         destImg         = './dist/img/';
         destCss         = './src/scss/_variable/';
 
@@ -253,15 +253,15 @@ function imageSprites(taskName) {
                 ))
             .pipe(spritesmith(
                 {
-                    imgName         : 'sprite_de.png',
+                    imgName         : 'sprite_it.png',
                     imgPath         : spImgPath,
                     retinaImgPath   : retinaspImgPath,
-                    cssName         : '_sprite_de.scss',
+                    cssName         : '_sprite_it.scss',
                     retinaSrcFilter :
                         [
                             './src/icons/*@2x.png'
                         ],
-                    retinaImgName   : 'sprite_de@2x.png',
+                    retinaImgName   : 'sprite_it@2x.png',
                     algorithm       : 'top-down',
                     algorithmOpts   : {
                         sort : false

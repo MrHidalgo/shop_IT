@@ -5,9 +5,9 @@
 @import "../_config/radioCheckboxBtn-config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
-$c-whisper  : return-value(color, whisper);
+$c-whisper  : return-value(color, zircon);
 
 
 /*
@@ -236,7 +236,7 @@ $c-whisper  : return-value(color, whisper);
 			left: -2px;
 			@include mixinDimensions(54px, 38px);
 			border: $RPB_borderWidthActive solid $RPB_borderColorActive;
-			box-shadow: inset 0 0 0 2px rgba(#fff, 1), 0 2px 3px 0 rgba(#000, 0.25);
+			box-shadow: inset 0 0 0 2px rgba(#fff, 1), 0 0 6px 0 rgba(#4DABA8, 0.25);
 			@include respond-to("small-all") {
 				@include mixinDimensions(58px, 42px);
 			}

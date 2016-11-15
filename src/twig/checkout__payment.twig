@@ -16,7 +16,6 @@
         <div class="internal-container">
 
             <div class="header-steps">
-                <h1 class="main__title">Zur Kasse</h1>
 
                 {% include './_template/steps.twig' with {
                     count : 3
@@ -24,12 +23,12 @@
 
                 {% include './_template/sub_title.twig' with {
                     page_number : 3,
-                    page_name   : "Zahlungsart",
+                    page_name   : "Metodo di Pagamento",
                 } %}
             </div>
 
 
-            <p class="block__title border-radius_top">Wählen sie zahlungsart</p>
+            <p class="block__title border-radius_all">Selezionare il metodo di spedizione</p>
 
 
             <form action="" id="checkout_form" class="payment-method wrap_bg border-radius_bottom">
@@ -58,7 +57,7 @@
 
                     <div class="input-wrap__date-birth clearfix">
                         {% include './_template/select-dataBirth.twig' with {
-                            inputTitle      : "Geburtsdatum"
+                            inputTitle      : "Data di nascita"
                         } %}
                     </div>
 
@@ -68,28 +67,28 @@
                         <div class="input-wrap__issuing-bank">
                             {% include './_template/input.twig' with {
                                 idName      : "f2_issuing_bank",
-                                labelName   : "Name der Bank"
+                                labelName   : "La banca emittente"
                             } %}
                         </div>
 
                         <div class="input-wrap__card-number">
                             {% include './_template/input.twig' with {
                                 idName      : "f_card_number",
-                                labelName   : "Kreditkartennummer"
+                                labelName   : "Numeero di carta"
                             } %}
                         </div>
 
                         <div class="input-wrap__card-info clearfix">
                             <div class="input-wrap__card-l">
                                 {% include './_template/select-expirationDate.twig' with {
-                                    inputTitle      : "Gültig bis"
+                                    inputTitle      : "Data di scadenza"
                                 } %}
                             </div>
 
                             <div class="input-wrap__card-r">
                                 {% include './_template/input-securityCode.twig' with {
                                     idName      : "f_cvv",
-                                    inputTitle  : "Sicherheitscode"
+                                    inputTitle  : "Il Codicedi Sicurezza"
                                 } %}
                             </div>
                         </div>
@@ -109,7 +108,7 @@
                     class   : "next",
                     optBtn  : "fake-next",
                     optIcon : "no-icon",
-                    text    : "Bitte warten...",
+                    text    : "Attendere prego...",
                     hrefAttr: "javascript:void(0);"
                 } %}
 
@@ -117,7 +116,7 @@
                     class   : "next",
                     optBtn  : "next",
                     optIcon : "with-icon right",
-                    text    : "Weiter zur Bestätigung",
+                    text    : "Continuare alla Conferma",
                     hrefAttr: "/confirm"
                 } %}
 
@@ -129,8 +128,8 @@
                 {% include './_template/btn.twig' with {
                     class   : "prev",
                     optBtn  : "prev",
-                    optIcon : "no-icon",
-                    text    : "Zurück zur Lieferart",
+                    optIcon : "with-icon left",
+                    text    : "Ritornare al Metodo di Spedizione",
                     hrefAttr: "/shipping"
                 } %}
 

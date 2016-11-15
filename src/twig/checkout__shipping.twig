@@ -16,7 +16,6 @@
         <div class="internal-container">
 
             <div class="header-steps">
-                <h1 class="main__title">Zur Kasse</h1>
 
                 {% include './_template/steps.twig' with {
                     count : 2
@@ -24,12 +23,12 @@
 
                 {% include './_template/sub_title.twig' with {
                     page_number : 2,
-                    page_name   : "Lieferart",
+                    page_name   : "Metodo di Spedizione",
                 } %}
             </div>
 
             <form action="">
-                <p class="block__title border-radius_top">Wählen Sie Lieferart</p>
+                <p class="block__title border-radius_all">Metodo di Spedizione</p>
 
                 <div class="method-wrap wrap_bg">
                     <div class="method-wrap__left">
@@ -70,26 +69,26 @@
 
                 {% include './_template/cart-total.twig' with {
                     totalClass  : '',
-                    text        : 'Insgesamt:',
+                    text        : 'Totale:',
                     sum         : '€132.82',
                 } %}
                 {% include './_template/cart-total.twig' with {
                     totalClass  : '',
-                    text        : 'Preis inkl. rabatt:',
+                    text        : 'Prezzo Con Tutti Gli Sconti:',
                     sum         : '€132.82',
                 } %}
                 {% include './_template/cart-total.twig' with {
                     totalClass  : '',
-                    text        : 'Lieferung:',
+                    text        : 'Spedizione:',
                     sum         : '€132.82',
                 } %}
                 {% include './_template/cart-total.twig' with {
                     totalClass  : 'total',
-                    text        : 'GESAMT:',
+                    text        : 'TOTALE:',
                     sum         : '€132.82',
                 } %}
 
-                <p class="block__title">Rechnungsinformationen</p>
+                <p class="block__title border-radius_all block__title_next">Dati di fatturazione</p>
 
                 <div class="input-wrap wrap_bg">
                     <h3 class="question__title">Have you ordered with us before?</h3>
@@ -98,7 +97,7 @@
                         class   : "next next-customer",
                         optBtn  : "next__empty",
                         optIcon : "with-icon right",
-                        text    : "Ja, ich bin hier zum ersten Mal"
+                        text    : "Sì, sono qui per la prima volta"
                     } %}
 
                     <div class="divider-text divider-text-input">
@@ -106,12 +105,12 @@
                         <span class="divider-text__word">OR</span>
                     </div>
 
-                    <div class="input-wrap__name clearfix">
+                    <div class="input-wrap__name  input-wrap_padding clearfix">
                         <div class="input-wrap__two-l">
 
                             {% include './_template/input.twig' with {
                                 idName      : "first_name",
-                                labelName   : "Vorname"
+                                labelName   : "Nome"
                             } %}
 
                         </div>
@@ -119,41 +118,41 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "last_name",
-                                labelName   : "Name"
+                                labelName   : "Cognome"
                             } %}
 
                         </div>
                     </div>
 
-                    <div class="input-wrap__gender clearfix">
+                    <div class="input-wrap__gender input-wrap_padding clearfix">
 
                         <div class="forms-row gender-form-row">
-                            <span class="gender__title">Geschlecht</span>
+                            <span class="gender__title">Il sesso</span>
 
                             {% include './_template/radioBtn.twig' with {
                                 classActive : "",
                                 idNum       : 0,
                                 optImg      : false,
-                                productName : "Männlich"
+                                productName : "Maschile"
                             } %}
                             {% include './_template/radioBtn.twig' with {
                                 classActive : "",
                                 idNum       : 1,
                                 optImg      : false,
-                                productName : "Weiblich"
+                                productName : "Femminile"
                             } %}
                             {% include './_template/radioBtn.twig' with {
                                 classActive : "",
                                 idNum       : 2,
                                 optImg      : false,
-                                productName : "Anderes"
+                                productName : "Altro"
                             } %}
 
                             <span class="error-m">Bitte wählen Sie Ihr Geschlecht aus</span>
                         </div>
                     </div>
 
-                    <div class="input-wrap__email clearfix">
+                    <div class="input-wrap__email input-wrap_padding clearfix">
                         <div class="input-wrap__two-l">
 
                             {% include './_template/input.twig' with {
@@ -167,7 +166,7 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "a_email_name",
-                                labelName   : "Alternative e-mail (Optional)"
+                                labelName   : "Alternativo e-mail (Opzionale)"
                             } %}
 
                         </div>
@@ -177,11 +176,11 @@
                         <span class="divider-text__line"></span>
                     </div>
 
-                    <div class="input-wrap__country clearfix">
+                    <div class="input-wrap__country input-wrap_padding clearfix">
                         <div class="input-wrap__two-l">
 
                             {% include './_template/select.twig' with {
-                                titleName   : "Country"
+                                titleName   : "Nazione"
                             } %}
 
                         </div>
@@ -191,7 +190,7 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "city",
-                                    labelName   : "Stadt"
+                                    labelName   : "Città"
                                 } %}
 
                             </div>
@@ -199,19 +198,19 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "zip",
-                                    labelName   : "PLZ"
+                                    labelName   : "Codice postale"
                                 } %}
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="input-wrap__addrees clearfix">
+                    <div class="input-wrap__addrees input-wrap_padding clearfix">
                         <div class="input-wrap__two-l">
 
                             {% include './_template/input.twig' with {
                                 idName      : "address",
-                                labelName   : "Anschrift"
+                                labelName   : "Indirizzo"
                             } %}
 
                         </div>
@@ -219,17 +218,17 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "phone",
-                                labelName   : "Telefon"
+                                labelName   : "Telefono"
                             } %}
 
                         </div>
                     </div>
                 </div>
 
-                <p class="block__title">Lieferadresse</p>
+                <p class="block__title border-radius_all block__title_next">Indirizzo di consegna</p>
 
                 <div class="shipping-address wrap_bg">
-                    <span class="shipping-address__text">Lieferadresse ist dieselbe, wie die Rechnungsadresse?</span>
+                    <span class="shipping-address__text">Indirizzo di trasporto è lo stesso che l'indirizzo di fatturazione?</span>
 
                     <div class="forms-row forms-shipping">
 
@@ -237,34 +236,34 @@
                             classActive : "",
                             idNum       : "isSameAsBilling",
                             optImg      : false,
-                            productName : "Ja"
+                            productName : "Sì"
                         } %}
 
                         {% include './_template/radioBtn.twig' with {
                             classActive : "",
                             idNum       : "notSameAsBilling",
                             optImg      : false,
-                            productName : "Nein"
+                            productName : "No"
                         } %}
                     </div>
                 </div>
 
                 <form action="">
-                    <div class="input-wrap wrap_bg input-wrap-shipping">
+                    <div class="input-wrap input-wrap_padding wrap_bg input-wrap-shipping">
                         <div class="input-wrap__name clearfix">
 
                             <div class="input-wrap__two-l">
 
                                 {% include './_template/input.twig' with {
                                     idName      : "first_name",
-                                    labelName   : "Vorname & Name"
+                                    labelName   : "Cognome & Nome"
                                 } %}
 
                             </div>
                             <div class="input-wrap__two-r">
 
                                 {% include './_template/select.twig' with {
-                                    titleName   : "Country"
+                                    titleName   : "Nazione"
                                 } %}
 
                             </div>
@@ -275,7 +274,7 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "address",
-                                    labelName   : "Anschrift"
+                                    labelName   : "Indirizzo"
                                 } %}
 
                             </div>
@@ -284,7 +283,7 @@
 
                                     {% include './_template/input.twig' with {
                                         idName      : "city",
-                                        labelName   : "Stadt"
+                                        labelName   : "City"
                                     } %}
 
                                 </div>
@@ -292,7 +291,7 @@
 
                                     {% include './_template/input.twig' with {
                                         idName      : "zip",
-                                        labelName   : "PLZ"
+                                        labelName   : "Codice postale"
                                     } %}
 
                                 </div>
@@ -301,24 +300,21 @@
                     </div>
                 </form>
 
-                <p class="block__title">Rechnungsinformationen</p>
+                <p class="block__title  border-radius_all block__title_next">Dati di fatturazione</p>
 
-                <div class="input-wrap wrap_bg input-wrap-internal">
-                    <h3 class="input-wrap__text">Wenn Sie bereits etwas bei uns bestellt haben, dann geben Sie bitte
-                        Ihre E-Mail-Adresse (die Sie für den letzten Einkauf benutzt haben) und Ihre Bestellnummer (bzw.
-                        die vier letzten Ziffern Ihrer Kreditkartennummer, falls Sie die Bestellnummer nicht mehr
-                        wissen) ein, um die Bestellinformationen automatisch auszufüllen</h3>
+                <div class="input-wrap wrap_bg input-wrap_padding input-wrap-internal">
+                    <h3 class="input-wrap__text">Se avete già completato l’acquisto, siete pregati di inserire il vostro indirizzo e-mail (che avete utilizzato per il primo acquisto) ed il numero dell’ordine (oppure le ultime 4 cifre del numero della carta di credito se non siete a conoscenza del numero dell’ordine) per la compilazione automatica delle vostre informazioni sull’ordine</h3>
 
                     <div class="input-wrap__internal clearfix">
 
-                        {% include './_template/input.twig' with {
+                        {% include './_template/inputTitle.twig' with {
                             idName      : "email_name",
-                            labelName   : "Email"
+                            inputTitle  : "Email"
                         } %}
 
-                        {% include './_template/input.twig' with {
+                        {% include './_template/inputTitle.twig' with {
                             idName      : "order",
-                            labelName   : "Bestellnummer bzw. die vier letzten Ziffern Ihrer Kreditkartennummer"
+                            inputTitle  : "Numero dell’ordine oppure le ultime 4 cifre del numero della carta di credito"
                         } %}
 
                     </div>
@@ -326,8 +322,8 @@
                     {% include './_template/btn.twig' with {
                         class   : "next next-internal",
                         optBtn  : "next",
-                        optIcon : "no-icon",
-                        text    : "Absenden"
+                        optIcon : "yes-icon right",
+                        text    : "Inviare"
                     } %}
 
                     <div class="divider-text divider-text-input divider-text-internal">
@@ -339,7 +335,7 @@
                         class   : "prev prev-internal",
                         optBtn  : "prev",
                         optIcon : "with-icon left",
-                        text    : "No, I'm a New customer"
+                        text    : "No, l'ho già acquistato in precedenza"
                     } %}
 
                 </div>
@@ -347,11 +343,11 @@
             </form>
 
             <p class="invoice__title">
-                Hinweis! Die Rechnung wird in USD angegeben. (<span>$82.37</span>)
+                <span class="invoice__title-note">Noti!</span> L'importo totale della fattura sono indicati ai USD. (<span>$82.37</span>)
                 <br>
-                In einigen Fällen kann der tatsächliche Endbetrag vom Gesamtrechnungsbetrag aufgrund der ausländischen Transaktionsgebühr abweichen.
+                In alcuni casi l'importo addebito può differire dall'importo totale della fattura a causa della tassa di transazione estera.
                 <br>
-                Sie erhalten die Möglichkeit Ihre Bestellung zu überprüfen, bevor sie aufgegeben wird.
+                Si avrà la possibilità di rivedere il vostro ordine prima della sua immissione.
             </p>
 
             <div class="btn">
@@ -360,7 +356,7 @@
                     class   : "next",
                     optBtn  : "fake-next",
                     optIcon : "no-icon",
-                    text    : "Bitte warten...",
+                    text    : "Attendere prego...",
                     hrefAttr: "javascript:void(0);"
                 } %}
 
@@ -368,7 +364,7 @@
                     class   : "next",
                     optBtn  : "next",
                     optIcon : "with-icon right",
-                    text    : "Weiter zur Zahlungsart",
+                    text    : "Continuare al Metodo di Pagamento",
                     hrefAttr: "/payment"
                 } %}
 
@@ -380,8 +376,8 @@
                 {% include './_template/btn.twig' with {
                     class   : "prev",
                     optBtn  : "prev",
-                    optIcon : "no-icon",
-                    text    : "Zurück zum Warenkorb",
+                    optIcon : "yes-icon left",
+                    text    : "Ritornare al Carello",
                     hrefAttr: "/"
                 } %}
 

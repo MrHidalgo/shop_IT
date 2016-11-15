@@ -2,7 +2,7 @@
 @import "../_function/function";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 // CONFIG VARIABLE
 @import "../_config/input-config";
@@ -17,19 +17,24 @@ $c-white                        : return-value(color, white);
 $c-show                         : return-value(color, show);
 $c-nero                         : return-value(color, nero);
 $c-deep_pink                    : return-value(color, deep_pink);
+$c-pumpkin                      : return-value(color, pumpkin);
+$c-zircon                       : return-value(color, zircon);
 
 $fontSize-select								: 13px;
 $fontFamily-select							: return-value(fonts, open-sans-regular);
 $iconArrow-select								: $sp-i-select-arrow-group;
-$top-select__icon								: 17px;
+$top-select__icon								: 13px;
 $right-select__icon							: 15px;
 $paddingLeft-select__value			: 20px;
 
-$fontSize__method-right         : 13px;
-$fontFamily__method-right       : return-value(fonts, open-sans-bold);
+$fontSize__method-right         : 14px;
+$fontFamily__method-right       : return-value(fonts, SSP-bold);
+$borderColor__method-right      : return-value(color, powder-blue);
 
-$fontSize__place-wrap__text     : 13px;
-$fontFamily__place-wrap__text   : return-value(fonts, open-sans-bold);
+$fontSize__place-wrap__text     : 14px;
+$fontFamily__place-wrap__text   : return-value(fonts, SSP-bold);
+
+$borderColor                    : return-value(color, zircon);
 
 
 
@@ -72,7 +77,6 @@ input[type="checkbox"] {
 	padding: 0;
 	filter: alpha(opacity=0);
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	visibility: hidden;
 	outline: none;
 }
 
@@ -91,9 +95,7 @@ input:-webkit-autofill {
 	&__value {
 		font: {
 			size: $fontSize-select;
-			family: $fontFamily-select;
 		}
-		//padding-left: $paddingLeft-select__value;
 	}
 
 
@@ -132,7 +134,7 @@ input:-webkit-autofill {
 
 		.divider-text__word {
 			color: $c-nero;
-			background-color: $c-show;
+			background-color: $c-white;
 		}
 	}
 
@@ -157,7 +159,7 @@ input:-webkit-autofill {
 		left: 0;
 		@include mixinDimensions($w-all, 1px);
 		top: 20px;
-		background-color: $c-whisperLight;
+		background-color: $c-zircon;
 	}
 
 
@@ -168,8 +170,7 @@ input:-webkit-autofill {
 		padding: 0 15px;
 		display: inline-block;  *display: inline;  *zoom: 1;
 		font: {
-			size: 16px;
-			style: italic;
+			size: 14px;
 		}
 		color: $c-grey;
 		@include respond-to('extra_small') {
@@ -183,28 +184,41 @@ input:-webkit-autofill {
 
 .header-steps {
 	padding-top: 10px;
+	padding-bottom: 40px;
+	@include respond-to("small-all") {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 
 .wrap_bg{
-	background-color: $c-show;
+	background-color: $c-white;
 }
 
 
-.border-radius_bottom {
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+.border_bottom {
+	border-bottom: 1px solid $borderColor;
 }
 
 
-.border-radius_top {
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+.border-radius {
+	&_all {
+		border-radius: 4px;
+	}
+	&_top {
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+	}
+	&_bottom {
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
 }
 
 
 .bonus-wrap {
-	padding: 0 30px 20px;
+	padding: 0 30px 30px;
 	overflow: hidden;
 	@include respond-to("small-all") {
 		padding: 0 15px 20px;
@@ -222,12 +236,14 @@ input:-webkit-autofill {
 
 	&__right {
 		position: absolute;
-		top: 50%;
-		right: 30px;
-		margin-top: -27px;
+		top: 20px;
+		right: 0;
 		font: {
 			size: $fontSize__method-right;
 		}
+		padding: 15px 20px;
+		border: 1px solid $borderColor__method-right;
+		border-radius: 4px;
 		@include respond-to("small-all") {
 			position: static;
 			margin-top: 20px;
@@ -251,7 +267,7 @@ input:-webkit-autofill {
 					font: {
 						family: $fontFamily__method-right;
 					}
-					color: $c-deep_pink;
+					color: $c-pumpkin;
 				}
 			}
 		}
@@ -260,15 +276,22 @@ input:-webkit-autofill {
 
 
 .input-wrap {
-	padding: 0 30px;
 	@include respond-to("small-all") {
 		padding: 0 15px;
 	}
 
 
+	&_padding {
+		padding: 0 30px;
+		@include respond-to("small-all") {
+			padding: 0 0;
+		}
+	}
+
+
 	&__text {
 		font : {
-			size: 13px;
+			size: 14px;
 			weight: normal;
 		}
 		color: $c-nero;
@@ -286,8 +309,17 @@ input:-webkit-autofill {
 		padding-top: 15px;
 
 
+
 		.forms-row {
 			min-height: 70px;
+		}
+	}
+
+
+	&-internal,
+	&-shipping {
+		@include respond-to("extra_small") {
+			padding: 0 15px;
 		}
 	}
 }
@@ -303,7 +335,7 @@ input:-webkit-autofill {
 
 	&__text {
 		display: block;
-		font-size: 13px;
+		font-size: 14px;
 		color: $c-nero;
 	}
 }
@@ -345,6 +377,8 @@ input:-webkit-autofill {
 .place-wrap {
 	position: relative;
 	padding: 25px;
+	border-left: 1px solid $c-zircon;
+	border-right: 1px solid $c-zircon;
 	@include respond-to("small-all") {
 		padding: 15px;
 		text-align: center;
@@ -388,20 +422,18 @@ input:-webkit-autofill {
 
 	&__btn {
 		font-family: $fontFamily__place-wrap__text;
-		text-decoration: underline;
 	}
 }
 
 
+.cart-wrap,
+.total-wrap{
+	border-left: 1px solid $c-zircon;
+	border-right: 1px solid $c-zircon;
+}
+
+
 .border-radius_top {
-	.left-col,
-	.right-col {
-		.confirm-title {
-			border-top: none;
-		}
-	}
-
-
 	.right-col {
 		.confirm-title {
 			@include respond-to("small-all") {

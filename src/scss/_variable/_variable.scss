@@ -10,27 +10,53 @@ $object : (
     color : (
         white             : #fff,
         black             : #000,
-        nero              : #222,
-        suva_gray         : #909090,
+
+
         alice_blue        : #F5FAFD,
         deep_pink         : #E9007E,
-        fern              : #5EBC58,
         grey              : #868686,
-        show              : #FAFAFA,
 		    persimmon         : #E94F00,
 		    whisper           : #E5E5E5,
 		    whisperLight      : #EEE,
+		    black_russian     : #0B0B0D,
+		    snow              : #FCFCFC,
+
+
+		    nero              : #222,
+		    suva_gray         : #909090,
+		    show              : #FAFAFA,
+		    orange            : #FFA500,
+		    pumpkin           : #FF6E1D,
+		    cadet-blue        : #4DABA8,
+		    zircon            : #E0EBEA,
+		    powder-blue       : #B9DFDE,
+		    coral-red         : #FF4242,
+		    cosmos            : #FAD5D5,
+		    arsenic           : #43484C,
 		    sunset_orange     : #F14C4C,
 		    curious_blue      : #307FB4,
 		    mango_tango       : #E17900,
-		    black_russian     : #0B0B0D,
-		    snow              : #FCFCFC
+		    fern              : #5EBC58,
     ),
 
 		fonts : (
+			SSP-black           : "SourceSansPro-Black",
+			SSP-blackIt         : "SourceSansPro-BlackIt",
+			SSP-bold            : "SourceSansPro-Bold",
+			SSP-boldIt          : "SourceSansPro-BoldIt",
+			SSP-extraLight      : "SourceSansPro-ExtraLight",
+			SSP-extraLightIt    : "SourceSansPro-ExtraLightIt",
+			SSP-it              : "SourceSansPro-It",
+			SSP-light           : "SourceSansPro-Light",
+			SSP-lightIt         : "SourceSansPro-LightIt",
+			SSP-regular         : "SourceSansPro-Regular",
+			SSP-semibold        : "SourceSansPro-Semibold",
+			SSP-semiboldIt      : "SourceSansPro-SemiboldIt",
+			open-sans-regular   : 'opensans_regular',
+
 			lato-regular        : 'lato_regular',
 			lato-bold           : 'lato_bold',
-			open-sans-regular   : 'opensans_regular',
+
 			open-sans-bold      : 'opensans_bold',
 			officina-sans-bold  : 'officina_sans_boldC'
     ),

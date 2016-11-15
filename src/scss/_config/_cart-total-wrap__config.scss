@@ -17,12 +17,21 @@ $CTW_paddingRight               : 30px;
 	$CTW-SMALL-ALL__paddingLeft   : 15px;
 	$CTW-SMALL-ALL__paddingRight  : 15px;
 
-$CTW_backgroundColor            : return-value(color, whisperLight);
-$CTW_borderColor                : return-value(color, white);
+$CTW_backgroundColor            : return-value(color, white);
+$CTW_borderColor                : return-value(color, zircon);
 $CTW_fontSize                   : 14px;
-$CTW_fontFamily                 : return-value(fonts, open-sans-bold);
+$CTW_fontFamily                 : return-value(fonts, SSP-bold);
+$CTW_fontColor                  : return-value(color, cadet-blue);
 
 $CTT_width                      : 70%;
 
-$CTP_fontColor                  : return-value(color, deep_pink);
 $CTP_lineHeight                 : $CTW_height;
+$CTP_fontSize                   : 16px;
+$CTP_fontColor                  : return-value(color, pumpkin);
+$CTP_fontFamily                 : return-value(fonts, SSP-bold);
+$CTP_right                      : 0;
+$CTP_width                      : 100px;
+	$CTP-MEDIUM_width             : 80px;
+
+$CTP_width-confirm              : 110px;
+

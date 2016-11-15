@@ -14,11 +14,109 @@
 
     <title>CART</title>
 </head>
-
 <body class={{ bool_discount }}>
+
     <div class="container">
         <div class="internal-container">
 
+            <div class="header-steps clearfix">
+
+                {% include './_template/steps.twig' with {
+                    count : 1
+                } %}
+
+                {% include './_template/sub_title.twig' with {
+                    page_number : 1,
+                    page_name   : "Choose Your Cart & Bonus",
+                } %}
+
+            </div>
+
+
+            <form action="">
+
+                <p class="block__title">Informations générales</p>
+
+                <div class="cart">
+                    {% include './_template/cart.twig' with {
+                        countCart           : poduct_count,
+                        opt                 : bool_discount,
+                        bool_free_discount  : 'false'
+                    } %}
+                </div>
+
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Totale sconti:',
+                    sum         : '€132.82',
+                } %}
+                {% include './_template/cart-total.twig' with {
+                    totalClass  : '',
+                    text        : 'Prezzo con tutti gli sconti:',
+                    sum         : '€132.82',
+                } %}
+
+                <p class="block__title block__title_next">Seleziona il tuo bonus gratis</p>
+
+                <div class="bonus-wrap wrap_bg border_bottom">
+                    <p class="text__title">Each item in the basket increases the size of the bonus products. Update your product to increase the number of tablets in rebate.</p>
+
+                    <div class="forms-row form-bonus">
+                        {% for i in 1..4 %}
+
+                            {% if (loop.last) %}
+                                {% include './_template/radioBtn.twig' with {
+                                    classActive : "active",
+                                    idNum       : i,
+                                    optImg      : false,
+                                    productName : "Maximum Potency Testosterone Booster 60 caps bottle x <span class='red'>1 Flasche</span>"
+                                } %}
+                            {% else %}
+                                {% include './_template/radioBtn.twig' with {
+                                    classActive : "",
+                                    idNum       : i,
+                                    optImg      : true,
+                                    productName : "Maximum Potency Testosterone Booster 60 caps bottle x <span class='red'>1 Flasche</span>"
+                                } %}
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+
+
+            <p class="invoice__title">Si avrà la possibilità di rivedere il vostro ordine prima della sua immissione.</p>
+
+            <div class="btn">
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "fake-next",
+                    optIcon : "no-icon",
+                    text    : "Attendere prego...",
+                    hrefAttr: "javascript:void(0);"
+                } %}
+                {% include './_template/btn.twig' with {
+                    class   : "next",
+                    optBtn  : "next",
+                    optIcon : "with-icon right",
+                    text    : "Continuare al Metodo di Spedizione",
+                    hrefAttr: "/shipping"
+                } %}
+
+                <div class="divider-text">
+                    <span class="divider-text__line"></span>
+                    <span class="divider-text__word">OR</span>
+                </div>
+
+                {% include './_template/btn.twig' with {
+                    class   : "prev",
+                    optBtn  : "prev",
+                    optIcon : "yes-icon left",
+                    text    : "Ritornare a Shopping",
+                    hrefAttr: "javascript:void(0);"
+                } %}
+            </div>
         </div>
     </div>
 

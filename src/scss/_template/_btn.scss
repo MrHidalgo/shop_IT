@@ -5,7 +5,7 @@
 @import "../_config/btn__config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 /*
@@ -20,7 +20,7 @@
 	.btn__wrap {
 		position: absolute;
 		@include respond-to('small-all') {
-			position: static;
+			position: relative;
 		}
 	}
 }
@@ -33,32 +33,68 @@
 
 	&__wrap{
 		display: block;
+		position: relative;
 
 
 		&-prev,
 		&-place,
 		&-back,
 		&-next {
-			@include mixinDimensions($BTN_width - ($BTN_borderWidth * 2), $BTN_height - ($BTN_borderWidth * 2));
-			line-height: $BTN_height - ($BTN_borderWidth * 2) - 2;
+			@include mixinDimensions($BTN_width, $BTN_height);
+			line-height: $BTN_height - 2;
 			border-radius: $BTN_borderRadius;
 			text-align: center;
 			@include respond-to('small-all') {
 				display: block;
-				@include mixinDimensions($BTN_width, $BTN_height);
+				@include mixinDimensions($BTN-SMALL-ALL_width, $BTN_height);
 				margin: 0 auto;
 			}
 		}
 
 
-		&-prev {
-			color: $BTN-prev_fontColor;
-			left: 0;
-			border: $BTN_borderWidth solid $BTN-prev_borderColor;
-			background-color: $BTN-prev_backgroundColor;
+		&-prev,
+		&-back,
+		&-place,
+		&-next {
+			.btn__wrap-text,
+			.btn__wrap-icon {
+				height: 100%;
+			}
+
+
+			.btn__wrap-text {
+				width: $BTN-width-text;
+				@include respond-to("small-all") {
+					width: $BTN-SMALL-ALL-width-text;
+				}
+			}
 
 
 			.btn__wrap-icon {
+				width: $BTN-width-icon;
+				@include respond-to("small-all") {
+					width: $BTN-SMALL-ALL-width-icon;
+				}
+			}
+		}
+
+
+		&-prev,
+		&-back {
+			color: $BTN-prev_fontColor;
+			left: 0;
+			background-color: $BTN-prev_backgroundColor;
+
+
+			.btn__wrap-text {
+				right: 0;
+			}
+
+
+			.btn__wrap-icon {
+				left: 0;
+
+
 				.icon {
 					margin-right: $BTN_marginRight-icon;
 					@include retina-sprite($BTN-prev_iconName);
@@ -71,13 +107,20 @@
 		&-place {
 			color: $BTN-next_fontColor;
 			right: 0;
-			border: $BTN_borderWidth solid $BTN-next_borderColor;
 			background-color: $BTN-next_backgroundColor;
 		}
 
 
 		&-next {
+			.btn__wrap-text {
+				left: 0;
+			}
+
+
 			.btn__wrap-icon {
+				right: 0;
+
+
 				.icon {
 					margin-left: $BTN_marginLeft-icon;
 					@include retina-sprite($BTN-next_iconName);
@@ -88,6 +131,7 @@
 
 		&-place {
 			position: absolute;
+			width: 270px;
 			top: 0;  *top: 35px;
 			bottom: 0;
 			right: 25px;
@@ -96,6 +140,9 @@
 				position: static;
 			}
 
+			.btn__wrap-text {
+				text-transform: uppercase;
+			}
 
 			.btn__wrap-icon {
 				.icon {
@@ -103,13 +150,17 @@
 					@include retina-sprite($BTN-place_iconName);
 				}
 			}
+
+			.btn__wrap-text,
+			.btn__wrap-icon {
+				position: static;
+			}
 		}
 
 
 		&-print,
 		&-back {
 			display: inline-block;  *display: inline;  *zoom: 1;
-			margin-left: 25px;
 			@include respond-to("small-all") {
 				margin-left: 0;
 			}
@@ -141,6 +192,59 @@
 		}
 
 
+		&.next-internal {
+			.btn__wrap-text,
+			.btn__wrap-icon {
+				position: static;
+			}
+
+
+			.btn__wrap-icon {
+				.icon {
+					margin-right: 5px;
+					@include retina-sprite($sp-i-btn-submit-group);
+				}
+			}
+		}
+
+
+		&.prev-internal {
+			.btn__wrap-text {
+				width: $BTN-width-internal-text;
+				@include respond-to("small-all") {
+					width: $BTN-SMALL-ALL-width-text;
+				}
+			}
+		}
+
+
+		&-print {
+			width: 270px;
+			margin-left: 2.5px;
+			@include respond-to("small-all") {
+				width: 100%;
+				margin-left: 0;
+			}
+
+			.btn__wrap-text {
+				width: 270px - 50;
+				left: 50px;
+				@include respond-to("small-all") {
+					width: calc(100% - 50px);
+				}
+			}
+			.btn__wrap-icon {
+				left: 0;
+				width: 50px;
+
+
+				.icon {
+					@include retina-sprite($sp-i-btn-print-group);
+				}
+			}
+		}
+
+
 		&.next-customer {
 			margin: 0 auto 15px;
 		}
@@ -151,6 +255,9 @@
 				size: $BTN_fontSize;
 				family: $BTN_fontFamily;
 			}
+			@include respond-to("small-all") {
+				font-size: $BTN-SMALL-ALL_fontSize;
+			}
 		}
 
 
@@ -158,7 +265,15 @@
 			.icon {
 				display: inline-block;  *display: inline;  *zoom: 1;
 				vertical-align: middle;
+				position: relative;
+				top: -1px;
 			}
+		}
+
+
+		&-text,
+		&-icon {
+			position: absolute;
 		}
 	}
 }

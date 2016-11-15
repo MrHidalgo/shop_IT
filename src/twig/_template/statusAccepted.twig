@@ -1,12 +1,28 @@
 <div class="status status-accepted">
-    <img src="./img/img-accepted.png" alt="accepted" class="status__img status__img-normal">
-    <img src="./img/img-accepted@2x.png" alt="accepted" class="status__img status__img-retina">
 
-    <h1 class="status__title">
-        Dear John Doe,  thank you for you order.
-        <br>
-        Your order was successfully accepted.
-    </h1>
+    <div class="status__top clearfix">
+        <img src="./img/img-accepted.png" alt="accepted" class="status__img status__img-normal">
+        <img src="./img/img-accepted@2x.png" alt="accepted" class="status__img status__img-retina">
+
+        <h1 class="status__title">
+            Dear John Doe,  thank you for you order.
+            <br>
+            Your order was successfully accepted.
+        </h1>
+    </div>
+
+    <div class="status__wrap">
+        <h2 class="status__wrap-title">ORDER ID #444961</h2>
+
+        {% include './btn.twig' with {
+            class   : "next btn__wrap-print",
+            optBtn  : "next",
+            optIcon : "yes-icon left",
+            text    : "Stampa la pagina",
+            hrefAttr: "javascript:void(0);"
+        } %}
+
+    </div>
 
     <p class="status__sub-title">
         Your order was successfully accepted.
@@ -15,17 +31,4 @@
         <br>
         please, contact our Support.
     </p>
-
-    <div class="status__wrap">
-        <h2 class="status__wrap-title">ORDER ID #444961</h2>
-
-        {% include './btn.twig' with {
-            class   : "next btn__wrap-print",
-            optBtn  : "next",
-            optIcon : "no-icon",
-            text    : "Diese Seite drucken",
-            hrefAttr: "javascript:void(0);"
-        } %}
-
-    </div>
 </div>

@@ -30,7 +30,7 @@ $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
 
-$f-openSansRegular  : return-value(fonts, open-sans-regular);
+$f-SSP-regular      : return-value(fonts, SSP-regular);
 
 
 ///
@@ -61,7 +61,7 @@ body{
 
 	background-color: $c-white;
 
-	font-family: $f-openSansRegular;
+	font-family: $f-SSP-regular;
 }
 @media screen and (max-width: 1024px) {
 	body {

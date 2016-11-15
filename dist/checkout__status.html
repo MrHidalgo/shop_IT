@@ -12,31 +12,34 @@
     <div class="container">
       <div class="internal-container">
         <div class="status status-accepted">
-          <img src="./img/img-accepted.png" alt="accepted" class="status__img status__img-normal">
-          <img src="./img/img-accepted@2x.png" alt="accepted" class="status__img status__img-retina">
-          <h1 class="status__title"> Dear John Doe,  thank you for you order.
-            <br> Your order was successfully accepted. </h1>
-          <p class="status__sub-title"> Your order was successfully accepted.
-            <br> In case you didn't receive invoice in 24 hours, but your card has been charged,
-            <br> please, contact our Support. </p>
+          <div class="status__top clearfix">
+            <img src="./img/img-accepted.png" alt="accepted" class="status__img status__img-normal">
+            <img src="./img/img-accepted@2x.png" alt="accepted" class="status__img status__img-retina">
+            <h1 class="status__title"> Dear John Doe,  thank you for you order.
+              <br> Your order was successfully accepted. </h1>
+          </div>
           <div class="status__wrap">
             <h2 class="status__wrap-title">ORDER ID #444961</h2>
             <a href="javascript:void(0);" data-id="send_button" class="btn__wrap btn__wrap-next btn__wrap-print">
-              <span class="btn__wrap-text">Diese Seite drucken</span>
+              <span class="btn__wrap-icon">
+                <i class="icon icon-next btn__wrap-print"></i>
+              </span>
+              <span class="btn__wrap-text">Stampa la pagina</span>
             </a>
           </div>
-        </div>
-        <div class="status status-decline">
-          <img src="./img/img-decline.png" alt="accepted" class="status__img status__img-normal">
-          <img src="./img/img-decline@2x.png" alt="accepted" class="status__img status__img-retina">
-          <h1 class="status__title"> Dear John Doe,
-            <br> Your payment has been
-            <span class="status__title_color">declined</span>. </h1>
           <p class="status__sub-title"> Your order was successfully accepted.
             <br> In case you didn't receive invoice in 24 hours, but your card has been charged,
             <br> please, contact our Support. </p>
+        </div>
+        <div class="status status-decline">
+          <div class="status__top clearfix">
+            <img src="./img/img-decline.png" alt="accepted" class="status__img status__img-normal">
+            <img src="./img/img-decline@2x.png" alt="accepted" class="status__img status__img-retina">
+            <h1 class="status__title"> Dear John Doe,
+              <br> Your payment has been
+              <span class="status__title_color">declined</span>. </h1>
+          </div>
           <div class="status__wrap">
-            <h2 class="status__wrap-title">ORDER ID #444961</h2>
             <a href="/confirm" class="btn__wrap btn__wrap-back">
               <span class="btn__wrap-icon">
                 <i class="icon icon-back"></i>
@@ -44,22 +47,30 @@
               <span class="btn__wrap-text">Back to checkout</span>
             </a>
           </div>
-        </div>
-        <div class="status status-pending">
-          <img src="./img/img-pending.png" alt="accepted" class="status__img status__img-normal">
-          <img src="./img/img-pending@2x.png" alt="accepted" class="status__img status__img-retina">
-          <h1 class="status__title"> Dear John Doe, thank you for you order.
-            <br> Your order was
-            <span class="status__title_color">successfully pending</span>. </h1>
           <p class="status__sub-title"> Your order was successfully accepted.
             <br> In case you didn't receive invoice in 24 hours, but your card has been charged,
             <br> please, contact our Support. </p>
+        </div>
+        <div class="status status-pending">
+          <div class="status__top clearfix">
+            <img src="./img/img-pending.png" alt="accepted" class="status__img status__img-normal">
+            <img src="./img/img-pending@2x.png" alt="accepted" class="status__img status__img-retina">
+            <h1 class="status__title"> Dear John Doe, thank you for you order.
+              <br> Your order was
+              <span class="status__title_color">successfully pending</span>. </h1>
+          </div>
           <div class="status__wrap">
             <h2 class="status__wrap-title">ORDER ID #444961</h2>
             <a href="javascript:void(0);" data-id="send_button" class="btn__wrap btn__wrap-next btn__wrap-print">
-              <span class="btn__wrap-text">Diese Seite drucken</span>
+              <span class="btn__wrap-icon">
+                <i class="icon icon-next btn__wrap-print"></i>
+              </span>
+              <span class="btn__wrap-text">Stampa la pagina</span>
             </a>
           </div>
+          <p class="status__sub-title"> Your order was successfully accepted.
+            <br> In case you didn't receive invoice in 24 hours, but your card has been charged,
+            <br> please, contact our Support. </p>
         </div>
         <div class="confirmation-wrap wrap_bg border-radius_top">
           <div class="wrap">
@@ -69,35 +80,35 @@
                 <table>
                   <tbody>
                     <tr>
-                      <td class="col1">Geschlecht:</td>
+                      <td class="col1">Il sesso:</td>
                       <td class="col2">Männlich</td>
                     </tr>
                     <tr>
-                      <td class="col1">Vorname:</td>
+                      <td class="col1">Nome:</td>
                       <td class="col2">M. Quinn</td>
                     </tr>
                     <tr>
-                      <td class="col1">Name:</td>
+                      <td class="col1">Cognome:</td>
                       <td class="col2">Chris</td>
                     </tr>
                     <tr>
-                      <td class="col1">Anschrift:</td>
+                      <td class="col1">Indirizzo:</td>
                       <td class="col2">Kennedy Court</td>
                     </tr>
                     <tr>
-                      <td class="col1">Stadt:</td>
+                      <td class="col1">Città:</td>
                       <td class="col2">Bolton, MA 01740</td>
                     </tr>
                     <tr>
-                      <td class="col1">Land:</td>
+                      <td class="col1">Nazione:</td>
                       <td class="col2">USA (United States)</td>
                     </tr>
                     <tr>
-                      <td class="col1">Staat:</td>
+                      <td class="col1">Stato:</td>
                       <td class="col2">American Samoa</td>
                     </tr>
                     <tr>
-                      <td class="col1">PLZ:</td>
+                      <td class="col1">Codice postale:</td>
                       <td class="col2">1766</td>
                     </tr>
                     <tr class="last">
@@ -114,31 +125,31 @@
                 <table>
                   <tbody>
                     <tr>
-                      <td class="col1">Vorname:</td>
+                      <td class="col1">Nome:</td>
                       <td class="col2">M. Quinn Chris</td>
                     </tr>
                     <tr>
-                      <td class="col1">Anschrift:</td>
+                      <td class="col1">Indirizzo:</td>
                       <td class="col2">Kennedy Court</td>
                     </tr>
                     <tr>
-                      <td class="col1">Stadt:</td>
+                      <td class="col1">Città:</td>
                       <td class="col2">Bolton, MA 01740</td>
                     </tr>
                     <tr>
-                      <td class="col1">Land:</td>
+                      <td class="col1">Nazione:</td>
                       <td class="col2">USA (United States)</td>
                     </tr>
                     <tr>
-                      <td class="col1">Staat:</td>
+                      <td class="col1">Stato:</td>
                       <td class="col2">American Samoa</td>
                     </tr>
                     <tr>
-                      <td class="col1">PLZ:</td>
+                      <td class="col1">Codice postale:</td>
                       <td class="col2">1766</td>
                     </tr>
                     <tr class="last">
-                      <td class="col1">Alternative E-Mail:</td>
+                      <td class="col1">Alternativo e-mail:</td>
                       <td class="col2">ChrisMQuinn@teleworm.us</td>
                     </tr>
                   </tbody>
@@ -155,7 +166,7 @@
                   <p class="second">VISA</p>
                 </div>
                 <div class="blank__row row-2">
-                  <p class="first">Kreditkarte</p>
+                  <p class="first">La banca emittente</p>
                   <p class="second">VISA
                     <span> / </span>4444333322221111</p>
                 </div>
@@ -166,12 +177,12 @@
                   <p class="second">Derrick Henry</p>
                 </div>
                 <div class="blank__row row-4">
-                  <p class="first">Gültig bis</p>
+                  <p class="first">Data di scadenza</p>
                   <p class="second">02
                     <span> / </span>2025</p>
                 </div>
                 <div class="blank__row row-5">
-                  <p class="first">Sicherheitscode</p>
+                  <p class="first">Il Codicedi Sicurezza</p>
                   <p class="second">124</p>
                 </div>
               </div>
@@ -182,7 +193,7 @@
           <div class="cart">
             <div class="cart-item">
               <div class="left-side">
-                <p class="cart-title">Ware</p>
+                <p class="cart-title">Merce</p>
                 <div class="left-side__wrap">
                   <div class="left-side__wrap-img">
                     <img src="./img/img-product.png" alt="" class='img-goods'> </div>
@@ -196,25 +207,25 @@
               </div>
               <div class="right-side">
                 <div class="row-btn">
-                  <p class="cart-title">Menge</p>
+                  <p class="cart-title">Quantita</p>
                   <div class="right-side__wrap">
                     <span class="quantity">1</span>
                   </div>
                 </div>
                 <div class="row-discount">
-                  <p class="cart-title">Rabatt</p>
+                  <p class="cart-title">Sconto</p>
                   <div class="right-side__wrap">
                     <span class="discount">10%</span>
                   </div>
                 </div>
                 <div class="row-perpack">
-                  <p class="cart-title">Fur Verpackung</p>
+                  <p class="cart-title">Per Confezione</p>
                   <div class="right-side__wrap">
-                    <span class="ppack">€1132.82</span>
+                    <span class="ppack">€132.82</span>
                   </div>
                 </div>
                 <div class="row-subtotal">
-                  <p class="cart-title">Insgesamt</p>
+                  <p class="cart-title">Totale</p>
                   <div class="right-side__wrap">
                     <span class="subtotal">€132.82</span>
                   </div>
@@ -223,7 +234,7 @@
             </div>
             <div class="cart-item cart-item-next">
               <div class="left-side">
-                <p class="cart-title">Ware</p>
+                <p class="cart-title">Merce</p>
                 <div class="left-side__wrap">
                   <div class="left-side__wrap-img">
                     <img src="./img/img-product.png" alt="" class='img-goods'> </div>
@@ -237,25 +248,25 @@
               </div>
               <div class="right-side">
                 <div class="row-btn">
-                  <p class="cart-title">Menge</p>
+                  <p class="cart-title">Quantita</p>
                   <div class="right-side__wrap">
                     <span class="quantity">1</span>
                   </div>
                 </div>
                 <div class="row-discount">
-                  <p class="cart-title">Rabatt</p>
+                  <p class="cart-title">Sconto</p>
                   <div class="right-side__wrap">
                     <span class="discount">10%</span>
                   </div>
                 </div>
                 <div class="row-perpack">
-                  <p class="cart-title">Fur Verpackung</p>
+                  <p class="cart-title">Per Confezione</p>
                   <div class="right-side__wrap">
-                    <span class="ppack">€1132.82</span>
+                    <span class="ppack">€132.82</span>
                   </div>
                 </div>
                 <div class="row-subtotal">
-                  <p class="cart-title">Insgesamt</p>
+                  <p class="cart-title">Totale</p>
                   <div class="right-side__wrap">
                     <span class="subtotal">€132.82</span>
                   </div>
@@ -266,7 +277,7 @@
           <div class="cart cart-free">
             <div class="cart-item">
               <div class="left-side">
-                <p class="cart-title">Ware</p>
+                <p class="cart-title">Merce</p>
                 <div class="left-side__wrap">
                   <div class="left-side__wrap-img">
                     <img src="./img/img-product.png" alt="" class='img-goods'> </div>
@@ -280,19 +291,19 @@
               </div>
               <div class="right-side">
                 <div class="row-btn">
-                  <p class="cart-title">Menge</p>
+                  <p class="cart-title">Quantita</p>
                   <div class="right-side__wrap">
                     <span class="quantity">1</span>
                   </div>
                 </div>
                 <div class="row-perpack">
-                  <p class="cart-title">Fur Verpackung</p>
+                  <p class="cart-title">Per Confezione</p>
                   <div class="right-side__wrap">
-                    <span class="ppack">€1132.82</span>
+                    <span class="ppack">€132.82</span>
                   </div>
                 </div>
                 <div class="row-subtotal">
-                  <p class="cart-title">Insgesamt</p>
+                  <p class="cart-title">Totale</p>
                   <div class="right-side__wrap">
                     <span class="subtotal subtotal_free">GRATIS</span>
                   </div>
@@ -301,25 +312,27 @@
             </div>
           </div>
         </div>
-        <div class="cart-total-wrap ">
-          <span class="aligner"></span>
-          <span class="cart-total-title">Insgesamt:</span>
-          <span class="cart-total-price">€132.82</span>
-        </div>
-        <div class="cart-total-wrap ">
-          <span class="aligner"></span>
-          <span class="cart-total-title">Preis inkl. rabatt:</span>
-          <span class="cart-total-price">€132.82</span>
-        </div>
-        <div class="cart-total-wrap ">
-          <span class="aligner"></span>
-          <span class="cart-total-title">Lieferung:</span>
-          <span class="cart-total-price">€132.82</span>
-        </div>
-        <div class="cart-total-wrap border-radius_bottom total">
-          <span class="aligner"></span>
-          <span class="cart-total-title">GESAMT:</span>
-          <span class="cart-total-price">€132.82</span>
+        <div class="total-wrap">
+          <div class="cart-total-wrap ">
+            <span class="aligner"></span>
+            <span class="cart-total-title">Insgesamt:</span>
+            <span class="cart-total-price">€132.82</span>
+          </div>
+          <div class="cart-total-wrap ">
+            <span class="aligner"></span>
+            <span class="cart-total-title">Preis inkl. rabatt:</span>
+            <span class="cart-total-price">€132.82</span>
+          </div>
+          <div class="cart-total-wrap ">
+            <span class="aligner"></span>
+            <span class="cart-total-title">Lieferung:</span>
+            <span class="cart-total-price">€132.82</span>
+          </div>
+          <div class="cart-total-wrap border-radius_bottom total">
+            <span class="aligner"></span>
+            <span class="cart-total-title">GESAMT:</span>
+            <span class="cart-total-price">€132.82</span>
+          </div>
         </div>
         <div class="bottom-info wrap_bg">
           <p class="bottom-info__title"> Wenn Sie Ihre Rechnung nicht in 24 Stunden erhalten haben, der Betrag aber abgebucht wurde, dann kontaktieren Sie bitte unseren Support. </p>

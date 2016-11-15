@@ -1,18 +1,18 @@
 @import "../_mixin/mixin";
 @import "../_function/function";
 
-// SPRITE [&retina]
-@import "../_variable/sprite_de";
+//// SPRITE [&retina]
+@import "../_variable/sprite_it";
 
 
 $w-all                : return-value(dimension, all);
 
 $c-show               : return-value(color, show);
 $c-nero               : return-value(color, nero);
-$c-deep_pink          : return-value(color, deep_pink);
-$c-mango_tango        : return-value(color, mango_tango);
+$c-coral-red          : return-value(color, coral-red);
+$c-cadet-blue         : return-value(color, cadet-blue);
 
-$f-open-sans-bold     : return-value(fonts, open-sans-bold);
+$f-SSP-bold           : return-value(fonts, SSP-bold);
 
 
 .bottom-info {
@@ -25,27 +25,27 @@ $f-open-sans-bold     : return-value(fonts, open-sans-bold);
 
 
 	&__title {
-		font-size: 18px;
-		color: $c-deep_pink;
+		color: $c-coral-red;
 	}
 
 
 	&__sub-title {
-		font-size: 13px;
+		color: $c-cadet-blue;
 		text-transform: uppercase;
-		color: $c-nero;
+		font-family: $f-SSP-bold;
 	}
 
 
 	&__title,
 	&__sub-title {
-		font-family: $f-open-sans-bold;
+		font-size: 14px;
 		margin-bottom: 20px;
+
 	}
 
 
 	&__text {
-		font-size: 13px;
+		font-size: 14px;
 		color: $c-nero;
 
 
@@ -55,7 +55,7 @@ $f-open-sans-bold     : return-value(fonts, open-sans-bold);
 
 
 		&_color {
-			color: $c-mango_tango;
+			color: $c-cadet-blue;
 			text-decoration: underline;
 		}
 	}

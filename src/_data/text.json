@@ -1,9 +1,17 @@
 {
   "steps" : {
-    "1" : "Warenkorb",
-    "2" : "Lieferart",
-    "3" : "Zahlungsart",
-    "4" : "Bestätigung",
-    "5" : "Ergebnis"
+    "1" : "Carrello",
+    "2" : "Metodo di spedizione",
+    "3" : "Metodo di pagamento",
+    "4" : "Conferma",
+    "5" : "Risultato"
+  },
+
+  "stepsMobile" : {
+    "1" : "Passo 1",
+    "2" : "Passo 2",
+    "3" : "Passo 3",
+    "4" : "Passo 4",
+    "5" : "Risultato"
   }
 }

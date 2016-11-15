@@ -11,8 +11,8 @@
 $CC_widthAll        : 940px;
 $CC_width-left      : ($CC_widthAll / 2) - 1;
 $CC_width-right     : $CC_widthAll / 2;
-$CC_fontSize        : 13px;
-$CC_fontFamily      : return-value(fonts, open-sans-bold);
+$CC_fontSize        : 14px;
+$CC_fontFamily      : return-value(fonts, SSP-bold);
 $CC_marginTop       : 5px;
-$CC_borderColor     : return-value(color, whisperLight);
+$CC_borderColor     : return-value(color, zircon);
 $CC_fontSize-card   : $CC_fontSize + 1;

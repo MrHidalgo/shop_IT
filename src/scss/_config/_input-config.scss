@@ -59,12 +59,13 @@ $IS_width                   : 425px;
 $IS_height                  : 40px;
 $IS_lineHeight              : $IS_height;
 $IS_borderWidth             : 1px;
-$IS_borderColor             : return-value(color, whisper);
+$IS_borderColor             : return-value(color, zircon);
 $IS_borderRadius            : 4px;
 $IS_paddingTop              : 0;
 $IS_paddingRight            : 15px;
 $IS_paddingBottom           : 0;
 $IS_paddingLeft             : $IS_paddingRight;
+$IS_fontFamily              : return-value(fonts, open-sans-regular);
 
 
 // LABEL TITLE & SELECT TITLE  --> LTST
@@ -176,8 +177,8 @@ $PMSED_width-input          : ($PMES_width-left - ($IS_paddingRight * 4) - ($IS_
 
 
 // PAYMENT METHOD BTN CVV                --> PMBCVV
-$PMBCVV_fontSize            : 12px;
-$PMBCVV_fontColor           : return-value(color, persimmon);
+$PMBCVV_fontSize            : 14px;
+$PMBCVV_fontColor           : return-value(color, cadet-blue);
 $PMBCVV_textDecoration      : underline;
 	$PMBCVV-EXTRA-SMALL_position: absolute;
 	$PMBCVV-EXTRA-SMALL_left  : $PMSED-EXTRA-SMALL_width-input + $PMSED-EXTRA-SMALL_marginRight;
@@ -185,16 +186,16 @@ $PMBCVV_textDecoration      : underline;
 
 
 // PAYMENT METHOD INFO-M                 --> PMI-M
-$PMI-M_borderRadius         : 10px;
+$PMI-M_borderRadius         : 4px;
 $PMI-M_backgroundColor      : return-value(color, white);
-$PMI-M_boxShadow            : 0 0 30px 0 rgba(0,0,0,0.5);
+$PMI-M_boxShadow            : 0 2px 30px 0 rgba(0,0,0,0.25);
 $PMI-M_fontColor            : return-value(color, nero);
 $PMI-M_fontSize-title       : 16px;
-$PMI-M_fontFamily-title     : return-value(fonts, officina-sans-bold);
+$PMI-M_fontFamily-title     : return-value(fonts, SSP-bold);
 $PMI-M_fontSize-text        : 13px;
-$PMI-M_fontFamily-text      : return-value(fonts, open-sans-regular);
+$PMI-M_fontFamily-text      : return-value(fonts, SSP-regular);
 	// AFTER ADD CLASS ERROR
 	$PMI-M_boxShadow-error        : none;
-	$PMI-M_backgroundColor-error  : return-value(color, sunset_orange);
+	$PMI-M_backgroundColor-error  : return-value(color, coral-red);
 	$PMI-M_fontColor-error        : return-value(color, white);
-	$PMI-M_fontFamily-text-error  : return-value(fonts, open-sans-bold);
+	$PMI-M_fontFamily-text-error  : return-value(fonts, SSP-bold);

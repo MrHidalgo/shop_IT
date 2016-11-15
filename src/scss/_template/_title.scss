@@ -5,7 +5,7 @@
 @import "../_config/_title__config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 /*
@@ -30,10 +30,10 @@
 .main__title,
 .block__title,
 .sub__title {
-	font: {
-		family: $TGP_fontFamily;
-	}
-	color: $TGP_fontColor;
+	//font: {
+	//	family: $TGP_fontFamily;
+	//}
+	//color: $TGP_fontColor;
 }
 
 
@@ -51,10 +51,21 @@
 
 
 .sub__title {
+	display: inline-block;  *display: inline;  *zoom: 1;
 	font: {
 		size: $ST_fontSize;
 	}
+	color: $ST_fontColor;
 	padding: $ST_paddingTop $ST_paddingRight $ST_paddingBottom $ST_paddingLeft;
+	@include respond-to("medium") {
+		width: 150px;
+	}
+	@include respond-to("small-all") {
+		padding-top: $ST-SMALL-ALL_paddingTop;
+		padding-bottom: $ST-SMALL-ALL_paddingBottom;
+		width: auto;
+		font-size: $ST-SMALL-ALL_fontSize;
+	}
 	@include respond-to("extra_small") {
 		padding-left: $ST-EXTRA-SMALL_paddingLeft;
 	}
@@ -67,22 +78,31 @@
 	}
 	height: $BT_height;
 	line-height: $BT_lineHeight;
-	border-bottom: 1px solid $BT_borderColor;
 	padding: $BT_paddingTop $BT_paddingRight $BT_paddingBottom $BT_paddingLeft;
 	background-color: $BT_backgroundColor;
+	border-radius: $BT_borderRadius;
 	@include respond-to("extra_small") {
 		font: {
 			size: $BT__EXTRA-SMALL__fontSize;
 		}
+		margin: 0 $BT__EXTRA-SMALL__marginLeft;
 	}
 	@include respond-to("small-all") {
 		padding: $BT_paddingTop $BT_paddingRight $BT_paddingBottom $BT__SMALL-ALL__paddingLeft;
 	}
 
 
-	&_top {
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
+	&_next {
+		margin-top: 20px;
+	}
+
+	&-confirm {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		background-color: $BT_backgroundColor-confirm;
+		border : 1px solid $BT_borderColor-confirm;
 	}
 }
 
@@ -103,6 +123,10 @@
 	}
 	padding: $IT_paddingTop $IT_paddingRight $IT_paddingBottom $IT_paddingLeft;
 	text-align: center;
+
+	&-note {
+		color: $IT_fontColor-note;
+	}
 }
 
 
@@ -153,6 +177,7 @@
 .place-wrap__title {
 	font : {
 		size: $PWT_fontSize;
+		family: $PWT_fontFamily;
 	}
 	color: $PWT_fontColor;
 	margin-bottom: 5px;
@@ -179,15 +204,28 @@
 
 .status__wrap-title {
 	font: {
-		size: 22px;
-		family: return-value(fonts, open-sans-bold);
+		size: 16px;
+		family: return-value(fonts, SSP-bold);
 	}
-	color: return-value(color, deep_pink);
+	color: return-value(color, nero);
 	text-transform: uppercase;
 	display: inline-block;  *display: inline;  *zoom: 1;
-	vertical-align: middle;
+	vertical-align: top;
+	margin-right: 2.5px;
+	width: 270px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #F6FCFB;
+	border: {
+		radius: 4px;
+		width: 1px;
+		style: solid;
+		color: #E0EBEA;
+	}
 	@include respond-to("small-all") {
 		display: block;
+		text-align: center;
+		width: 100%;
 		margin-bottom: 15px;
 	}
 }

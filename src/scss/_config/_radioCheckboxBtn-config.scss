@@ -14,9 +14,9 @@
 
 
 // RADIO BUTTON & CHECKBOX BUTTON --> RBCB
-$RBCB_fontSize                : 13px;
+$RBCB_fontSize                : 14px;
 $RBCB_fontColor               : return-value(color, nero);
-$RBCB_fontColor-afterUpgrade  : return-value(color, persimmon);
+$RBCB_fontColor-afterUpgrade  : return-value(color, coral-red);
 $RBCB_marginTop               : 15px;
 $RBCB_marginRight             : 0;
 $RBCB_marginBottom            : 0;
@@ -30,7 +30,7 @@ $RBCB-img_marginTop           : 0;
 $RBCB-img_marginRight         : 10px;
 $RBCB-img_marginBottom        : 0;
 $RBCB-img_marginLeft          : 0;
-$RBCB_total_fontFamily        : return-value(fonts, open-sans-bold);
+$RBCB_total_fontFamily        : return-value(fonts, SSP-bold);
 
 
 // RADIO BUTTON    --> RB
@@ -45,7 +45,7 @@ $CB-icon_active               : $sp-i-checkbox-active-group;
 
 // RADIO PAYMENT BUTTON  --> RPB
 $RPB_borderColor              : return-value(color, snow);
-$RPB_borderColorActive        : return-value(color, deep_pink);
+$RPB_borderColorActive        : return-value(color, cadet-blue);
 $RPB_borderWidthActive        : 2px;
 $RPB_borderRadiusActive       : 6px;
 $RPB-img_visa                 : $sp-i-payment-visa-group;
@@ -55,5 +55,5 @@ $RPB-img_btc                  : $sp-i-payment-bitcoin-group;
 
 
 // SUBSCRIBE RADIO BUTTON          --> SRB
-$SRB_fontFamily-text-color    : return-value(fonts, open-sans-bold);
-$SRB_fontColor-text-color     : return-value(color, deep_pink);
+$SRB_fontFamily-text-color    : return-value(fonts, SSP-regular);
+$SRB_fontColor-text-color     : return-value(color, cadet-blue);

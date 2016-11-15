@@ -41,48 +41,57 @@ $MT_fontColor       : return-value(color, black_russian);
 
 
 // SUB TITLE
-$ST_fontSize        : 16px;
+$ST_fontSize        : 20px;
+	$ST-SMALL-ALL_fontSize  : 18px;
+
 $ST_fontFamily      : return-value(fonts, officina-sans-bold);
-$ST_fontColor       : return-value(color, black_russian);
-$ST_paddingTop      : 20px;
+$ST_fontColor       : return-value(color, pumpkin);
+$ST_paddingTop      : 0;
 $ST_paddingRight    : $ST_paddingTop;
 $ST_paddingBottom   : $ST_paddingTop;
 $ST_paddingLeft     : 0;
-	$ST-EXTRA-SMALL_paddingLeft     : 15px;
+	$ST-SMALL-ALL_paddingTop    : 20px;
+	$ST-SMALL-ALL_paddingBottom : 15px;
+	$ST-EXTRA-SMALL_paddingLeft : 15px;
 
 
 // BLOCK TITLE
 $BT_height          : 50px;
-$BT_lineHeight      : $BT_height + 5px;
-$BT_fontSize        : 18px;
+$BT_lineHeight      : $BT_height;
+$BT_fontSize        : 20px;
 	$BT__EXTRA-SMALL__fontSize    : 16px;
 
-$BT_borderColor     : return-value(color, whisper);
 $BT_paddingTop      : 0;
 $BT_paddingRight    : 0;
 $BT_paddingBottom   : 0;
 $BT_paddingLeft     : 30px;
 	$BT__SMALL-ALL__paddingLeft : $BT_paddingLeft - 15;
+		$BT__EXTRA-SMALL__marginLeft : 15px;
+		$BT__EXTRA-SMALL__marginRight : $BT__EXTRA-SMALL__marginLeft;
 
 $BT_backgroundColor : return-value(color, snow);
+$BT_backgroundColor-confirm : return-value(color, white);
+$BT_borderRadius    : 4px;
+$BT_borderColor-confirm : return-value(color, zircon);
 
 
 // TEXT TITLE
-$TT_fontSize        : 13px;
-$TT_fontStyle       : italic;
-$TT_fontColor       : return-value(color, grey);
-$TT_paddingTop      : 15px;
+$TT_fontSize        : 14px;
+$TT_fontStyle       : normal;
+$TT_fontColor       : return-value(color, nero);
+$TT_paddingTop      : 30px;
 $TT_paddingRight    : 0;
-$TT_paddingBottom   : $TT_paddingTop;
+$TT_paddingBottom   : 15px;
 $TT_paddingLeft     : $TT_paddingRight;
 
 
 // INVOICE TITLE
-$IT_fontSize        : 13px;
-$IT_paddingTop      : 20px;
+$IT_fontSize        : 14px;
+$IT_paddingTop      : 25px;
 $IT_paddingRight    : 15px;
 $IT_paddingBottom   : $IT_paddingTop;
 $IT_paddingLeft     : $IT_paddingRight;
+$IT_fontColor-note  : return-value(color, pumpkin);
 
 
 // QUESTION TITLE
@@ -112,14 +121,15 @@ $SbT_fontColor      : return-value(color, nero);
 
 
 // PLACE WRAP TITLE --> PWT
-$PWT_fontSize       : 16px;
-$PWT_fontColor      : return-value(color, deep_pink);
+$PWT_fontSize       : 14px;
+$PWT_fontColor      : return-value(color, pumpkin);
+$PWT_fontFamily     : return-value(fonts, SSP-bold);
 
 
 // CONFIRM TITLE --> CT
-$CT_fontSize        : 13px;
-$CT_fontFamily      : return-value(fonts, open-sans-bold);
-$CT_fontColor       : return-value(color, nero);
+$CT_fontSize        : 14px;
+$CT_fontFamily      : return-value(fonts, SSP-bold);
+$CT_fontColor       : return-value(color, cadet-blue);
 $CT_fontTransform   : uppercase;
 $CT_paddingLeft     : 25px;
 	$CT-SMALL-ALL_paddingLeft     : 15px;

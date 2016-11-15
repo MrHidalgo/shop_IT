@@ -5,7 +5,7 @@
 @import "../_config/_cart-total-wrap__config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 /*
@@ -27,8 +27,9 @@
 		padding: 0 $CTW_paddingLeft 0 $CTW_paddingRight;
 		font: {
 			size: $CTW_fontSize;
-			family: $CTW_fontFamily;
 		}
+		text-transform: uppercase;
+		position: relative;
 		@include respond-to('small-all') {
 			padding: 0 $CTW-SMALL-ALL__paddingLeft 0 $CTW-SMALL-ALL__paddingRight;
 		}
@@ -36,6 +37,7 @@
 
 		&.total {
 			.cart-total-price {
+				font-family: $CTP_fontFamily;
 				color: $CTP_fontColor;
 			}
 		}
@@ -52,11 +54,33 @@
 		display: inline-block;  *display: inline;  *zoom: 1;
 		width: $CTT_width;
 		vertical-align: middle;
+		color: $CTW_fontColor;
+		font-family: $CTW_fontFamily;
 	}
 
 
 	&-price {
-		float: right;
+		position: absolute;
+		top: 0;
+		right: $CTP_right;
+		width: $CTP_width;
 		line-height: $CTP_lineHeight;
+		font-size: $CTP_fontSize;
+		@include respond-to("medium") {
+			width: $CTP-MEDIUM_width;
+		}
+		@include respond-to("small-all") {
+			width: auto;
+			padding-right: 15px;
+		}
+	}
+}
+
+.total-wrap {
+	.cart-total-price {
+		width: $CTP_width-confirm;
+		@include respond-to("small-all") {
+			text-align: right;
+		}
 	}
 }

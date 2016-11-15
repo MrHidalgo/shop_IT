@@ -10,7 +10,9 @@
 */
 
 
-$BTN_width                : 260px;
+$BTN_width                : 324px;
+	$BTN-SMALL-ALL_width    : 270px;
+
 $BTN_width-internal       : 425px;
 	$BTN__SMALL-ALL__width-internal : 100%;
 
@@ -18,12 +20,14 @@ $BTN_height               : 40px;
 $BTN_lineHeight           : $BTN_height;
 $BTN_borderRadius         : 4px;
 $BTN_borderWidth          : 2px;
-$BTN_fontSize             : 14px;
-$BTN_fontFamily           : return-value(fonts, open-sans-bold);
+$BTN_fontSize             : 16px;
+	$BTN-SMALL-ALL_fontSize : 14px;
 
-$BTN-prev_fontColor       : return-value(color, fern);
-$BTN-prev_borderColor     : return-value(color, fern);
-$BTN-prev_backgroundColor : return-value(color, white);
+$BTN_fontFamily           : return-value(fonts, SSP-bold);
+
+$BTN-prev_fontColor       : return-value(color, arsenic);
+$BTN-prev_borderColor     : return-value(color, zircon);
+$BTN-prev_backgroundColor : return-value(color, zircon);
 $BTN-prev_iconName        : $sp-i-btn-prev-group;
 
 $BTN-next_fontColor       : return-value(color, white);
@@ -41,5 +45,14 @@ $BTN-back_borderColor     : $BTN-next_borderColor;
 $BTN-back_backgroundColor : $BTN-next_backgroundColor;
 $BTN-back_iconName        : $sp-i-btn-back-group;
 
-$BTN_marginLeft-icon      : 10px;
-$BTN_marginRight-icon     : 10px;
+$BTN_marginLeft-icon      : 0;
+$BTN_marginRight-icon     : 0;
+
+$BTN-width-icon           : 50px;
+	$BTN-SMALL-ALL-width-icon: 35px;
+
+$BTN-width-text           : $BTN_width - $BTN-width-icon;
+	$BTN-SMALL-ALL-width-text: $BTN-SMALL-ALL_width - $BTN-SMALL-ALL-width-icon;
+
+$BTN-width-internal-text  : $BTN_width-internal - $BTN-width-icon;
+	$BTN-SMALL-ALL-width-text: calc(100% - 35px);

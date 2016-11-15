@@ -5,19 +5,19 @@
 
         {% if (count == i) %}
             <div class="steps__wrap steps__wrap_active steps__wrap-{{ i }}">
-                {{ steps.stepsBody(text.steps[i]) }}
+                {{ steps.stepsBody(text.steps[i], text.stepsMobile[i]) }}
             </div>
         {% elseif (count > i) %}
             <div class="steps__wrap steps__wrap_check steps__wrap-{{ i }}">
-                {{ steps.stepsBody(text.steps[i]) }}
+                {{ steps.stepsBody(text.steps[i], text.stepsMobile[i]) }}
             </div>
         {% elseif (loop.last) %}
             <div class="steps__wrap steps__wrap_status steps__wrap-{{ i }}">
-                {{ steps.stepsBody(text.steps[i]) }}
+                {{ steps.stepsBody(text.steps[i], text.stepsMobile[i]) }}
             </div>
         {% else %}
             <div class="steps__wrap steps__wrap-{{ i }}">
-                {{ steps.stepsBody(text.steps[i]) }}
+                {{ steps.stepsBody(text.steps[i], text.stepsMobile[i]) }}
             </div>
         {% endif %}
 

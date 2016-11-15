@@ -1,13 +1,27 @@
 <div class="status status-decline">
-    <img src="./img/img-decline.png" alt="accepted" class="status__img status__img-normal">
-    <img src="./img/img-decline@2x.png" alt="accepted" class="status__img status__img-retina">
 
-    <h1 class="status__title">
-        Dear John Doe,
-        <br>
-        Your payment has been
-        <span class="status__title_color">declined</span>.
-    </h1>
+    <div class="status__top clearfix">
+        <img src="./img/img-decline.png" alt="accepted" class="status__img status__img-normal">
+        <img src="./img/img-decline@2x.png" alt="accepted" class="status__img status__img-retina">
+
+        <h1 class="status__title">
+            Dear John Doe,
+            <br>
+            Your payment has been
+            <span class="status__title_color">declined</span>.
+        </h1>
+    </div>
+
+    <div class="status__wrap">
+        {% include './btn.twig' with {
+            class   : "back",
+            optBtn  : "prev",
+            optIcon : "with-icon left",
+            text    : "Back to checkout",
+            hrefAttr: "/confirm"
+        } %}
+
+    </div>
 
     <p class="status__sub-title">
         Your order was successfully accepted.
@@ -16,17 +30,4 @@
         <br>
         please, contact our Support.
     </p>
-
-    <div class="status__wrap">
-        <h2 class="status__wrap-title">ORDER ID #444961</h2>
-
-        {% include './btn.twig' with {
-        class   : "back",
-        optBtn  : "prev",
-        optIcon : "yes-icon",
-        text    : "Back to checkout",
-        hrefAttr: "/confirm"
-        } %}
-
-    </div>
 </div>

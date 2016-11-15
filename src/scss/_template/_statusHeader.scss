@@ -2,7 +2,7 @@
 @import "../_function/function";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 $w-all                : return-value(dimension, all);
@@ -10,65 +10,56 @@ $w-all                : return-value(dimension, all);
 $c-fern               : return-value(color, fern);
 $c-nero               : return-value(color, nero);
 $c-deep_pink          : return-value(color, deep_pink);
-$c-persimmon        : return-value(color, persimmon);
+$c-persimmon          : return-value(color, persimmon);
+$c-coral-red          : return-value(color, coral-red);
 
-$f-officina-sans-bold : return-value(fonts, officina-sans-bold);
+$f-SSP-bold            : return-value(fonts, SSP-bold);
 
 
 .status {
-	width: 550px;
+	width: 560px;
 	padding: 60px 15px 50px;
 	margin: 0 auto;
 	text-align: center;
 	@include respond-to("small-all") {
 		width: $w-all;
 		padding: 20px 15px;
+		text-align: left;
+	}
+
+
+	&.wrap {
+		@include respond-to("small-all") {
+			padding: 0 15px;
+		}
 	}
 
 
 	&-accepted,
+	&-decline,
 	&-pending {
 		.status__img {
 			&-normal,
 			&-retina {
-				@include mixinDimensions(108px, auto);
-				margin-left: -15px;
+				@include mixinDimensions(82px, auto);
 			}
 		}
 	}
 
 
 	&-decline {
-		.status__img {
-			&-normal,
-			&-retina {
-				@include mixinDimensions(74px);
-			}
-		}
-
-		.status__title {
-			&_color {
-				color: $c-deep_pink;
-			}
-		}
-
 		.status__sub-title {
-			color: $c-deep_pink;
-		}
-	}
-
-
-	&-pending {
-		.status__title {
-			&_color {
-				color: $c-persimmon;
-			}
+			color: $c-coral-red;
 		}
 	}
 
 
 	&__img {
 		margin-bottom: 20px;
+		@include respond-to("small-all") {
+			float: left;
+		}
+
 
 		&-retina {
 			display: none;
@@ -78,23 +69,24 @@ $f-officina-sans-bold : return-value(fonts, officina-sans-bold);
 
 	&__title {
 		font: {
-			size: 24px;
-			family: $f-officina-sans-bold;
+			size: 20px;
+			weight: normal;
 		}
-		color: $c-fern;
+		color: $c-nero;
 		margin-bottom: 15px;
 		@include respond-to("small-all") {
 			font-size: 16px;
+			padding-left: 112px;
 		}
 	}
 
 
 	&__sub-title {
-		font-size: 13px;
+		font-size: 14px;
 		color: $c-nero;
-		margin-bottom: 25px;
+		margin: 15px 0 25px;
 		@include respond-to("small-all") {
-			margin-bottom: 15px;
+			margin: 10px 0 15px;
 		}
 	}
 }

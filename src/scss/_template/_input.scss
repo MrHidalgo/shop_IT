@@ -5,7 +5,7 @@
 @import "../_config/input-config";
 
 // SPRITE [&retina]
-@import "../_variable/sprite_de";
+@import "../_variable/sprite_it";
 
 
 /*
@@ -54,6 +54,11 @@ $c-white  : return-value(color, white);
 			justify-content: space-between;
 		}
 	}
+
+
+	.input-select__icon {
+		top: 18px;
+	}
 }
 
 
@@ -66,6 +71,7 @@ input,
 	border-radius: $IS_borderRadius;
 	padding: $IS_paddingTop $IS_paddingRight $IS_paddingBottom $IS_paddingLeft;
 	background-color: #fff;
+	font-family: $IS_fontFamily;
 }
 
 .input-select {
@@ -83,6 +89,7 @@ input,
 		position: absolute;
 		font: {
 			size: $LTST_fontSize;
+			family: $IS_fontFamily;
 		}
 		z-index: 10;
 	}
@@ -97,16 +104,21 @@ input,
 }
 
 
+.input__title,
+.label__title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
+}
+
+
 .label__title {
 	top: 0;
 	left: $LT_left;
 	line-height: $IS_height;
 	color: $LT_fontColor;
 	transition: all .2s ease-in-out;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 90%;
 
 	&-text {
 		position: relative;
@@ -456,8 +468,6 @@ input,
 
 
 .info-m {
-
-
 	.focus &.card-info,
 	&.card-info.show-info {
 		display: block;
