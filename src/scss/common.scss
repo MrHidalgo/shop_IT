@@ -125,3 +125,29 @@ img {
 .clearfix {
 	zoom: 1;
 }
+
+
+
+
+// test btn
+.btn-test {
+	text-align: center;
+	margin: 30px 0;
+
+	* {
+		padding: 5px 20px;
+		color: #fff;
+		font-family: "SourceSansPro-Bold";
+		font-size: 14px;
+	}
+
+	&_error {
+		background-color: #FF4242;
+	}
+	&_focus {
+		background-color: #307FB4;
+	}
+	&_clear {
+		background-color: #909090;
+	}
+}

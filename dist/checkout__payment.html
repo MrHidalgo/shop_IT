@@ -10,6 +10,11 @@
   </head>
   <body>
     <div class="container">
+      <div class="btn-test">
+        <a href="javascript:void(0);" data-id="error" class="b-test btn-test_error">ERROR</a>
+        <a href="javascript:void(0);" data-id="focus" class="b-test btn-test_focus">FOCUS</a>
+        <a href="javascript:void(0);" data-id="clear" class="b-test btn-test_clear">CLEAR</a>
+      </div>
       <div class="internal-container">
         <div class="header-steps">
           <div class="steps">
@@ -122,8 +127,8 @@
                     <i class="input-select__icon"></i>
                   </div>
                 </div>
-                <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
-                <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                <span class="info-m">La Sua data di nascita fa la parte dell’informazione sulla Sua carta di credito. Noi abbiamo bisogno per verificare l’effettivo titolare della carta.</span>
+                <span class="error-m">Si prega di scegliere la Sua data di nascita</span>
               </div>
             </div>
             <div class="rows">
@@ -136,8 +141,19 @@
                       <span class="label__title-bg"></span>
                     </label>
                   </div>
-                  <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
-                  <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                  <span class="info-m">
+                    <span data-pm_hint="visa"> Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="btc"> Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="mastercard"> Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="amex"> Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. Se il nome della banca per voi è sconosciuta, inserire Amex o American Express. </span>
+                  </span>
+                  <span class="error-m">Si prega d’inserire il nome della banca che ha emesso la vostra carta di credito</span>
                 </div>
               </div>
               <div class="input-wrap__card-number">
@@ -149,8 +165,19 @@
                       <span class="label__title-bg"></span>
                     </label>
                   </div>
-                  <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
-                  <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                  <span class="info-m">
+                    <span data-pm_hint="visa"> Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="btc"> Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="mastercard"> Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online. </span>
+                    <br/>
+                    <br/>
+                    <span data-pm_hint="amex"> Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online. </span>
+                  </span>
+                  <span class="error-m">Si prega d’inserire il valido numero della carta.</span>
                 </div>
               </div>
               <div class="input-wrap__card-info clearfix">
@@ -181,8 +208,7 @@
                         <i class="input-select__icon"></i>
                       </div>
                     </div>
-                    <span class="info-m">Bitte geben Sie Ihren Vornamen ein. Wir müssen Sie identifizieren, bevor wir Ihre Bestellung annehmen.</span>
-                    <span class="error-m">Bitte geben Sie Vorname ein.</span>
+                    <span class="error-m">La vostra carta scade presto. Si prega di provare un’altra carta.</span>
                   </div>
                 </div>
                 <div class="input-wrap__card-r">

@@ -22,6 +22,7 @@ var gulp                =   require('gulp'),
     uglify              =   require('gulp-uglify'),
     fixmyjs             =   require("gulp-fixmyjs"),
     prettify            =   require('gulp-prettify'),
+    cssbeautify         =   require('cssbeautify');
     YOUR_LOCALS         =   {};
 
 
@@ -180,11 +181,6 @@ function styleMainTask(taskName) {
 				autoPrefixOptions
 			))
 			.pipe(plumber.stop())
-            // .pipe(sourcemaps.write('./maps',
-            //     {
-            //         addComment: true
-            //     }
-            // ))
 			.pipe(
 				gulp.dest(dest)
 			)

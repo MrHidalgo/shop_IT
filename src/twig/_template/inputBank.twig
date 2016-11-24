@@ -1,0 +1,27 @@
+<div class="forms-row">
+
+    <div class="input">
+        <input type="text" id="{{ idName }}">
+
+        <label for="{{ idName }}" class="label__title">
+            <span class="label__title-text">{{ labelName }}</span>
+            <span class="label__title-bg"></span>
+        </label>
+    </div>
+
+
+    <span class="info-m">
+        <span data-pm_hint="visa">          {{ infoVisa }}          </span>
+        <br/>
+        <br/>
+        <span data-pm_hint="btc">           {{ infoBtc }}           </span>
+        <br/>
+        <br/>
+        <span data-pm_hint="mastercard">    {{ infoMastercard }}    </span>
+        <br/>
+        <br/>
+        <span data-pm_hint="amex">          {{ infoAmex }}          </span>
+    </span>
+
+    <span class="error-m">{{ errorText }}</span>
+</div>

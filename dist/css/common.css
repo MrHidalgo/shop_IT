@@ -2416,6 +2416,7 @@ input,
   display: none;
   font-size: 11px;
   font-family: "opensans_bold";
+  margin-bottom: 10px;
 }
 
 
@@ -3594,4 +3595,33 @@ img {
 
 .clearfix {
   zoom: 1;
+}
+
+
+.btn-test {
+  text-align: center;
+  margin: 30px 0;
+}
+
+
+.btn-test * {
+  padding: 5px 20px;
+  color: #fff;
+  font-family: "SourceSansPro-Bold";
+  font-size: 14px;
+}
+
+
+.btn-test_error {
+  background-color: #FF4242;
+}
+
+
+.btn-test_focus {
+  background-color: #307FB4;
+}
+
+
+.btn-test_clear {
+  background-color: #909090;
 }

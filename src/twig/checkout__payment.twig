@@ -13,6 +13,13 @@
 </head>
 <body>
     <div class="container">
+
+        <div class="btn-test">
+            <a href="javascript:void(0);" data-id="error" class="b-test btn-test_error">ERROR</a>
+            <a href="javascript:void(0);" data-id="focus" class="b-test btn-test_focus">FOCUS</a>
+            <a href="javascript:void(0);" data-id="clear" class="b-test btn-test_clear">CLEAR</a>
+        </div>
+
         <div class="internal-container">
 
             <div class="header-steps">
@@ -57,7 +64,9 @@
 
                     <div class="input-wrap__date-birth clearfix">
                         {% include './_template/select-dataBirth.twig' with {
-                            inputTitle      : "Data di nascita"
+                            inputTitle  : "Data di nascita",
+                            infoText    : "La Sua data di nascita fa la parte dell’informazione sulla Sua carta di credito. Noi abbiamo bisogno per verificare l’effettivo titolare della carta.",
+                            errorText   : "Si prega di scegliere la Sua data di nascita"
                         } %}
                     </div>
 
@@ -65,23 +74,34 @@
                     <div class="rows">
 
                         <div class="input-wrap__issuing-bank">
-                            {% include './_template/input.twig' with {
-                                idName      : "f2_issuing_bank",
-                                labelName   : "La banca emittente"
+                            {% include './_template/inputBank.twig' with {
+                                idName          : "f2_issuing_bank",
+                                labelName       : "La banca emittente",
+                                infoVisa        : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
+                                infoBtc         : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
+                                infoMastercard  : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
+                                infoAmex        : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. Se il nome della banca per voi è sconosciuta, inserire Amex o American Express.",
+                                errorText       : "Si prega d’inserire il nome della banca che ha emesso la vostra carta di credito"
                             } %}
                         </div>
 
                         <div class="input-wrap__card-number">
-                            {% include './_template/input.twig' with {
+                            {% include './_template/inputBank.twig' with {
                                 idName      : "f_card_number",
-                                labelName   : "Numeero di carta"
+                                labelName   : "Numeero di carta",
+                                infoVisa        : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
+                                infoBtc         : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
+                                infoMastercard  : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
+                                infoAmex        : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
+                                errorText   : "Si prega d’inserire il valido numero della carta."
                             } %}
                         </div>
 
                         <div class="input-wrap__card-info clearfix">
                             <div class="input-wrap__card-l">
                                 {% include './_template/select-expirationDate.twig' with {
-                                    inputTitle      : "Data di scadenza"
+                                    inputTitle      : "Data di scadenza",
+                                    errorText       : "La vostra carta scade presto. Si prega di provare un’altra carta."
                                 } %}
                             </div>
 

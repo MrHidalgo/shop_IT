@@ -13,6 +13,13 @@
 </head>
 <body>
     <div class="container">
+
+        <div class="btn-test">
+            <a href="javascript:void(0);" data-id="error" class="b-test btn-test_error">ERROR</a>
+            <a href="javascript:void(0);" data-id="focus" class="b-test btn-test_focus">FOCUS</a>
+            <a href="javascript:void(0);" data-id="clear" class="b-test btn-test_clear">CLEAR</a>
+        </div>
+
         <div class="internal-container">
 
             <div class="header-steps">
@@ -110,7 +117,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "first_name",
-                                labelName   : "Nome"
+                                labelName   : "Nome",
+                                infoText    : "Fornire il vostro nome reale. Abbiamo bisogno di identificare l'utente prima di accettare l'ordine.",
+                                errorText   : "Si prega d’inserire vostro Nome"
                             } %}
 
                         </div>
@@ -118,7 +127,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "last_name",
-                                labelName   : "Cognome"
+                                labelName   : "Cognome",
+                                infoText    : "Fornire il vostro cognome reale. Abbiamo bisogno di identificare l'utente prima di accettare l'ordine.",
+                                errorText   : "Si prega d’inserire vostro Cognome"
                             } %}
 
                         </div>
@@ -148,7 +159,7 @@
                                 productName : "Altro"
                             } %}
 
-                            <span class="error-m">Bitte wählen Sie Ihr Geschlecht aus</span>
+                            <span class="error-m">Per favore seleziona il sesso</span>
                         </div>
                     </div>
 
@@ -157,7 +168,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "email_name",
-                                labelName   : "Email"
+                                labelName   : "Email",
+                                infoText    : "Riceverete la conferma dell'ordine a questo indirizzo.",
+                                errorText   : "Si prega di’inserire un indirizzo email valido"
                             } %}
 
                         </div>
@@ -166,7 +179,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "a_email_name",
-                                labelName   : "Alternativo e-mail (Opzionale)"
+                                labelName   : "Alternativo e-mail (Opzionale)",
+                                infoText    : "Fornire un altro email valido solo per essere sicuri.",
+                                errorText   : ""
                             } %}
 
                         </div>
@@ -180,7 +195,8 @@
                         <div class="input-wrap__two-l">
 
                             {% include './_template/select.twig' with {
-                                titleName   : "Nazione"
+                                titleName   : "Nazione",
+                                errorText   : "Dear Customer! Non si accettano pagamenti da"
                             } %}
 
                         </div>
@@ -190,7 +206,9 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "city",
-                                    labelName   : "Città"
+                                    labelName   : "Città",
+                                    infoText    : "Città è una parte di un indirizzo di fatturazione associato con la vostra carta di credito.",
+                                    errorText   : "Si prega d’inserire una città che fa parte di un indirizzo di fatturazione associato con la tua carta di credito"
                                 } %}
 
                             </div>
@@ -198,7 +216,9 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "zip",
-                                    labelName   : "Codice postale"
+                                    labelName   : "Codice postale",
+                                    infoText    : "Zip/CAP del vostro indirizzo di fatturazione.",
+                                    errorText   : "Si prega d’inserire Zip/CAP"
                                 } %}
 
                             </div>
@@ -210,7 +230,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "address",
-                                labelName   : "Indirizzo"
+                                labelName   : "Indirizzo",
+                                infoText    : "Indirizzo di fatturazione associato con la carta di credito, ad esempio 100 Il Nome Della Mia via, App A",
+                                errorText   : "Si prega d’inserire l'indirizzo di fatturazione associato con la vostra carta di credito."
                             } %}
 
                         </div>
@@ -218,7 +240,9 @@
 
                             {% include './_template/input.twig' with {
                                 idName      : "phone",
-                                labelName   : "Telefono"
+                                labelName   : "Telefono",
+                                infoText    : "Fornire il vostro cellulare attuale o numero di telefono fisso.",
+                                errorText   : "+1 è troppo breve."
                             } %}
 
                         </div>
@@ -256,14 +280,17 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "first_name",
-                                    labelName   : "Cognome & Nome"
+                                    labelName   : "Cognome & Nome",
+                                    infoText    : "Fornite ai vostri veri nomi e cognomi. Abbiamo bisogno di identificare l'utente prima di accettare l'ordine.",
+                                    errorText   : "Si prega d’inserire vostro Nome & Cognome"
                                 } %}
 
                             </div>
                             <div class="input-wrap__two-r">
 
                                 {% include './_template/select.twig' with {
-                                    titleName   : "Nazione"
+                                    titleName   : "Nazione",
+                                    errorText   : "Dear Customer! Non si accettano pagamenti da"
                                 } %}
 
                             </div>
@@ -274,7 +301,9 @@
 
                                 {% include './_template/input.twig' with {
                                     idName      : "address",
-                                    labelName   : "Indirizzo"
+                                    labelName   : "Indirizzo",
+                                    infoText    : "Indirizzo di fatturazione associato con la carta di credito, ad esempio 100 Il Nome Della Mia via, App A",
+                                    errorText   : "Si prega d’inserire l'indirizzo di fatturazione associato con la vostra carta di credito."
                                 } %}
 
                             </div>
@@ -283,7 +312,9 @@
 
                                     {% include './_template/input.twig' with {
                                         idName      : "city",
-                                        labelName   : "City"
+                                        labelName   : "Città",
+                                        infoText    : "Città è una parte di un indirizzo di fatturazione associato con la vostra carta di credito.",
+                                        errorText   : "Si prega d’inserire una città che fa parte di un indirizzo di fatturazione associato con la tua carta di credito"
                                     } %}
 
                                 </div>
@@ -291,7 +322,9 @@
 
                                     {% include './_template/input.twig' with {
                                         idName      : "zip",
-                                        labelName   : "Codice postale"
+                                        labelName   : "Codice postale",
+                                        infoText    : "Zip/CAP del vostro indirizzo di fatturazione.",
+                                        errorText   : "Si prega d’inserire Zip/CAP"
                                     } %}
 
                                 </div>
@@ -309,12 +342,16 @@
 
                         {% include './_template/inputTitle.twig' with {
                             idName      : "email_name",
-                            inputTitle  : "Email"
+                            inputTitle  : "Email",
+                            infoText    : "Riceverete la conferma dell'ordine a questo indirizzo.",
+                            errorText   : "Si prega di’inserire un indirizzo email valido"
                         } %}
 
                         {% include './_template/inputTitle.twig' with {
                             idName      : "order",
-                            inputTitle  : "Numero dell’ordine oppure le ultime 4 cifre del numero della carta di credito"
+                            inputTitle  : "Numero dell’ordine oppure le ultime 4 cifre del numero della carta di credito",
+                            infoText    : "Numero dell’ordine oppure le ultime 4 cifre del numero della carta di credito",
+                            errorText   : "Si prega di compilare ID Ordine o le ultime 4 cifre della carta di credito utilizzata per l'ordine precedente."
                         } %}
 
                     </div>

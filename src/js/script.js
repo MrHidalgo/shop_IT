@@ -62,4 +62,25 @@ $(document).ready( function () {
 
         $(this).siblings('.info-m').toggleClass('show-info');
     });
+
+
+    // test
+    $(".b-test").on("click", function(e){
+        var _thisDataId = $(this).attr("data-id");
+
+        $(".forms-row").removeClass("error focus");
+
+        if (_thisDataId == "error") {
+            console.log("error");
+            $(".forms-row").addClass("error");
+        } else if (_thisDataId == "focus") {
+            console.log("focus");
+            $(".forms-row").addClass("focus");
+        } else {
+            console.log("clear");
+            $(".forms-row").removeClass("error focus");
+        }
+
+        $(".input-wrap__card-r .forms-row").removeClass("error focus");
+    });
 });
