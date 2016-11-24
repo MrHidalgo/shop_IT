@@ -13,15 +13,20 @@
     <span class="info-m">
         <span data-pm_hint="visa">          {{ infoVisa }}          </span>
         <br/>
-        <br/>
         <span data-pm_hint="btc">           {{ infoBtc }}           </span>
         <br/>
-        <br/>
         <span data-pm_hint="mastercard">    {{ infoMastercard }}    </span>
-        <br/>
         <br/>
         <span data-pm_hint="amex">          {{ infoAmex }}          </span>
     </span>
 
-    <span class="error-m">{{ errorText }}</span>
+    <span class="error-m">
+        {{ errorTextVisa }}
+        <br/>
+        {{ errorTextBtc }}
+        <br/>
+        {{ errorTextMastercard }}
+        <br/>
+        {{ errorTextAmex }}
+    </span>
 </div>

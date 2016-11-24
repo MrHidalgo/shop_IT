@@ -78,22 +78,18 @@
                                 idName          : "f2_issuing_bank",
                                 labelName       : "La banca emittente",
                                 infoVisa        : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
-                                infoBtc         : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
-                                infoMastercard  : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta.",
                                 infoAmex        : "Inserire il nome della banca (ad esempio Citibank, HSBC, Standard Chartered ecc) che ha emesso la carta. Se il nome della banca per voi è sconosciuta, inserire Amex o American Express.",
-                                errorText       : "Si prega d’inserire il nome della banca che ha emesso la vostra carta di credito"
+                                errorTextVisa   : "Si prega d’inserire il nome della banca che ha emesso la vostra carta di credito"
                             } %}
                         </div>
 
                         <div class="input-wrap__card-number">
                             {% include './_template/inputBank.twig' with {
-                                idName      : "f_card_number",
-                                labelName   : "Numeero di carta",
+                                idName          : "f_card_number",
+                                labelName       : "Numeero di carta",
                                 infoVisa        : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
-                                infoBtc         : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
-                                infoMastercard  : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
-                                infoAmex        : "Si prega di assicurarsi che la Sua carta può essere utilizzata per effettuare l’acquisti online.",
-                                errorText   : "Si prega d’inserire il valido numero della carta."
+                                errorTextVisa   : "Si prega d’inserire il valido numero della carta.",
+                                errorTextMastercard   : "Siamo spiacenti, non possiamo accettare Discover. Si prega di riprovare un’altra carta."
                             } %}
                         </div>
 
